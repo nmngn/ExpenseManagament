@@ -1,0 +1,56 @@
+PODS:
+  - Alamofire (4.9.1)
+  - AlamofireObjectMapper (5.2.1):
+    - Alamofire (~> 4.7)
+    - ObjectMapper (~> 3.4)
+  - DynamicBlurView (4.1.0)
+  - ESPullToRefresh (2.9.3)
+  - ESTabBarController-swift (2.8.0)
+  - IQKeyboardManagerSwift (6.5.10)
+  - ObjectMapper (3.5.3)
+  - PopupDialog (1.1.1):
+    - DynamicBlurView (~> 4.0)
+  - Presentr (1.9)
+  - SwiftCSV (0.6.1)
+  - Then (3.0.0)
+
+DEPENDENCIES:
+  - AlamofireObjectMapper (~> 5.2)
+  - ESPullToRefresh
+  - ESTabBarController-swift
+  - IQKeyboardManagerSwift
+  - PopupDialog
+  - Presentr
+  - SwiftCSV
+  - Then
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireObjectMapper
+    - DynamicBlurView
+    - ESPullToRefresh
+    - ESTabBarController-swift
+    - IQKeyboardManagerSwift
+    - ObjectMapper
+    - PopupDialog
+    - Presentr
+    - SwiftCSV
+    - Then
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
+  DynamicBlurView: 58e18fae80bb614e34681a4486870e7d257b62e8
+  ESPullToRefresh: 0d68daa602b343c81753a1b95e09fd0bfcddfd40
+  ESTabBarController-swift: 05593a6ad64700b03c0eb60ff625916370aa4136
+  IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
+  ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
+  PopupDialog: 720c92befd8bc23c13442254945213db5612f149
+  Presentr: 7078d7eb5d1661ebeaae60c9e42a1e534de1b993
+  SwiftCSV: f0108ec3e85c69ca7d7707645a4d044a222dc10c
+  Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
+
+PODFILE CHECKSUM: 0a9b38eba1668ba9230af917e2e971d911ba73d9
+
+COCOAPODS: 1.11.3

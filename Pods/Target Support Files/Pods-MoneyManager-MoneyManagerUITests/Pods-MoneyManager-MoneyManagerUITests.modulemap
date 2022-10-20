@@ -1,0 +1,6 @@
+framework module Pods_MoneyManager_MoneyManagerUITests {
+  umbrella header "Pods-MoneyManager-MoneyManagerUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
