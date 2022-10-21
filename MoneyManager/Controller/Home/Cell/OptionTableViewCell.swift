@@ -9,15 +9,16 @@ import UIKit
 
 class OptionTableViewCell: UITableViewCell {
 
+    var delegate: HomeActionDelegete?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBAction func openDefaultExpense(_ sender: UIButton) {
+        delegate?.openDefaultExpense()
     }
     
+    @IBAction func openFlexibleExpense(_ sender: UIButton) {
+        delegate?.openFlexibleExpense()
+    }
 }

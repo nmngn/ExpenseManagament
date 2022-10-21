@@ -10,6 +10,7 @@ import UIKit
 class WelcomeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
+    var delegate: HomeActionDelegete?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,7 +19,7 @@ class WelcomeTableViewCell: UITableViewCell {
     }
     
     @IBAction func showProfile(_ sender: UIButton) {
-        
+        delegate?.openProfile()
     }
     
 }

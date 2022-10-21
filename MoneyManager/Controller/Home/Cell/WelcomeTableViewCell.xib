@@ -43,7 +43,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xin chào" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKr-tu-zTP">
-                                <rect key="frame" x="12" y="18" width="170" height="20"/>
+                                <rect key="frame" x="16" y="18" width="166" height="20"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -51,7 +51,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="VKr-tu-zTP" firstAttribute="leading" secondItem="bYO-BK-OPM" secondAttribute="leading" constant="12" id="2Hb-ou-n9t"/>
+                            <constraint firstItem="VKr-tu-zTP" firstAttribute="leading" secondItem="bYO-BK-OPM" secondAttribute="leading" constant="16" id="2Hb-ou-n9t"/>
                             <constraint firstItem="VKr-tu-zTP" firstAttribute="centerY" secondItem="sWj-lW-15o" secondAttribute="centerY" id="5yZ-AG-dQR"/>
                             <constraint firstAttribute="height" constant="56" id="6Yo-6z-iwg"/>
                             <constraint firstAttribute="trailing" secondItem="sWj-lW-15o" secondAttribute="trailing" id="Tnh-7m-k5I"/>

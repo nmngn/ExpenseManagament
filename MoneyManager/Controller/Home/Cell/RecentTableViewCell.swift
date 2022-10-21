@@ -9,15 +9,19 @@ import UIKit
 
 class RecentTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    var delegate: HomeActionDelegete?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    @IBAction func showAll(_ sender: UIButton) {
+         
     }
     
+    @IBAction func reload(_ sender: UIButton) {
+        
+    }
 }

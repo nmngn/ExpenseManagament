@@ -223,6 +223,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "WelcomeTableViewCell", for: indexPath) as?
                     WelcomeTableViewCell else { return UITableViewCell() }
             cell.selectionStyle = .none
+            cell.delegate = self
             return cell
         case .badge:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "BadgeTableViewCell", for: indexPath) as?
@@ -233,12 +234,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case .option:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "OptionTableViewCell", for: indexPath) as?
                     OptionTableViewCell else { return UITableViewCell() }
+            cell.delegate = self
             cell.selectionStyle = .none
             return cell
         case .showRecent:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecentTableViewCell", for: indexPath) as?
                     RecentTableViewCell else { return UITableViewCell() }
             cell.selectionStyle = .none
+            cell.delegate = self
             return cell
         case .transaction:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionTableViewCell", for: indexPath) as?
@@ -251,5 +254,32 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             cell.selectionStyle = .none
             return cell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var model: HomeModel
+        model = modelIndexPath(indexPath: indexPath)
+    }
+}
+
+extension HomeViewController: HomeActionDelegete {
+    func openProfile() {
+        
+    }
+    
+    func openDefaultExpense() {
+        
+    }
+    
+    func openFlexibleExpense() {
+        
+    }
+    
+    func reloadExpense() {
+        
+    }
+    
+    func showAllRecent() {
+        
     }
 }
