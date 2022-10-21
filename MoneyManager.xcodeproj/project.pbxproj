@@ -238,7 +238,6 @@
 				36BF6B6D2901A19B00343E68 /* Controller */,
 				36BF6B602901A19900343E68 /* Extension */,
 				36BF6BF42901A19C00343E68 /* LaunchScreen.storyboard */,
-				36BF6BEF2901A19B00343E68 /* Lib */,
 				36BF6BF52901A19F00343E68 /* Utils */,
 				36BF6B162901A06600343E68 /* Info.plist */,
 			);
@@ -410,13 +409,6 @@
 				36BF6BA12901A19B00343E68 /* MainTabbar.storyboard */,
 			);
 			path = Tabbar;
-			sourceTree = "<group>";
-		};
-		36BF6BEF2901A19B00343E68 /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Lib;
 			sourceTree = "<group>";
 		};
 		36BF6BF12901A19B00343E68 /* AppDelegate */ = {

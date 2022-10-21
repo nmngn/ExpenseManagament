@@ -14,7 +14,21 @@ class UserRequest: BaseRequest {
         let body: [String: Any] = [
             "name": name,
             "dayOfBirth": birth,
-            "addMoney": allMoney]
+            "allMoney": allMoney]
         super.init(url: url, requestType: .post, body: body)
+    }
+    
+    required init(idUser: String) {
+        let url = URLs.userUrl + idUser
+        super.init(url: url, requestType: .get)
+    }
+    
+    required init(idUser: String, name: String, birth: String, allMoney: Int) { //update
+        let url = URLs.userUrl + idUser
+        let body: [String: Any] = [
+            "name": name,
+            "dayOfBirth": birth,
+            "allMoney": allMoney]
+        super.init(url: url, requestType: .put, body: body)
     }
 }

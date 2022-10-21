@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -65,6 +66,7 @@
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="zFi-A6-4aB">
                                 <rect key="frame" x="44" y="135" width="263" height="4"/>
+                                <color key="progressTintColor" red="0.015686274509803921" green="0.40784313725490196" blue="0.035294117647058823" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số tiền đã chi:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qtb-rA-Uvy">
                                 <rect key="frame" x="16" y="53" width="116" height="21"/>
@@ -107,6 +109,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" name="NewBG"/>
                 <constraints>
                     <constraint firstItem="0nA-kp-p3k" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="AfY-ac-Q3Z"/>
                     <constraint firstAttribute="trailing" secondItem="0nA-kp-p3k" secondAttribute="trailing" constant="16" id="PSY-UN-mU7"/>
@@ -115,11 +118,20 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="allLabel" destination="LMM-7x-T67" id="R7i-LX-hIQ"/>
+                <outlet property="progressView" destination="zFi-A6-4aB" id="k3i-JF-o9g"/>
+                <outlet property="remainLabel" destination="RGG-O5-Mdr" id="4su-Bn-fgW"/>
+                <outlet property="usedLabel" destination="sFH-9k-ZKW" id="Y6Y-b8-kym"/>
+            </connections>
             <point key="canvasLocation" x="177.536231884058" y="153.34821428571428"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="background" width="343" height="174"/>
+        <namedColor name="NewBG">
+            <color red="0.96100002527236938" green="0.9649999737739563" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

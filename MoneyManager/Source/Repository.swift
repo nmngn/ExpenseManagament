@@ -23,6 +23,32 @@ struct Repositories {
         }
     }
     
+    func getOneUser(idUser: String, completion: @escaping (BaseResult<User>) -> Void) {
+        let input = UserRequest(idUser: idUser)
+        api.request(input: input) { (object : User?, error) in
+            if let object = object {
+                completion(.success(object))
+            } else if let error = error {
+                completion(.failure(error: error))
+            } else {
+                completion(.failure(error: nil))
+            }
+        }
+    }
+    
+    func updateUser(idUser: String, name: String, birth: String, allMoney: Int, completion: @escaping (BaseResult<User>) -> Void) {
+        let input = UserRequest(idUser: idUser, name: name, birth: birth, allMoney: allMoney)
+        api.request(input: input) { (object : User?, error) in
+            if let object = object {
+                completion(.success(object))
+            } else if let error = error {
+                completion(.failure(error: error))
+            } else {
+                completion(.failure(error: nil))
+            }
+        }
+    }
+    
     func createTransaction(idUser: String, title: String, description: String, amount: String, category: String, dateTime: String, isIncome: Bool, type: Bool, completion: @escaping (BaseResult<Transaction>) -> Void) {
     let input = TransactionRequest(idUser: idUser, title: title, description: description, amount: amount, category: category, dateTime: dateTime, isIncome: isIncome, type: type)
         api.request(input: input) { (object : Transaction?, error) in

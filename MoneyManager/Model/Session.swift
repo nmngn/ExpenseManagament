@@ -32,6 +32,15 @@ final class UserLogIn {
             UserDefaults.standard.set(newValue, forKey: "idUser")
         }
     }
+    
+    var money: Int {
+        get {
+            UserDefaults.standard.integer(forKey: "userMoney")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "userMoney")
+        }
+    }
 }
 
 struct URLs {
@@ -43,8 +52,8 @@ struct URLs {
         
     static var transactionUrl = baseUrl + "transaction/"
         
-    static var createTransaction = transactionUrl + "all/"
-    static var getAllTransaction = transactionUrl
+    static var createTransaction = transactionUrl
+    static var getAllTransaction = transactionUrl + "all/"
     static var getOneTransaction = transactionUrl
     static var updateTransaction = transactionUrl
     static var deleteTransaction = transactionUrl

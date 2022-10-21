@@ -44,7 +44,7 @@ class RegisterViewController: UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
-        
+    
     @IBAction func login() { //login user
         if let name = nameTextField.text, let birth = birthTextField.text, let money = moneyTextField.text {
             if !name.isEmpty && !birth.isEmpty && !money.isEmpty {
@@ -54,6 +54,7 @@ class RegisterViewController: UIViewController {
                         if let user = user {
                             Session.shared.userProfile.idUser = user.idUser
                             Session.shared.userProfile.userName = user.name
+                            Session.shared.userProfile.money = Int(money) ?? 0
                         }
                         self.animateAfterLogin()
                     case .failure(let err):
@@ -124,12 +125,17 @@ extension RegisterViewController {
             $0.setLeftPaddingPoints(12)
         }
 
-        nameTextField.frame = CGRect(x: 16, y: 220,
-                                     width: sizeTextField.width, height: sizeTextField.height)
-        birthTextField.frame = CGRect(x: 16, y: nameTextField.frame.maxY + 16,
-                                      width: sizeTextField.width, height: sizeTextField.height)
-        moneyTextField.frame = CGRect(x: 16, y: birthTextField.frame.maxY + 16,
-                                      width: sizeTextField.width, height: sizeTextField.height)
+        nameTextField.frame = CGRect(x: view.bounds.width, y: 250,
+                                     width: sizeTextField.width,
+                                     height: sizeTextField.height)
+        birthTextField.frame = CGRect(x: view.bounds.width,
+                                      y: nameTextField.frame.maxY + 16,
+                                      width: sizeTextField.width,
+                                      height: sizeTextField.height)
+        moneyTextField.frame = CGRect(x: view.bounds.width,
+                                      y: birthTextField.frame.maxY + 16,
+                                      width: sizeTextField.width,
+                                      height: sizeTextField.height)
         
         startButton.center.x = view.center.x
         startButton.isHidden = true
@@ -142,14 +148,17 @@ extension RegisterViewController {
         
         UIView.animate(withDuration: 1.5, delay: 0.5, options: []) {
             self.moneyTextField.isHidden = false
+            self.moneyTextField.center.x -= self.view.bounds.width - 32
         } completion: { _ in }
         
         UIView.animate(withDuration: 1.5, delay: 1, options: []) {
             self.birthTextField.isHidden = false
+            self.birthTextField.center.x -= self.view.bounds.width - 32
         } completion: { _ in }
         
         UIView.animate(withDuration: 1.5, delay: 1.5, options: []) {
             self.nameTextField.isHidden = false
+            self.nameTextField.center.x -= self.view.bounds.width - 32
         } completion: { _ in }
         
         UIView.animate(withDuration: 1.5, delay: 1.5, options: .curveEaseInOut) {

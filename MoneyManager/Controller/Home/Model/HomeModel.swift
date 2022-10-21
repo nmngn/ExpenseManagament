@@ -19,6 +19,19 @@ enum HomeType {
 struct HomeModel {
     var type: HomeType
     
+    var allMoney = 0
+    var usedMoney = 0
+    var remainMoney = 0
+    
+    var category = ""
+    var titleExpense = ""
+    var timeExpense = ""
+    var moneyExpense = 0
+    
+    mutating func calc() {
+        remainMoney = allMoney - usedMoney
+    }
+    
     init(type: HomeType) {
         self.type = type
     }

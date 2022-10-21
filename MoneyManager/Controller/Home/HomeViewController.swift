@@ -12,10 +12,17 @@ import Presentr
 import ESPullToRefresh
 import Then
 
+protocol HomeActionDelegete {
+    func openProfile()
+    func openDefaultExpense()
+    func openFlexibleExpense()
+    func reloadExpense()
+    func showAllRecent()
+}
+
 class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet weak var theme: UIImageView!
         
     var model = [HomeModel]()
     var listTransaction: [Transaction]? {
@@ -23,9 +30,11 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             self.setupData()
         }
     }
+    var userData: User?
     let userNotificationCenter = UNUserNotificationCenter.current()
     let repo = Repositories(api: .share)
     let idUser = Session.shared.userProfile.idUser
+    let userMoney = Session.shared.userProfile.money
     let utilityThread = DispatchQueue.global(qos: .utility)
     
     let presenter: Presentr = {
@@ -40,7 +49,6 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Màn hình chính"
         configView()
         utilityThread.async {
             self.getListTransaction()
@@ -65,9 +73,6 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
-    }
-    
-    @objc func openMore() {
     }
 
     func requestNotificationAuthorization() {
@@ -128,14 +133,10 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
 //    }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.banner, .badge, .sound])
-    }
-    
-    func getUserToPushNoti(listUser: [User]?) {
     }
     
     func getListTransaction() {
@@ -166,7 +167,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             $0.registerNibCellFor(type: RecentTableViewCell.self)
             $0.registerNibCellFor(type: TransactionTableViewCell.self)
             $0.registerNibCellFor(type: BannerTableViewCell.self)
-            $0.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 48, right: 0)
+            $0.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
             $0.es.addPullToRefresh {
                 self.getListTransaction()
             }
@@ -180,7 +181,11 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         }
         
         let welcome = HomeModel(type: .welcome)
-        let badge = HomeModel(type: .badge)
+        var badge = HomeModel(type: .badge)
+        badge.allMoney = userMoney
+        badge.usedMoney = 100000
+        badge.calc()
+        
         let option = HomeModel(type: .option)
         let showRecent = HomeModel(type: .showRecent)
         let tran1 = HomeModel(type: .transaction)
@@ -222,6 +227,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case .badge:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "BadgeTableViewCell", for: indexPath) as?
                     BadgeTableViewCell else { return UITableViewCell() }
+            cell.setupData(data: model)
             cell.selectionStyle = .none
             return cell
         case .option:

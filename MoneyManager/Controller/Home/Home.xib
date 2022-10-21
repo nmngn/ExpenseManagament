@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,25 +19,18 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nkz-7L-DQ5">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" name="NewBG"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nkz-7L-DQ5" secondAttribute="trailing" id="9nH-aw-7Qp"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="nkz-7L-DQ5" secondAttribute="bottom" id="D8L-f8-VcE"/>
-                <constraint firstItem="nkz-7L-DQ5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Xhg-GJ-xJf"/>
+                <constraint firstItem="nkz-7L-DQ5" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Xhg-GJ-xJf"/>
                 <constraint firstItem="nkz-7L-DQ5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="mRb-pH-7ok"/>
-                <constraint firstItem="nkz-7L-DQ5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="wTu-9B-b4d"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="100.44642857142857"/>
         </view>
     </objects>
-    <resources>
-        <namedColor name="NewBG">
-            <color red="0.96100002527236938" green="0.9649999737739563" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-    </resources>
 </document>

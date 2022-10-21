@@ -9,15 +9,16 @@ import UIKit
 
 class WelcomeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        let userName = Session.shared.userProfile.userName
+        titleLabel.text = "Xin chào, \(userName)"
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    @IBAction func showProfile(_ sender: UIButton) {
+        
     }
     
 }
