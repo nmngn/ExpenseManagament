@@ -13,7 +13,6 @@ class SmallOptionViewController: UIViewController {
     @IBOutlet weak var dismissView: UIView!
     @IBOutlet weak var theme: UIImageView!
     
-    var notiModel = [NotificationModel]()
     var navigation = UINavigationController()
     
     override func viewDidLoad() {
@@ -26,11 +25,6 @@ class SmallOptionViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if !notiModel.isEmpty {
-            UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
-                self.notiImage.image = UIImage(systemName: "bell.badge")?.toHierachicalImage()
-            }, completion: nil)
-        }
     }
     
     @objc func dismissVC() {
@@ -38,10 +32,6 @@ class SmallOptionViewController: UIViewController {
     }
 
     @IBAction func openNoti(_ sender: UIButton) {
-        let vc = NotificationViewController.init(nibName: "NotificationViewController", bundle: nil)
-        vc.notiModel = self.notiModel
-        dismissVC()
-        self.navigation.pushViewController(vc, animated: true)
     }
     
     func logOut() {
@@ -66,9 +56,7 @@ class SmallOptionViewController: UIViewController {
     }
     
     @IBAction func openProfile(_ sender: UIButton) {
-        let vc = AdminViewController.init(nibName: "AdminViewController", bundle: nil)
-        dismissVC()
-        navigation.pushViewController(vc, animated: true)
+
     }
         
     @IBAction func logOut(_ sender: UIButton) {

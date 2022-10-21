@@ -6,31 +6,26 @@
 //
 
 import UIKit
-
-func delay(seconds: Double, completion: @escaping () -> Void) {
-    DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: completion)
-}
+import Toast_Swift
 
 class RegisterViewController: UIViewController {
 
-    @IBOutlet weak var signUpButton: UIButton!
-    @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var heading: UILabel!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var theme: UIImageView!
-
+    @IBOutlet weak var logoImage: UIImageView!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var birthTextField: UITextField!
+    @IBOutlet weak var moneyTextField: UITextField!
+    @IBOutlet weak var startButton: UIButton!
+    
     let repo = Repositories(api: .share)
-
+    let sizeTextField = CGSize(width: UIScreen.main.bounds.width, height: 50)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginButton.isEnabled = false
-        emailTextField.delegate = self
-        emailTextField.addTarget(self, action: #selector(accountDidChange), for: .editingChanged)
-        passwordTextField.delegate = self
-        passwordTextField.addTarget(self, action: #selector(passwordDidChange), for: .editingChanged)
-        configView()
+        startButton.isEnabled = false
+        nameTextField.delegate = self
+        birthTextField.delegate = self
+        moneyTextField.delegate = self
+        navigationController?.isNavigationBarHidden = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
@@ -51,6 +46,25 @@ class RegisterViewController: UIViewController {
     }
         
     @IBAction func login() { //login user
+        if let name = nameTextField.text, let birth = birthTextField.text, let money = moneyTextField.text {
+            if !name.isEmpty && !birth.isEmpty && !money.isEmpty {
+                repo.createUser(name: name, birth: birth, allMoney: Int(money) ?? 0) { data in
+                    switch data {
+                    case .success(let user):
+                        if let user = user {
+                            Session.shared.userProfile.idUser = user.idUser
+                            Session.shared.userProfile.userName = user.name
+                        }
+                        self.animateAfterLogin()
+                    case .failure(let err):
+                        self.view.makeToast("Lỗi")
+                        print(err)
+                    }
+                }
+            } else {
+                self.view.makeToast("Đang thiếu thông tin")
+            }
+        }
     }
 }
 
@@ -67,83 +81,106 @@ extension RegisterViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        if let name = nameTextField.text, let birth = birthTextField.text, let money = moneyTextField.text {
+            if !name.isEmpty && !birth.isEmpty && !money.isEmpty {
+                startButton.isEnabled = true
+            }
+        }
         resignFirstResponder()
     }
 }
 
 // MARK: - SetupAnimation
 extension RegisterViewController {
-    func configView() {
-        navigationController?.isNavigationBarHidden = true
-        signUpButton.center.y = view.bounds.height - 50
-        loginButton.layer.cornerRadius = loginButton.frame.size.height / 10
-        loginButton.layer.masksToBounds = true
-        loginButton.setTitle("Đăng nhập", for: .normal)
-    }
     
     func setUpUI() {
-        heading.center.x -= view.bounds.width
-        heading.frame.size.width = view.bounds.width - 88*2
-        emailTextField.frame.size.width = view.bounds.width - 50*2
-        passwordTextField.frame.size.width = view.bounds.width - 50*2
-        emailTextField.frame.size.height = 36
-        passwordTextField.frame.size.height = 36
+        logoImage.frame.size = CGSize(width: 100, height: 100)
+        logoImage.center = view.center
         
-        loginButton.frame.size.width = view.bounds.width - 78*2
-        emailTextField.center.x -= view.bounds.width
-        passwordTextField.center.x -= view.bounds.width
+        nameTextField.isHidden = true
+        birthTextField.isHidden = true
+        moneyTextField.isHidden = true
         
-        loginButton.center.y += 100
-        loginButton.alpha = 0
-        signUpButton.frame.size.width = view.bounds.width - 100*2
-        signUpButton.alpha = 0
-        signUpButton.center.y += 50
+        nameTextField.do {
+            $0.layer.masksToBounds = true
+            $0.layer.borderColor = UIColor.white.cgColor
+            $0.layer.borderWidth = 1.0
+            $0.layer.cornerRadius = 12
+            $0.setLeftPaddingPoints(12)
+        }
+        
+        birthTextField.do {
+            $0.layer.masksToBounds = true
+            $0.layer.borderColor = UIColor.white.cgColor
+            $0.layer.borderWidth = 1.0
+            $0.layer.cornerRadius = 12
+            $0.setLeftPaddingPoints(12)
+        }
+        moneyTextField.do {
+            $0.layer.masksToBounds = true
+            $0.layer.borderColor = UIColor.white.cgColor
+            $0.layer.borderWidth = 1.0
+            $0.layer.cornerRadius = 12
+            $0.setLeftPaddingPoints(12)
+        }
+
+        nameTextField.frame = CGRect(x: 16, y: 220,
+                                     width: sizeTextField.width, height: sizeTextField.height)
+        birthTextField.frame = CGRect(x: 16, y: nameTextField.frame.maxY + 16,
+                                      width: sizeTextField.width, height: sizeTextField.height)
+        moneyTextField.frame = CGRect(x: 16, y: birthTextField.frame.maxY + 16,
+                                      width: sizeTextField.width, height: sizeTextField.height)
+        
+        startButton.center.x = view.center.x
+        startButton.isHidden = true
     }
     
     func setUpAnimation() {
-        UIView.animate(withDuration: 1.5, delay: 0.5, options: []) {
-            self.signUpButton.center.y -= 50
-            self.signUpButton.alpha = 1
+        UIView.animate(withDuration: 1, delay: 0, options: []) {
+            self.logoImage.center.y -= 300
         } completion: { _ in}
         
-        UIView.animate(withDuration: 1.5) {
-            self.heading.center.x += self.view.bounds.width
-        }
         UIView.animate(withDuration: 1.5, delay: 0.5, options: []) {
-            self.emailTextField.center.x += self.view.bounds.width
+            self.moneyTextField.isHidden = false
         } completion: { _ in }
         
         UIView.animate(withDuration: 1.5, delay: 1, options: []) {
-            self.passwordTextField.center.x += self.view.bounds.width
+            self.birthTextField.isHidden = false
         } completion: { _ in }
-        UIView.animate(withDuration: 1.5, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 1.0, options: []) {
-            self.loginButton.center.y -= 100
-            self.loginButton.alpha = 1
+        
+        UIView.animate(withDuration: 1.5, delay: 1.5, options: []) {
+            self.nameTextField.isHidden = false
+        } completion: { _ in }
+        
+        UIView.animate(withDuration: 1.5, delay: 1.5, options: .curveEaseInOut) {
+            self.startButton.isHidden = false
         } completion: { _ in}
     }
     
     func animateAfterLogin() {
         view.endEditing(true)
-        loginButton.setTitle("", for: .normal)
-        UIView.animate(withDuration: 1.5) {
-            self.heading.center.x += self.view.bounds.width
-        }
+        UIView.animate(withDuration: 1.5, delay: 0, options: []) {
+            self.logoImage.center.y += 50
+            self.logoImage.isHidden = true
+        } completion: { _ in}
+        
         UIView.animate(withDuration: 1.5, delay: 0.5, options: []) {
-            self.emailTextField.center.x += self.view.bounds.width
+            self.moneyTextField.isHidden = true
         } completion: { _ in }
         
-        UIView.animate(withDuration: 1.5, delay: 0.75, options: []) {
-            self.passwordTextField.center.x += self.view.bounds.width
+        UIView.animate(withDuration: 1.5, delay: 1, options: []) {
+            self.birthTextField.isHidden = true
+        } completion: { _ in }
+        
+        UIView.animate(withDuration: 1.5, delay: 1.5, options: []) {
+            self.nameTextField.isHidden = true
+        } completion: { _ in }
+        
+        UIView.animate(withDuration: 1.5, delay: 1.5, options: .curveEaseInOut) {
+            self.startButton.isHidden = true
         } completion: { _ in
             self.appDelegate.switchViewController(animation: true)
         }
-        UIView.animate(withDuration: 1, delay: 0.05, usingSpringWithDamping: 0.5, initialSpringVelocity: 1.0, options: []) {
-            self.loginButton.center.y += self.view.bounds.height
-        } completion: { _ in}
-        UIView.animate(withDuration: 1.5, delay: 0.5, options: []) {
-            self.signUpButton.center.y += 50
-            self.signUpButton.alpha = 0
-        } completion: { _ in}
     }
     
 }

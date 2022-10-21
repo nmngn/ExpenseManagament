@@ -35,25 +35,9 @@
 		36BF6C182901A1A000343E68 /* SmallOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6B742901A19B00343E68 /* SmallOptionViewController.swift */; };
 		36BF6C192901A1A000343E68 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6B752901A19B00343E68 /* HomeViewController.swift */; };
 		36BF6C1A2901A1A000343E68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36BF6B762901A19B00343E68 /* Main.storyboard */; };
-		36BF6C1B2901A1A000343E68 /* BadgeUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6B792901A19B00343E68 /* BadgeUserTableViewCell.swift */; };
-		36BF6C1C2901A1A000343E68 /* AddUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36BF6B7A2901A19B00343E68 /* AddUserTableViewCell.xib */; };
-		36BF6C1D2901A1A000343E68 /* BiggerHomeUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6B7B2901A19B00343E68 /* BiggerHomeUserTableViewCell.swift */; };
-		36BF6C1E2901A1A000343E68 /* HomeTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36BF6B7C2901A19B00343E68 /* HomeTitleTableViewCell.xib */; };
-		36BF6C1F2901A1A000343E68 /* AddUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6B7D2901A19B00343E68 /* AddUserTableViewCell.swift */; };
-		36BF6C202901A1A000343E68 /* SortListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6B7E2901A19B00343E68 /* SortListTableViewCell.swift */; };
-		36BF6C212901A1A000343E68 /* BiggerHomeUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36BF6B7F2901A19B00343E68 /* BiggerHomeUserTableViewCell.xib */; };
-		36BF6C222901A1A000343E68 /* SortListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36BF6B802901A19B00343E68 /* SortListTableViewCell.xib */; };
-		36BF6C232901A1A000343E68 /* BadgeUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36BF6B812901A19B00343E68 /* BadgeUserTableViewCell.xib */; };
-		36BF6C242901A1A000343E68 /* HomeTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6B822901A19B00343E68 /* HomeTitleTableViewCell.swift */; };
 		36BF6C252901A1A000343E68 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6B842901A19B00343E68 /* HomeModel.swift */; };
 		36BF6C392901A1A000343E68 /* MainTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6BA02901A19B00343E68 /* MainTabbarViewController.swift */; };
 		36BF6C3A2901A1A000343E68 /* MainTabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36BF6BA12901A19B00343E68 /* MainTabbar.storyboard */; };
-		36BF6C6C2901A1A000343E68 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36BF6BE12901A19B00343E68 /* NotificationTableViewCell.xib */; };
-		36BF6C6D2901A1A000343E68 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6BE22901A19B00343E68 /* NotificationTableViewCell.swift */; };
-		36BF6C6E2901A1A000343E68 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6BE42901A19B00343E68 /* NotificationModel.swift */; };
-		36BF6C6F2901A1A000343E68 /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36BF6BE52901A19B00343E68 /* NotificationViewController.xib */; };
-		36BF6C702901A1A000343E68 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6BE62901A19B00343E68 /* NotificationViewController.swift */; };
-		36BF6C762901A1A000343E68 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6BF02901A19B00343E68 /* Toast.swift */; };
 		36BF6C772901A1A000343E68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6BF22901A19B00343E68 /* AppDelegate.swift */; };
 		36BF6C782901A1A000343E68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6BF32901A19B00343E68 /* SceneDelegate.swift */; };
 		36BF6C792901A1A000343E68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36BF6BF42901A19C00343E68 /* LaunchScreen.storyboard */; };
@@ -73,8 +57,6 @@
 		36BF6C892901A1A000343E68 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36BF6C062901A19F00343E68 /* Roboto-Bold.ttf */; };
 		36BF6C8A2901A1A000343E68 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36BF6C072901A19F00343E68 /* Roboto-Thin.ttf */; };
 		36BF6C8B2901A1A000343E68 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36BF6C082901A19F00343E68 /* Roboto-Black.ttf */; };
-		36BF6C902901BE6000343E68 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6C8E2901BE6000343E68 /* AccountViewController.swift */; };
-		36BF6C912901BE6000343E68 /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36BF6C8F2901BE6000343E68 /* AccountViewController.xib */; };
 		36BF6C942901BE6F00343E68 /* ExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6C922901BE6F00343E68 /* ExpenseViewController.swift */; };
 		36BF6C952901BE6F00343E68 /* ExpenseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36BF6C932901BE6F00343E68 /* ExpenseViewController.xib */; };
 		36BF6C992901BFAC00343E68 /* TransactionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6C972901BFAC00343E68 /* TransactionDetailViewController.swift */; };
@@ -83,6 +65,18 @@
 		36BF6C9F2901C16400343E68 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36BF6C9D2901C16400343E68 /* RegisterViewController.xib */; };
 		897E880E9A49F3F360D40283 /* Pods_MoneyManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FDA6FB7219882E3A549DEF /* Pods_MoneyManager.framework */; };
 		A9BC7F3EDDD352322A7C9517 /* Pods_MoneyManager_MoneyManagerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D82ABA2EDCF2FAA293504018 /* Pods_MoneyManager_MoneyManagerUITests.framework */; };
+		D8355FAC2902ACA600EDB910 /* WelcomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8355FAA2902ACA600EDB910 /* WelcomeTableViewCell.swift */; };
+		D8355FAD2902ACA600EDB910 /* WelcomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8355FAB2902ACA600EDB910 /* WelcomeTableViewCell.xib */; };
+		D8355FB02902AE6D00EDB910 /* BadgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8355FAE2902AE6D00EDB910 /* BadgeTableViewCell.swift */; };
+		D8355FB12902AE6D00EDB910 /* BadgeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8355FAF2902AE6D00EDB910 /* BadgeTableViewCell.xib */; };
+		D8355FB42902B22E00EDB910 /* OptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8355FB22902B22E00EDB910 /* OptionTableViewCell.swift */; };
+		D8355FB52902B22E00EDB910 /* OptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8355FB32902B22E00EDB910 /* OptionTableViewCell.xib */; };
+		D8355FB82902B5F600EDB910 /* RecentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8355FB62902B5F600EDB910 /* RecentTableViewCell.swift */; };
+		D8355FB92902B5F600EDB910 /* RecentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8355FB72902B5F600EDB910 /* RecentTableViewCell.xib */; };
+		D8355FBC2902B9A400EDB910 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8355FBA2902B9A400EDB910 /* TransactionTableViewCell.swift */; };
+		D8355FBD2902B9A400EDB910 /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8355FBB2902B9A400EDB910 /* TransactionTableViewCell.xib */; };
+		D8355FC02902BAE900EDB910 /* BannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8355FBE2902BAE900EDB910 /* BannerTableViewCell.swift */; };
+		D8355FC12902BAE900EDB910 /* BannerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8355FBF2902BAE900EDB910 /* BannerTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,25 +128,9 @@
 		36BF6B742901A19B00343E68 /* SmallOptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallOptionViewController.swift; sourceTree = "<group>"; };
 		36BF6B752901A19B00343E68 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		36BF6B772901A19B00343E68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		36BF6B792901A19B00343E68 /* BadgeUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeUserTableViewCell.swift; sourceTree = "<group>"; };
-		36BF6B7A2901A19B00343E68 /* AddUserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddUserTableViewCell.xib; sourceTree = "<group>"; };
-		36BF6B7B2901A19B00343E68 /* BiggerHomeUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiggerHomeUserTableViewCell.swift; sourceTree = "<group>"; };
-		36BF6B7C2901A19B00343E68 /* HomeTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTitleTableViewCell.xib; sourceTree = "<group>"; };
-		36BF6B7D2901A19B00343E68 /* AddUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddUserTableViewCell.swift; sourceTree = "<group>"; };
-		36BF6B7E2901A19B00343E68 /* SortListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortListTableViewCell.swift; sourceTree = "<group>"; };
-		36BF6B7F2901A19B00343E68 /* BiggerHomeUserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BiggerHomeUserTableViewCell.xib; sourceTree = "<group>"; };
-		36BF6B802901A19B00343E68 /* SortListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SortListTableViewCell.xib; sourceTree = "<group>"; };
-		36BF6B812901A19B00343E68 /* BadgeUserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BadgeUserTableViewCell.xib; sourceTree = "<group>"; };
-		36BF6B822901A19B00343E68 /* HomeTitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTitleTableViewCell.swift; sourceTree = "<group>"; };
 		36BF6B842901A19B00343E68 /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		36BF6BA02901A19B00343E68 /* MainTabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbarViewController.swift; sourceTree = "<group>"; };
 		36BF6BA12901A19B00343E68 /* MainTabbar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainTabbar.storyboard; sourceTree = "<group>"; };
-		36BF6BE12901A19B00343E68 /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
-		36BF6BE22901A19B00343E68 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
-		36BF6BE42901A19B00343E68 /* NotificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
-		36BF6BE52901A19B00343E68 /* NotificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationViewController.xib; sourceTree = "<group>"; };
-		36BF6BE62901A19B00343E68 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
-		36BF6BF02901A19B00343E68 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		36BF6BF22901A19B00343E68 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36BF6BF32901A19B00343E68 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		36BF6BF42901A19C00343E68 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -172,8 +150,6 @@
 		36BF6C062901A19F00343E68 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		36BF6C072901A19F00343E68 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		36BF6C082901A19F00343E68 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
-		36BF6C8E2901BE6000343E68 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
-		36BF6C8F2901BE6000343E68 /* AccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = "<group>"; };
 		36BF6C922901BE6F00343E68 /* ExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewController.swift; sourceTree = "<group>"; };
 		36BF6C932901BE6F00343E68 /* ExpenseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseViewController.xib; sourceTree = "<group>"; };
 		36BF6C972901BFAC00343E68 /* TransactionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +163,18 @@
 		B6D44D811AC2054192F8BD78 /* Pods-MoneyManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyManager.release.xcconfig"; path = "Target Support Files/Pods-MoneyManager/Pods-MoneyManager.release.xcconfig"; sourceTree = "<group>"; };
 		CB112617A9EFA01D98E9822C /* Pods-MoneyManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyManager.debug.xcconfig"; path = "Target Support Files/Pods-MoneyManager/Pods-MoneyManager.debug.xcconfig"; sourceTree = "<group>"; };
 		D82ABA2EDCF2FAA293504018 /* Pods_MoneyManager_MoneyManagerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyManager_MoneyManagerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8355FAA2902ACA600EDB910 /* WelcomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeTableViewCell.swift; sourceTree = "<group>"; };
+		D8355FAB2902ACA600EDB910 /* WelcomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeTableViewCell.xib; sourceTree = "<group>"; };
+		D8355FAE2902AE6D00EDB910 /* BadgeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeTableViewCell.swift; sourceTree = "<group>"; };
+		D8355FAF2902AE6D00EDB910 /* BadgeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BadgeTableViewCell.xib; sourceTree = "<group>"; };
+		D8355FB22902B22E00EDB910 /* OptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionTableViewCell.swift; sourceTree = "<group>"; };
+		D8355FB32902B22E00EDB910 /* OptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionTableViewCell.xib; sourceTree = "<group>"; };
+		D8355FB62902B5F600EDB910 /* RecentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTableViewCell.swift; sourceTree = "<group>"; };
+		D8355FB72902B5F600EDB910 /* RecentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentTableViewCell.xib; sourceTree = "<group>"; };
+		D8355FBA2902B9A400EDB910 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		D8355FBB2902B9A400EDB910 /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
+		D8355FBE2902BAE900EDB910 /* BannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTableViewCell.swift; sourceTree = "<group>"; };
+		D8355FBF2902BAE900EDB910 /* BannerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerTableViewCell.xib; sourceTree = "<group>"; };
 		DF5573617153B0CB0404C1C8 /* Pods_MoneyManagerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyManagerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA1826142BAE1B9E0340083C /* Pods-MoneyManagerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyManagerTests.debug.xcconfig"; path = "Target Support Files/Pods-MoneyManagerTests/Pods-MoneyManagerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -244,14 +232,14 @@
 		36BF6B072901A06300343E68 /* MoneyManager */ = {
 			isa = PBXGroup;
 			children = (
-				36BF6BF52901A19F00343E68 /* Utils */,
 				36BF6B482901A18700343E68 /* Source */,
+				36BF6B682901A19A00343E68 /* Model */,
 				36BF6BF12901A19B00343E68 /* AppDelegate */,
 				36BF6B6D2901A19B00343E68 /* Controller */,
 				36BF6B602901A19900343E68 /* Extension */,
 				36BF6BF42901A19C00343E68 /* LaunchScreen.storyboard */,
 				36BF6BEF2901A19B00343E68 /* Lib */,
-				36BF6B682901A19A00343E68 /* Model */,
+				36BF6BF52901A19F00343E68 /* Utils */,
 				36BF6B162901A06600343E68 /* Info.plist */,
 			);
 			path = MoneyManager;
@@ -358,10 +346,8 @@
 				36BF6C9B2901C15300343E68 /* Register */,
 				36BF6C962901BF9700343E68 /* TransactionDetail */,
 				36BF6C8D2901BD2A00343E68 /* Expense */,
-				36BF6C8C2901BD1900343E68 /* Account */,
 				36BF6B6E2901A19B00343E68 /* Home */,
 				36BF6B9F2901A19B00343E68 /* Tabbar */,
-				36BF6BDF2901A19B00343E68 /* NotificationVC */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -393,16 +379,18 @@
 		36BF6B782901A19B00343E68 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				36BF6B792901A19B00343E68 /* BadgeUserTableViewCell.swift */,
-				36BF6B7A2901A19B00343E68 /* AddUserTableViewCell.xib */,
-				36BF6B7B2901A19B00343E68 /* BiggerHomeUserTableViewCell.swift */,
-				36BF6B7C2901A19B00343E68 /* HomeTitleTableViewCell.xib */,
-				36BF6B7D2901A19B00343E68 /* AddUserTableViewCell.swift */,
-				36BF6B7E2901A19B00343E68 /* SortListTableViewCell.swift */,
-				36BF6B7F2901A19B00343E68 /* BiggerHomeUserTableViewCell.xib */,
-				36BF6B802901A19B00343E68 /* SortListTableViewCell.xib */,
-				36BF6B812901A19B00343E68 /* BadgeUserTableViewCell.xib */,
-				36BF6B822901A19B00343E68 /* HomeTitleTableViewCell.swift */,
+				D8355FAA2902ACA600EDB910 /* WelcomeTableViewCell.swift */,
+				D8355FAB2902ACA600EDB910 /* WelcomeTableViewCell.xib */,
+				D8355FAE2902AE6D00EDB910 /* BadgeTableViewCell.swift */,
+				D8355FAF2902AE6D00EDB910 /* BadgeTableViewCell.xib */,
+				D8355FB22902B22E00EDB910 /* OptionTableViewCell.swift */,
+				D8355FB32902B22E00EDB910 /* OptionTableViewCell.xib */,
+				D8355FB62902B5F600EDB910 /* RecentTableViewCell.swift */,
+				D8355FB72902B5F600EDB910 /* RecentTableViewCell.xib */,
+				D8355FBA2902B9A400EDB910 /* TransactionTableViewCell.swift */,
+				D8355FBB2902B9A400EDB910 /* TransactionTableViewCell.xib */,
+				D8355FBE2902BAE900EDB910 /* BannerTableViewCell.swift */,
+				D8355FBF2902BAE900EDB910 /* BannerTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -424,38 +412,9 @@
 			path = Tabbar;
 			sourceTree = "<group>";
 		};
-		36BF6BDF2901A19B00343E68 /* NotificationVC */ = {
-			isa = PBXGroup;
-			children = (
-				36BF6BE02901A19B00343E68 /* Cell */,
-				36BF6BE32901A19B00343E68 /* Model */,
-				36BF6BE52901A19B00343E68 /* NotificationViewController.xib */,
-				36BF6BE62901A19B00343E68 /* NotificationViewController.swift */,
-			);
-			path = NotificationVC;
-			sourceTree = "<group>";
-		};
-		36BF6BE02901A19B00343E68 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				36BF6BE12901A19B00343E68 /* NotificationTableViewCell.xib */,
-				36BF6BE22901A19B00343E68 /* NotificationTableViewCell.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		36BF6BE32901A19B00343E68 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				36BF6BE42901A19B00343E68 /* NotificationModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		36BF6BEF2901A19B00343E68 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				36BF6BF02901A19B00343E68 /* Toast.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -498,15 +457,6 @@
 				36BF6C082901A19F00343E68 /* Roboto-Black.ttf */,
 			);
 			path = Roboto;
-			sourceTree = "<group>";
-		};
-		36BF6C8C2901BD1900343E68 /* Account */ = {
-			isa = PBXGroup;
-			children = (
-				36BF6C8E2901BE6000343E68 /* AccountViewController.swift */,
-				36BF6C8F2901BE6000343E68 /* AccountViewController.xib */,
-			);
-			path = Account;
 			sourceTree = "<group>";
 		};
 		36BF6C8D2901BD2A00343E68 /* Expense */ = {
@@ -669,32 +619,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				36BF6C7F2901A1A000343E68 /* Roboto-Medium.ttf in Resources */,
-				36BF6C232901A1A000343E68 /* BadgeUserTableViewCell.xib in Resources */,
+				D8355FB12902AE6D00EDB910 /* BadgeTableViewCell.xib in Resources */,
 				36BF6C812901A1A000343E68 /* Roboto-Regular.ttf in Resources */,
 				36BF6C172901A1A000343E68 /* SmallOptionViewController.xib in Resources */,
 				36BF6C8B2901A1A000343E68 /* Roboto-Black.ttf in Resources */,
+				D8355FC12902BAE900EDB910 /* BannerTableViewCell.xib in Resources */,
 				36BF6C952901BE6F00343E68 /* ExpenseViewController.xib in Resources */,
 				36BF6C842901A1A000343E68 /* Roboto-BoldItalic.ttf in Resources */,
 				36BF6C802901A1A000343E68 /* Roboto-Light.ttf in Resources */,
-				36BF6C222901A1A000343E68 /* SortListTableViewCell.xib in Resources */,
 				36BF6C142901A19F00343E68 /* Home.xib in Resources */,
 				36BF6C3A2901A1A000343E68 /* MainTabbar.storyboard in Resources */,
-				36BF6C212901A1A000343E68 /* BiggerHomeUserTableViewCell.xib in Resources */,
-				36BF6C6F2901A1A000343E68 /* NotificationViewController.xib in Resources */,
-				36BF6C6C2901A1A000343E68 /* NotificationTableViewCell.xib in Resources */,
 				36BF6C152901A19F00343E68 /* PopupInfoViewController.xib in Resources */,
 				36BF6C9F2901C16400343E68 /* RegisterViewController.xib in Resources */,
 				36BF6C822901A1A000343E68 /* Roboto-MediumItalic.ttf in Resources */,
+				D8355FBD2902B9A400EDB910 /* TransactionTableViewCell.xib in Resources */,
 				36BF6C8A2901A1A000343E68 /* Roboto-Thin.ttf in Resources */,
-				36BF6C1C2901A1A000343E68 /* AddUserTableViewCell.xib in Resources */,
 				36BF6C1A2901A1A000343E68 /* Main.storyboard in Resources */,
-				36BF6C912901BE6000343E68 /* AccountViewController.xib in Resources */,
 				36BF6C7D2901A1A000343E68 /* Color.xcassets in Resources */,
 				36BF6C9A2901BFAC00343E68 /* TransactionDetailViewController.xib in Resources */,
 				36BF6C792901A1A000343E68 /* LaunchScreen.storyboard in Resources */,
 				36BF6C872901A1A000343E68 /* LICENSE.txt in Resources */,
-				36BF6C1E2901A1A000343E68 /* HomeTitleTableViewCell.xib in Resources */,
+				D8355FB52902B22E00EDB910 /* OptionTableViewCell.xib in Resources */,
+				D8355FB92902B5F600EDB910 /* RecentTableViewCell.xib in Resources */,
 				36BF6C862901A1A000343E68 /* Roboto-Italic.ttf in Resources */,
+				D8355FAD2902ACA600EDB910 /* WelcomeTableViewCell.xib in Resources */,
 				36BF6C882901A1A000343E68 /* Roboto-BlackItalic.ttf in Resources */,
 				36BF6C832901A1A000343E68 /* Roboto-ThinItalic.ttf in Resources */,
 				36BF6C7B2901A1A000343E68 /* Assets.xcassets in Resources */,
@@ -828,42 +776,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				36BF6B572901A18700343E68 /* Repository.swift in Sources */,
+				D8355FBC2902B9A400EDB910 /* TransactionTableViewCell.swift in Sources */,
+				D8355FB42902B22E00EDB910 /* OptionTableViewCell.swift in Sources */,
+				D8355FAC2902ACA600EDB910 /* WelcomeTableViewCell.swift in Sources */,
 				36BF6B582901A18700343E68 /* BaseResult.swift in Sources */,
 				36BF6C252901A1A000343E68 /* HomeModel.swift in Sources */,
-				36BF6C762901A1A000343E68 /* Toast.swift in Sources */,
 				36BF6B592901A18700343E68 /* BaseRequest.swift in Sources */,
 				36BF6C162901A1A000343E68 /* PopupInfoViewController.swift in Sources */,
-				36BF6C202901A1A000343E68 /* SortListTableViewCell.swift in Sources */,
 				36BF6B5B2901A18700343E68 /* UserRequest.swift in Sources */,
 				36BF6C782901A1A000343E68 /* SceneDelegate.swift in Sources */,
 				36BF6C192901A1A000343E68 /* HomeViewController.swift in Sources */,
 				36BF6C392901A1A000343E68 /* MainTabbarViewController.swift in Sources */,
-				36BF6C1D2901A1A000343E68 /* BiggerHomeUserTableViewCell.swift in Sources */,
 				36BF6C7A2901A1A000343E68 /* Constant.swift in Sources */,
 				36BF6B5C2901A18700343E68 /* TransactionRequest.swift in Sources */,
 				36BF6C092901A19F00343E68 /* Other+.swift in Sources */,
-				36BF6C702901A1A000343E68 /* NotificationViewController.swift in Sources */,
 				36BF6C992901BFAC00343E68 /* TransactionDetailViewController.swift in Sources */,
-				36BF6C902901BE6000343E68 /* AccountViewController.swift in Sources */,
-				36BF6C242901A1A000343E68 /* HomeTitleTableViewCell.swift in Sources */,
 				36BF6B5D2901A18700343E68 /* ErrorResponse.swift in Sources */,
 				36BF6C112901A19F00343E68 /* Session.swift in Sources */,
 				36BF6C0A2901A19F00343E68 /* UIView+.swift in Sources */,
 				36BF6C772901A1A000343E68 /* AppDelegate.swift in Sources */,
 				36BF6C9E2901C16400343E68 /* RegisterViewController.swift in Sources */,
+				D8355FC02902BAE900EDB910 /* BannerTableViewCell.swift in Sources */,
 				36BF6C0F2901A19F00343E68 /* UITableView+.swift in Sources */,
 				36BF6C102901A19F00343E68 /* Model.swift in Sources */,
 				36BF6C0D2901A19F00343E68 /* UITextField+.swift in Sources */,
 				36BF6C0C2901A19F00343E68 /* UIViewController+.swift in Sources */,
+				D8355FB82902B5F600EDB910 /* RecentTableViewCell.swift in Sources */,
 				36BF6B5F2901A18700343E68 /* APIService.swift in Sources */,
 				36BF6C0E2901A19F00343E68 /* Date+.swift in Sources */,
-				36BF6C6D2901A1A000343E68 /* NotificationTableViewCell.swift in Sources */,
+				D8355FB02902AE6D00EDB910 /* BadgeTableViewCell.swift in Sources */,
 				36BF6C942901BE6F00343E68 /* ExpenseViewController.swift in Sources */,
-				36BF6C1B2901A1A000343E68 /* BadgeUserTableViewCell.swift in Sources */,
-				36BF6C1F2901A1A000343E68 /* AddUserTableViewCell.swift in Sources */,
 				36BF6C182901A1A000343E68 /* SmallOptionViewController.swift in Sources */,
 				36BF6C0B2901A19F00343E68 /* String+.swift in Sources */,
-				36BF6C6E2901A1A000343E68 /* NotificationModel.swift in Sources */,
 				36BF6B5E2901A18700343E68 /* BaseError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

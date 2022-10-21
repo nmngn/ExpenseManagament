@@ -12,6 +12,7 @@ enum HomeType {
     case badge
     case option
     case showRecent
+    case transaction
     case banner
 }
 

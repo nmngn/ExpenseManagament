@@ -9,12 +9,12 @@ target 'MoneyManager' do
   pod 'Then'
   pod 'PopupDialog'
   pod 'IQKeyboardManagerSwift'
-  pod "SwiftCSV"
   pod 'Presentr'
   pod 'AlamofireObjectMapper', '~> 5.2'
   pod "ESPullToRefresh"
   pod "ESTabBarController-swift"
-  
+  pod 'Toast-Swift', '~> 5.0.1'
+
   target 'MoneyManagerTests' do
     inherit! :search_paths
     # Pods for testing

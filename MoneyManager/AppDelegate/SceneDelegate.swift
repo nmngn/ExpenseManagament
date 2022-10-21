@@ -16,8 +16,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = UIStoryboard(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()
         window?.makeKeyAndVisible()
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-            self.switchViewController(animation: true)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
+            let vc = RegisterViewController.init(nibName: "RegisterViewController", bundle: nil)
+            self.window?.rootViewController = vc
         }
         guard let _ = (scene as? UIWindowScene) else { return }
     }

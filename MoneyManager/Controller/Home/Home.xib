@@ -2,16 +2,15 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="MomCare" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="MoneyManager" customModuleProvider="target">
             <connections>
                 <outlet property="tableView" destination="nkz-7L-DQ5" id="GqX-kE-TCW"/>
-                <outlet property="theme" destination="9Qs-Fq-qtW" id="Etg-Cf-c0b"/>
                 <outlet property="view" destination="iN0-l3-epB" id="wfC-zv-Xah"/>
             </connections>
         </placeholder>
@@ -20,27 +19,26 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Qs-Fq-qtW">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nkz-7L-DQ5">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" name="NewBG"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nkz-7L-DQ5" secondAttribute="trailing" id="9nH-aw-7Qp"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="nkz-7L-DQ5" secondAttribute="bottom" id="D8L-f8-VcE"/>
-                <constraint firstItem="9Qs-Fq-qtW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="XBP-nd-sv0"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9Qs-Fq-qtW" secondAttribute="trailing" id="mEQ-We-5UD"/>
+                <constraint firstItem="nkz-7L-DQ5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Xhg-GJ-xJf"/>
                 <constraint firstItem="nkz-7L-DQ5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="mRb-pH-7ok"/>
-                <constraint firstItem="9Qs-Fq-qtW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="p4T-ix-iJI"/>
-                <constraint firstItem="nkz-7L-DQ5" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="wTu-9B-b4d"/>
-                <constraint firstAttribute="bottom" secondItem="9Qs-Fq-qtW" secondAttribute="bottom" id="woK-E4-rYa"/>
+                <constraint firstItem="nkz-7L-DQ5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="wTu-9B-b4d"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="100.44642857142857"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="NewBG">
+            <color red="0.96100002527236938" green="0.9649999737739563" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

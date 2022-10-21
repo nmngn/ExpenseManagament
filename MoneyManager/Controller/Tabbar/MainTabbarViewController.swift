@@ -42,10 +42,10 @@ class MainTabbarViewController: ESTabBarController, UITabBarControllerDelegate {
         button.layer.borderWidth = 4
         button.layer.borderColor = UIColor.yellow.cgColor
         self.view.insertSubview(button, aboveSubview: self.tabBar)
-        button.addTarget(self, action: #selector(addTransaction()), for: .touchUpInside)
+        button.addTarget(self, action: #selector(addTransaction), for: .touchUpInside)
     }
     
-    @objc func addTransaction() {
+    @objc func addTransaction(_ sender: UIButton) {
         
     }
     
@@ -69,15 +69,8 @@ class MainTabbarViewController: ESTabBarController, UITabBarControllerDelegate {
         homeVC.tabBarItem = ESTabBarItem.init(ESTabbarBasicContentView(), title: "Màn hình chính", image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill")?.toHierachicalImage())
         
         let expense = UINavigationController(rootViewController: ExpenseViewController.init(nibName: "ExpenseViewController", bundle: nil))
-        expense.tabBarItem = ESTabBarItem.init(ESTabbarBasicContentView(),title: "Tìm kiếm", image: UIImage(systemName: "magnifyingglass"), selectedImage: UIImage(systemName: "magnifyingglass.fill")?.toHierachicalImage())
-        
-        let notiVC = UINavigationController(rootViewController: NotificationViewController.init(nibName: "NotificationViewController", bundle: nil))
-        notiVC.tabBarItem = ESTabBarItem.init(ESTabbarBasicContentView(), title: "Thông báo", image: UIImage(systemName: "bell"), selectedImage: UIImage(systemName: "bell.fill")?.toHierachicalImage())
-        
-        let account = UINavigationController(rootViewController: AccountViewController.init(nibName: "AccountViewController", bundle: nil))
-        account.tabBarItem = ESTabBarItem.init(ESTabbarBasicContentView(), title: "Thông tin cá nhân".localized, image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill")?.toHierachicalImage())
-
-        viewController.append(contentsOf: [homeVC, expense, notiVC, account])
+        expense.tabBarItem = ESTabBarItem.init(ESTabbarBasicContentView(),title: "Tìm kiếm", image: UIImage(systemName: "magnifyingglass"), selectedImage: UIImage(systemName: "wallet.pass")?.toHierachicalImage())
+        viewController.append(contentsOf: [homeVC, expense])
         return viewController
     }
 }

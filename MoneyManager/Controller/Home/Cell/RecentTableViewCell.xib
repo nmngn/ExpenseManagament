@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecentTableViewCell" rowHeight="50" id="KGk-i7-Jjw" customClass="RecentTableViewCell" customModule="MoneyManager" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CfJ-bb-QUH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nguồn chi cố định" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nk-gE-unv">
+                                <rect key="frame" x="16" y="12" width="136.5" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="V4k-DI-euR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRw-UQ-8NA">
+                                <rect key="frame" x="152.5" y="4" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="mYG-tN-m2q"/>
+                                    <constraint firstAttribute="height" constant="40" id="rKA-ta-pro"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="ic_reload"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbE-JS-dEq">
+                                <rect key="frame" x="233" y="10" width="87" height="28.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="87" id="aLZ-vv-XoN"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Xem tất cả">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="12"/>
+                                    <color key="baseForegroundColor" systemColor="linkColor"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="NewBG"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="48" id="7kb-hk-G5e"/>
+                            <constraint firstItem="rRw-UQ-8NA" firstAttribute="centerY" secondItem="5nk-gE-unv" secondAttribute="centerY" id="Bc0-uG-43c"/>
+                            <constraint firstItem="5nk-gE-unv" firstAttribute="leading" secondItem="CfJ-bb-QUH" secondAttribute="leading" constant="16" id="Kp0-3l-cEj"/>
+                            <constraint firstItem="5nk-gE-unv" firstAttribute="centerY" secondItem="CfJ-bb-QUH" secondAttribute="centerY" id="N8e-vP-6GC"/>
+                            <constraint firstItem="QbE-JS-dEq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="rRw-UQ-8NA" secondAttribute="trailing" constant="8" id="hzt-3L-9m1"/>
+                            <constraint firstItem="QbE-JS-dEq" firstAttribute="centerY" secondItem="5nk-gE-unv" secondAttribute="centerY" id="iFU-FN-s7L"/>
+                            <constraint firstItem="rRw-UQ-8NA" firstAttribute="leading" secondItem="5nk-gE-unv" secondAttribute="trailing" id="nrG-qK-QVC"/>
+                            <constraint firstAttribute="trailing" secondItem="QbE-JS-dEq" secondAttribute="trailing" id="w4d-0u-G4h"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="CfJ-bb-QUH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="KxI-LO-5cp"/>
+                    <constraint firstAttribute="bottom" secondItem="CfJ-bb-QUH" secondAttribute="bottom" id="QKw-mn-WvX"/>
+                    <constraint firstAttribute="trailing" secondItem="CfJ-bb-QUH" secondAttribute="trailing" id="WZz-1G-UpE"/>
+                    <constraint firstItem="CfJ-bb-QUH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="g9m-CR-agK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="131.8840579710145" y="101.78571428571428"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_reload" width="24" height="24"/>
+        <namedColor name="NewBG">
+            <color red="0.96100002527236938" green="0.9649999737739563" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
