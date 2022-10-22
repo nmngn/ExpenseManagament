@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 class TransactionRequest: BaseRequest {
-    required init(idUser: String, title: String, description: String, amount: String, category: String, dateTime: String, isIncome: Bool, type: Bool) { //create
+    required init(idUser: String, title: String, description: String, amount: Int, category: String, dateTime: String, isIncome: Bool, type: Bool) { //create
         let url = URLs.createTransaction
         let body: [String: Any] = [
             "idUser": idUser,
@@ -24,7 +24,7 @@ class TransactionRequest: BaseRequest {
         super.init(url: url, requestType: .post, body: body)
     }
     
-    required init(transactionId: String, title: String, description: String, amount: String, category: String, isIncome: Bool) { //update
+    required init(transactionId: String, title: String, description: String, amount: Int, category: String, isIncome: Bool) { //update
         let url = URLs.updateTransaction + transactionId
         let body: [String: Any] = [
             "title": title,

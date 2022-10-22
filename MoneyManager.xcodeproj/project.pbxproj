@@ -77,6 +77,8 @@
 		D8355FBD2902B9A400EDB910 /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8355FBB2902B9A400EDB910 /* TransactionTableViewCell.xib */; };
 		D8355FC02902BAE900EDB910 /* BannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8355FBE2902BAE900EDB910 /* BannerTableViewCell.swift */; };
 		D8355FC12902BAE900EDB910 /* BannerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8355FBF2902BAE900EDB910 /* BannerTableViewCell.xib */; };
+		D844349829038D2200019696 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844349629038D2200019696 /* CategoryCollectionViewCell.swift */; };
+		D844349929038D2200019696 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D844349729038D2200019696 /* CategoryCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +177,8 @@
 		D8355FBB2902B9A400EDB910 /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
 		D8355FBE2902BAE900EDB910 /* BannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTableViewCell.swift; sourceTree = "<group>"; };
 		D8355FBF2902BAE900EDB910 /* BannerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerTableViewCell.xib; sourceTree = "<group>"; };
+		D844349629038D2200019696 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		D844349729038D2200019696 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		DF5573617153B0CB0404C1C8 /* Pods_MoneyManagerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyManagerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA1826142BAE1B9E0340083C /* Pods-MoneyManagerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyManagerTests.debug.xcconfig"; path = "Target Support Files/Pods-MoneyManagerTests/Pods-MoneyManagerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -238,6 +242,7 @@
 				36BF6B6D2901A19B00343E68 /* Controller */,
 				36BF6B602901A19900343E68 /* Extension */,
 				36BF6BF42901A19C00343E68 /* LaunchScreen.storyboard */,
+				36BF6B762901A19B00343E68 /* Main.storyboard */,
 				36BF6BF52901A19F00343E68 /* Utils */,
 				36BF6B162901A06600343E68 /* Info.plist */,
 			);
@@ -357,7 +362,6 @@
 				36BF6B6F2901A19B00343E68 /* Home.xib */,
 				36BF6B702901A19B00343E68 /* Popup */,
 				36BF6B752901A19B00343E68 /* HomeViewController.swift */,
-				36BF6B762901A19B00343E68 /* Main.storyboard */,
 				36BF6B782901A19B00343E68 /* Cell */,
 				36BF6B832901A19B00343E68 /* Model */,
 			);
@@ -463,6 +467,7 @@
 		36BF6C962901BF9700343E68 /* TransactionDetail */ = {
 			isa = PBXGroup;
 			children = (
+				D844349529038D1100019696 /* Cell */,
 				36BF6C972901BFAC00343E68 /* TransactionDetailViewController.swift */,
 				36BF6C982901BFAC00343E68 /* TransactionDetailViewController.xib */,
 			);
@@ -489,6 +494,15 @@
 				9DEEC4CC0882E4FCA904686D /* Pods-MoneyManagerTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D844349529038D1100019696 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D844349629038D2200019696 /* CategoryCollectionViewCell.swift */,
+				D844349729038D2200019696 /* CategoryCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		DEB915D9CBF827C10E4692DD /* Frameworks */ = {
@@ -638,6 +652,7 @@
 				36BF6C882901A1A000343E68 /* Roboto-BlackItalic.ttf in Resources */,
 				36BF6C832901A1A000343E68 /* Roboto-ThinItalic.ttf in Resources */,
 				36BF6C7B2901A1A000343E68 /* Assets.xcassets in Resources */,
+				D844349929038D2200019696 /* CategoryCollectionViewCell.xib in Resources */,
 				36BF6C852901A1A000343E68 /* Roboto-LightItalic.ttf in Resources */,
 				36BF6C892901A1A000343E68 /* Roboto-Bold.ttf in Resources */,
 			);
@@ -793,6 +808,7 @@
 				36BF6C102901A19F00343E68 /* Model.swift in Sources */,
 				36BF6C0D2901A19F00343E68 /* UITextField+.swift in Sources */,
 				36BF6C0C2901A19F00343E68 /* UIViewController+.swift in Sources */,
+				D844349829038D2200019696 /* CategoryCollectionViewCell.swift in Sources */,
 				D8355FB82902B5F600EDB910 /* RecentTableViewCell.swift in Sources */,
 				36BF6B5F2901A18700343E68 /* APIService.swift in Sources */,
 				36BF6C0E2901A19F00343E68 /* Date+.swift in Sources */,

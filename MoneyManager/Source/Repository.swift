@@ -49,7 +49,7 @@ struct Repositories {
         }
     }
     
-    func createTransaction(idUser: String, title: String, description: String, amount: String, category: String, dateTime: String, isIncome: Bool, type: Bool, completion: @escaping (BaseResult<Transaction>) -> Void) {
+    func createTransaction(idUser: String, title: String, description: String, amount: Int, category: String, dateTime: String, isIncome: Bool, type: Bool, completion: @escaping (BaseResult<Transaction>) -> Void) {
     let input = TransactionRequest(idUser: idUser, title: title, description: description, amount: amount, category: category, dateTime: dateTime, isIncome: isIncome, type: type)
         api.request(input: input) { (object : Transaction?, error) in
             if let object = object {
@@ -62,7 +62,7 @@ struct Repositories {
         }
     }
     
-    func updateTransaction(transactionId: String, title: String, description: String, amount: String, category: String, isIncome: Bool, completion: @escaping (BaseResult<Transaction>) -> Void) {
+    func updateTransaction(transactionId: String, title: String, description: String, amount: Int, category: String, isIncome: Bool, completion: @escaping (BaseResult<Transaction>) -> Void) {
         let input = TransactionRequest(transactionId: transactionId, title: title, description: description, amount: amount, category: category, isIncome: isIncome)
         api.request(input: input) { (object : Transaction?, error) in
             if let object = object {

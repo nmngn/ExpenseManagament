@@ -22,22 +22,6 @@ extension UIViewController {
         let controller = storyboard.instantiateViewController(withIdentifier: storyboardId) as! T
         return controller
     }
-
-    func updateTime(dateString: String) -> String {
-        let dateFormatter = DateFormatter()
-        let todayDate = Date()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        let date = dateFormatter.date(from: dateString)
-        guard let timeLast = date?.millisecondsSince1970 else { return ""}
-        let timeToday = todayDate.millisecondsSince1970
-        let result = timeLast - timeToday
-        
-        let toDay = result / 86400000
-        let ageDay = 280 - Int(toDay)
-        let week = Int(ageDay / 7)
-        let day = Int(ageDay % 7)
-        return week < 10 ?  "0\(week)W \(day)D" : "\(week)W \(day)D"
-    }
     
     func transitionVC(vc: UIViewController, duration: CFTimeInterval, type: CATransitionSubtype) {
         let customVcTransition = vc
@@ -71,5 +55,24 @@ extension UIViewController {
         let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
+    }
+    
+    func getCurrentDate() -> String {
+        let date = Date()
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let dateString = df.string(from: date)
+        return dateString
+    }
+    
+    func setupNavigationButton() {
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        let backItem = UIBarButtonItem(image:  UIImage(named: "ic_left_arrow")?.toHierachicalImage()
+                                       , style: .plain, target: self, action: #selector(touchBackButton))
+        navigationItem.leftBarButtonItems = [backItem]
+    }
+    
+    @objc func touchBackButton() {
+        self.navigationController?.popViewController(animated: true)
     }
 }

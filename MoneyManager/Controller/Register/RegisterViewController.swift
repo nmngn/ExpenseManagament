@@ -17,17 +17,28 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     
     let repo = Repositories(api: .share)
-    let sizeTextField = CGSize(width: UIScreen.main.bounds.width, height: 50)
+    let sizeTextField = CGSize(width: UIScreen.main.bounds.width - 32, height: 50)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         startButton.isEnabled = false
-        nameTextField.delegate = self
-        birthTextField.delegate = self
-        moneyTextField.delegate = self
+        nameTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        birthTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        moneyTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         navigationController?.isNavigationBarHidden = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        if let name = nameTextField.text, let birth = birthTextField.text, let money = moneyTextField.text {
+            if !name.isEmpty && !birth.isEmpty && !money.isEmpty {
+                startButton.isEnabled = true
+            } else {
+                startButton.isEnabled = false
+            }
+        }
+        resignFirstResponder()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,28 +77,6 @@ class RegisterViewController: UIViewController {
                 self.view.makeToast("Đang thiếu thông tin")
             }
         }
-    }
-}
-
-// MARK: UITextFieldDelegate
-extension RegisterViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        textFieldDidEndEditing(textField)
-        return true
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if let name = nameTextField.text, let birth = birthTextField.text, let money = moneyTextField.text {
-            if !name.isEmpty && !birth.isEmpty && !money.isEmpty {
-                startButton.isEnabled = true
-            }
-        }
-        resignFirstResponder()
     }
 }
 

@@ -64,6 +64,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        self.navigationController?.isNavigationBarHidden = true
         if Session.shared.isPopToRoot {
             utilityThread.async {
                 self.getListTransaction()
@@ -179,6 +180,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         guard let listTransaction = listTransaction else {
             return
         }
+        print(listTransaction)
         
         let welcome = HomeModel(type: .welcome)
         var badge = HomeModel(type: .badge)
@@ -259,6 +261,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var model: HomeModel
         model = modelIndexPath(indexPath: indexPath)
+        
+        switch model.type {
+        case .transaction:
+            let vc = TransactionDetailViewController.init(nibName: "TransactionDetailViewController", bundle: nil)
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        default:
+            break
+        }
     }
 }
 

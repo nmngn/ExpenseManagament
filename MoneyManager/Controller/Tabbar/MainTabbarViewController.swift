@@ -10,36 +10,30 @@ import UIKit
 import IQKeyboardManagerSwift
 import ESTabBarController_swift
 
-
 class MainTabbarViewController: ESTabBarController, UITabBarControllerDelegate {
     
     let button = UIButton.init(type: .custom)
 
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+        setupButtonAdd()
         IQKeyboardManager.shared.enableAutoToolbar = true
         UserDefaults.standard.synchronize()
-        
-        self.setupButtonAdd()
         self.setViewControllers(self.getTabbarViewController(), animated: true)
         self.delegate = self
         self.view.backgroundColor = .white
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        button.frame = CGRect.init(x: self.tabBar.center.x - 28,
-                                   y: self.view.bounds.height - 110,
-                                   width: 56, height: 56)
-    }
-        
     func setupButtonAdd() {
         button.setImage(UIImage(named: "ic_add"), for: .normal)
-        button.layer.cornerRadius = 32
+        button.layer.cornerRadius = 28
         button.layer.shadowOffset = CGSize(width: 1, height: 1)
         button.layer.shadowOpacity = 0.4
-        self.view.insertSubview(button, aboveSubview: self.tabBar)
+        button.frame = CGRect.init(x: self.tabBar.center.x - 28,
+                                   y: -15,
+                                   width: 56, height: 56)
+
+        self.tabBar.addSubview(button)
         button.addTarget(self, action: #selector(addTransaction), for: .touchUpInside)
     }
     
@@ -52,13 +46,7 @@ class MainTabbarViewController: ESTabBarController, UITabBarControllerDelegate {
         itemHome.image = UIImage(systemName: "house")
         
         let itemTrans = self.tabBar.items![1]
-        itemTrans.image = UIImage(systemName: "magnifyingglass")
-        
-        let itemPerformance = self.tabBar.items![2]
-        itemPerformance.image = UIImage(systemName: "bell")
-        
-        let itemNotification = self.tabBar.items![3]
-        itemNotification.image = UIImage(named: "person")
+        itemTrans.image = UIImage(systemName: "wallet.pass")
     }
     
     func getTabbarViewController() -> [UIViewController] {
@@ -68,6 +56,7 @@ class MainTabbarViewController: ESTabBarController, UITabBarControllerDelegate {
         
         let expense = UINavigationController(rootViewController: ExpenseViewController.init(nibName: "ExpenseViewController", bundle: nil))
         expense.tabBarItem = ESTabBarItem.init(ESTabbarBasicContentView(),title: "Tổng hợp", image: UIImage(systemName: "wallet.pass"), selectedImage: UIImage(systemName: "wallet.pass")?.toHierachicalImage())
+        
         viewController.append(contentsOf: [homeVC, expense])
         return viewController
     }
