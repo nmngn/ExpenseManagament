@@ -44,7 +44,7 @@ struct Transaction : Mappable {
     var idUser = ""
     var title = ""
     var description = ""
-    var amount = ""
+    var amount = 0
     var category = ""
     var dateTime = ""
     var isIncome = false

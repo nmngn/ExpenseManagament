@@ -11,8 +11,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransactionDetailViewController" customModule="MoneyManager" customModuleProvider="target">
             <connections>
                 <outlet property="amountTextField" destination="jv2-HK-F8z" id="66U-cW-TsH"/>
+                <outlet property="bottomTextViewHeight" destination="JWd-hL-agU" id="C49-dM-xSg"/>
                 <outlet property="buttonAction" destination="ZhO-Sd-6CI" id="ua0-e8-W74"/>
                 <outlet property="collectionView" destination="Ybo-4W-v2t" id="lfs-H1-Xfb"/>
+                <outlet property="collectionViewHeight" destination="gri-Co-yoh" id="tcQ-UH-cHq"/>
                 <outlet property="descriptionTextView" destination="n5G-e9-2eZ" id="ySY-qi-yPD"/>
                 <outlet property="placeholderLabel" destination="Au6-p9-GjH" id="D6H-lk-3hH"/>
                 <outlet property="segmentType" destination="hRS-DR-8hH" id="gV5-SF-6hi"/>
@@ -40,34 +42,52 @@
                 </collectionView>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nhập tiêu đề" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0qL-kq-jB8">
                     <rect key="frame" x="95.5" y="358" width="302.5" height="19.5"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="19.5" id="XYp-bt-K2h"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiêu đề:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X66-Xl-gSQ">
                     <rect key="frame" x="16" y="357" width="67.5" height="21.5"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21.5" id="QgF-ro-0Dn"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nhập giá tiền" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jv2-HK-F8z">
                     <rect key="frame" x="97" y="403.5" width="301" height="19.5"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="19.5" id="gPi-QP-8GX"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giá tiền:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhv-aZ-7t7">
                     <rect key="frame" x="16" y="402.5" width="69" height="21.5"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21.5" id="fQb-TG-ZZ4"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ghi chú:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esQ-1s-L2e">
                     <rect key="frame" x="16" y="446" width="69" height="21.5"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21.5" id="nfM-Pi-nQ9"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hRS-DR-8hH">
                     <rect key="frame" x="16" y="304" width="382" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="Gib-RV-tYh"/>
+                    </constraints>
                     <segments>
                         <segment title="Cố định"/>
                         <segment title="Linh hoạt"/>

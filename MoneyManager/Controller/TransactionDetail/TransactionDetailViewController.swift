@@ -18,6 +18,9 @@ class TransactionDetailViewController: UIViewController {
     @IBOutlet weak var buttonAction: UIButton!
     @IBOutlet weak var placeholderLabel: UILabel!
     
+    @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var bottomTextViewHeight: NSLayoutConstraint!
+    
     var modelCategory = ["car", "device", "health", "house", "office", "food", "shopping", "other"]
     var expenseType: Bool = false
     var categorySelected = ""
@@ -36,20 +39,43 @@ class TransactionDetailViewController: UIViewController {
     
     func configView() {
         segmentType.selectedSegmentIndex = 0
+        
         titleTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         titleTextField.setLeftPaddingPoints(12)
         titleTextField.autocorrectionType = .no
+        
         amountTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         amountTextField.setLeftPaddingPoints(12)
+        
         descriptionTextView.delegate = self
         descriptionTextView.textContainerInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         descriptionTextView.autocorrectionType = .no
         descriptionTextView.isScrollEnabled = false
+        
         collectionView.do {
             $0.delegate = self
             $0.dataSource = self
             $0.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCollectionViewCell")
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            self.bottomTextViewHeight.constant = keyboardHeight - 18
+            self.collectionViewHeight.constant = 0
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        bottomTextViewHeight.constant = 16
+        self.collectionViewHeight.constant = 244
+        self.view.layoutIfNeeded()
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {

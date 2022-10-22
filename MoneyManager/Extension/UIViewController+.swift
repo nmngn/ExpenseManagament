@@ -50,6 +50,14 @@ extension UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func calculate(list: [Transaction]) -> Int {
+        var result = 0
+        for item in list {
+            result += item.amount
+        }
+        return result
+    }
+    
     func openAlert(_ message: String) {
         let alert = UIAlertController(title: "Lỗi", message: message, preferredStyle: .actionSheet)
         let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)

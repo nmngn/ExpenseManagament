@@ -180,27 +180,30 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         guard let listTransaction = listTransaction else {
             return
         }
-        print(listTransaction)
         
         let welcome = HomeModel(type: .welcome)
         var badge = HomeModel(type: .badge)
         badge.allMoney = userMoney
-        badge.usedMoney = 100000
+        badge.usedMoney = calculate(list: listTransaction)
         badge.calc()
         
         let option = HomeModel(type: .option)
         let showRecent = HomeModel(type: .showRecent)
-        let tran1 = HomeModel(type: .transaction)
-        let tran2 = HomeModel(type: .transaction)
-
-        let tutorial = HomeModel(type: .banner)
-         
+        
         model.append(welcome)
         model.append(badge)
         model.append(option)
         model.append(showRecent)
-        model.append(tran1)
-        model.append(tran2)
+        
+        var transaction = HomeModel(type: .transaction)
+        for item in listTransaction.filter({$0.idUser == self.idUser}).suffix(3) {
+            transaction.category = item.category
+            transaction.titleExpense = item.title
+            transaction.timeExpense = item.dateTime
+            transaction.moneyExpense = item.amount
+            model.append(transaction)
+        }
+        let tutorial = HomeModel(type: .banner)
         model.append(tutorial)
         tableView.reloadData()
     }
@@ -249,6 +252,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionTableViewCell", for: indexPath) as?
                     TransactionTableViewCell else { return UITableViewCell() }
             cell.selectionStyle = .none
+            cell.setupData(model: model)
             return cell
         case .banner:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "BannerTableViewCell", for: indexPath) as?

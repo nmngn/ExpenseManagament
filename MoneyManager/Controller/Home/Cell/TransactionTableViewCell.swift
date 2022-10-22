@@ -9,15 +9,16 @@ import UIKit
 
 class TransactionTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBOutlet weak var imageCategory: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var moneyLabel: UILabel!
+    
+    func setupData(model: HomeModel) {
+        imageCategory.image = UIImage(named: model.category)
+        titleLabel.text = model.titleExpense
+        timeLabel.text = model.timeExpense
+        moneyLabel.text = "- \(model.moneyExpense)"
     }
     
 }
