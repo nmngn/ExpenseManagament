@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Toast_Swift
 
 class TransactionDetailViewController: UIViewController {
 
@@ -104,9 +103,9 @@ class TransactionDetailViewController: UIViewController {
             case .success(let data):
                 if let data = data {
                     print(data)
-                    self.navigationController?.popToRootViewController(animated: true)
-                    Session.shared.isPopToRoot = true
                     self.view.makeToast("Lưu thành công")
+                    Session.shared.isPopToRoot = true
+                    self.navigationController?.popToRootViewController(animated: true)
                 }
             case .failure(let err):
                 if let err = err {

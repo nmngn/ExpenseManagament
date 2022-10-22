@@ -16,7 +16,23 @@ enum HomeType {
     case banner
 }
 
-struct HomeModel {
+struct HomeModel: DataTransaction {
+    func getTitle() -> String {
+        return titleExpense
+    }
+    
+    func getTime() -> String {
+        return timeExpense
+    }
+    
+    func getCategory() -> String {
+        return category
+    }
+    
+    func getAmount() -> Int {
+        return moneyExpense
+    }
+    
     var type: HomeType
     
     var allMoney = 0

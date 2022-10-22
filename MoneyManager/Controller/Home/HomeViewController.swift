@@ -196,7 +196,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         model.append(showRecent)
         
         var transaction = HomeModel(type: .transaction)
-        for item in listTransaction.filter({$0.idUser == self.idUser}).suffix(3) {
+        for item in listTransaction.suffix(3).reversed() {
             transaction.category = item.category
             transaction.titleExpense = item.title
             transaction.timeExpense = item.dateTime
@@ -295,6 +295,8 @@ extension HomeViewController: HomeActionDelegete {
     }
     
     func showAllRecent() {
-        
+        let vc = ListTransactionViewController.init(nibName: "ListTransactionViewController", bundle: nil)
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -39,7 +39,7 @@ struct SuperTransaction: Mappable {
     }
 }
 
-struct Transaction : Mappable {
+struct Transaction : Mappable, DataTransaction {
     var id = ""
     var idUser = ""
     var title = ""
@@ -63,5 +63,21 @@ struct Transaction : Mappable {
         category <- map["category"]
         dateTime <- map["dateTime"]
         isIncome <- map["isIncome"]
+    }
+    
+    func getTitle() -> String {
+        return title
+    }
+    
+    func getTime() -> String {
+        return dateTime
+    }
+    
+    func getCategory() -> String {
+        return category
+    }
+    
+    func getAmount() -> Int {
+        return amount
     }
 }

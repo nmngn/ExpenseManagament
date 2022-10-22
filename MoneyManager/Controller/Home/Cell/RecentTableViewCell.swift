@@ -18,7 +18,7 @@ class RecentTableViewCell: UITableViewCell {
     }
     
     @IBAction func showAll(_ sender: UIButton) {
-         
+        delegate?.showAllRecent()
     }
     
     @IBAction func reload(_ sender: UIButton) {

@@ -7,6 +7,13 @@
 
 import UIKit
 
+protocol DataTransaction {
+    func getTitle() -> String
+    func getTime() -> String
+    func getCategory() -> String
+    func getAmount() -> Int
+}
+
 class TransactionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imageCategory: UIImageView!
@@ -14,11 +21,10 @@ class TransactionTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var moneyLabel: UILabel!
     
-    func setupData(model: HomeModel) {
-        imageCategory.image = UIImage(named: model.category)
-        titleLabel.text = model.titleExpense
-        timeLabel.text = model.timeExpense
-        moneyLabel.text = "- \(model.moneyExpense)"
+    func setupData(model: DataTransaction) {
+        imageCategory.image = UIImage(named: model.getCategory())
+        titleLabel.text = model.getTitle()
+        timeLabel.text = model.getTime()
+        moneyLabel.text = "- \(model.getAmount())"
     }
-    
 }
