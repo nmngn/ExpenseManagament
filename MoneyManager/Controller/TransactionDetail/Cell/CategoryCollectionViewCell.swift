@@ -24,14 +24,13 @@ class CategoryCollectionViewCell: UICollectionViewCell {
             }
         }
     }
-    override func updateConstraints() {
-        super.updateConstraints()
-        
-    }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func compareCategory(ofIndex: String, ofData: String) {
+        if ofIndex == ofData {
+            self.subView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
+        } else {
+            self.subView.backgroundColor = .clear
+        }
     }
     
     func setupImage(image: String) {

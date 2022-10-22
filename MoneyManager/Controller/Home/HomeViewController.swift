@@ -197,6 +197,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         
         var transaction = HomeModel(type: .transaction)
         for item in listTransaction.suffix(3).reversed() {
+            transaction.transactionId = item.id
             transaction.category = item.category
             transaction.titleExpense = item.title
             transaction.timeExpense = item.dateTime
@@ -270,6 +271,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case .transaction:
             let vc = TransactionDetailViewController.init(nibName: "TransactionDetailViewController", bundle: nil)
             vc.hidesBottomBarWhenPushed = true
+            vc.idTransaction = model.transactionId
             self.navigationController?.pushViewController(vc, animated: true)
         default:
             break

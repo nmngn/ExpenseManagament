@@ -32,13 +32,14 @@ class MainTabbarViewController: ESTabBarController, UITabBarControllerDelegate {
         button.frame = CGRect.init(x: self.tabBar.center.x - 28,
                                    y: -15,
                                    width: 56, height: 56)
-
         self.tabBar.addSubview(button)
         button.addTarget(self, action: #selector(addTransaction), for: .touchUpInside)
     }
     
     @objc func addTransaction(_ sender: UIButton) {
-        
+        let vc = TransactionDetailViewController.init(nibName: "TransactionDetailViewController", bundle: nil)
+        let nav = UINavigationController(rootViewController: vc)
+        self.present(nav, animated:true, completion: nil)
     }
     
     func configureTabbarItem() {

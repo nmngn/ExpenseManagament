@@ -43,6 +43,7 @@ struct HomeModel: DataTransaction {
     var titleExpense = ""
     var timeExpense = ""
     var moneyExpense = 0
+    var transactionId = ""
     
     mutating func calc() {
         remainMoney = allMoney - usedMoney

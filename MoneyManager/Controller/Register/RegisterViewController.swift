@@ -70,7 +70,7 @@ class RegisterViewController: UIViewController {
                         self.animateAfterLogin()
                     case .failure(let err):
                         self.view.makeToast("Lỗi")
-                        print(err)
+                        print(err as Any)
                     }
                 }
             } else {

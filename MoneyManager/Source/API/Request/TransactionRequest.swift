@@ -24,7 +24,7 @@ class TransactionRequest: BaseRequest {
         super.init(url: url, requestType: .post, body: body)
     }
     
-    required init(transactionId: String, title: String, description: String, amount: Int, category: String, isIncome: Bool) { //update
+    required init(transactionId: String, title: String, description: String, amount: Int, category: String, isIncome: Bool, type: Bool) { //update
         let url = URLs.updateTransaction + transactionId
         let body: [String: Any] = [
             "title": title,
@@ -32,6 +32,7 @@ class TransactionRequest: BaseRequest {
             "amount": amount,
             "isIncome": isIncome,
             "category": category,
+            "type": type
         ]
         super.init(url: url, requestType: .put, body: body)
     }
