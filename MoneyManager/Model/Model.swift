@@ -63,6 +63,7 @@ struct Transaction : Mappable, DataTransaction {
         category <- map["category"]
         dateTime <- map["dateTime"]
         isIncome <- map["isIncome"]
+        type <- map["type"]
     }
     
     func getTitle() -> String {

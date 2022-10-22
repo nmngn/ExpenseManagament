@@ -10,6 +10,7 @@ import UIKit
 class ListTransactionViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     
     var listTransaction: [Transaction]? {
         didSet {
@@ -23,6 +24,8 @@ class ListTransactionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Danh sách chi tiêu"
+        segmentControl.selectedSegmentIndex = 0
+        segmentControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: UIControl.Event.valueChanged)
         configView()
         utilityThread.async {
             self.getListData()
@@ -50,7 +53,7 @@ class ListTransactionViewController: UIViewController {
             switch value {
             case .success(let data):
                 if let list = data?.transactions {
-                    self.listTransaction = list.filter({$0.idUser == self.idUser})
+                    self.listTransaction = list.filter({$0.idUser == self.idUser && $0.type == (self.segmentControl.selectedSegmentIndex == 0 ? true : false)})
                 }
             case .failure(let err):
                 if let err = err {
@@ -71,6 +74,12 @@ class ListTransactionViewController: UIViewController {
             case .failure(let error):
                 print(error as Any)
             }
+        }
+    }
+    
+    @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        utilityThread.async {
+            self.getListData()
         }
     }
 }
@@ -104,7 +113,10 @@ extension ListTransactionViewController: UITableViewDataSource, UITableViewDeleg
             self.listTransaction?.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .none)
             tableView.endUpdates()
-            self.getListData()
+            utilityThread.async {
+                self.getListData()
+            }
+            Session.shared.isPopToRoot = true
         }
     }
 }
