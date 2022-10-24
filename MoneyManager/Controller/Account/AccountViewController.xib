@@ -23,90 +23,123 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nhập tên của bạn" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lee-vI-nn3">
-                    <rect key="frame" x="125" y="243" width="277" height="22.5"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="light" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
-                </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nhập ngày sinh của bạn" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oND-uG-1uP">
-                    <rect key="frame" x="112" y="293" width="290" height="22.5"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="light" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
-                </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nhập số tiền bạn muốn quản lý" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uer-TB-ZWt">
-                    <rect key="frame" x="140" y="344" width="262" height="23"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" keyboardAppearance="light" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
-                </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thông tin cá nhân" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHL-Mw-KdD">
-                    <rect key="frame" x="0.0" y="60" width="414" height="24"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAn-GS-hka">
-                    <rect key="frame" x="106.5" y="750" width="201" height="64"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YHl-s7-vDV">
+                    <rect key="frame" x="50" y="194" width="314" height="518"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nhập tên của bạn" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lee-vI-nn3">
+                            <rect key="frame" x="121" y="89" width="185" height="22.5"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="light" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nhập ngày sinh của bạn" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oND-uG-1uP">
+                            <rect key="frame" x="108" y="125" width="198" height="22.5"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="light" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nhập số tiền " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uer-TB-ZWt">
+                            <rect key="frame" x="140.5" y="162" width="165.5" height="23"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" keyboardAppearance="light" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thông tin cá nhân" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHL-Mw-KdD">
+                            <rect key="frame" x="16" y="16" width="282" height="24"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên hiển thị: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmC-jL-Lc9">
+                            <rect key="frame" x="16" y="90" width="97" height="20"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số tiền chi tiêu:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pxo-th-o3A">
+                            <rect key="frame" x="16" y="163.5" width="116.5" height="20"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ngày sinh: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wv8-bO-O5g">
+                            <rect key="frame" x="16" y="126" width="84" height="20"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYI-AG-krm">
+                            <rect key="frame" x="274" y="8" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="LVk-iw-hQm"/>
+                                <constraint firstAttribute="height" constant="40" id="lJR-3h-nq7"/>
+                            </constraints>
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="xmark" catalog="system"/>
+                            <connections>
+                                <action selector="close:" destination="-1" eventType="touchUpInside" id="4Le-Xu-9fd"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAn-GS-hka">
+                            <rect key="frame" x="56.5" y="438" width="201" height="64"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="64" id="kU6-nr-hqF"/>
+                                <constraint firstAttribute="width" constant="201" id="vEm-bv-kdg"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Lưu">
+                                <fontDescription key="titleFontDescription" name="NotoSansMyanmar-Regular" family="Noto Sans Myanmar" pointSize="26"/>
+                                <color key="baseForegroundColor" red="0.22977593769999999" green="0.77712064830000005" blue="0.79721730030000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="saveAction:" destination="-1" eventType="touchUpInside" id="wyI-JR-1Zv"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" name="NewBG"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="64" id="kU6-nr-hqF"/>
-                        <constraint firstAttribute="width" constant="201" id="vEm-bv-kdg"/>
+                        <constraint firstAttribute="trailing" secondItem="oND-uG-1uP" secondAttribute="trailing" constant="8" id="4Fq-ZC-dUY"/>
+                        <constraint firstAttribute="bottom" secondItem="RAn-GS-hka" secondAttribute="bottom" constant="16" id="ClN-KN-hMk"/>
+                        <constraint firstItem="tYI-AG-krm" firstAttribute="centerY" secondItem="OHL-Mw-KdD" secondAttribute="centerY" id="HML-YA-bw1"/>
+                        <constraint firstItem="OHL-Mw-KdD" firstAttribute="top" secondItem="YHl-s7-vDV" secondAttribute="top" constant="16" id="HWe-CX-C0i"/>
+                        <constraint firstItem="oND-uG-1uP" firstAttribute="leading" secondItem="Wv8-bO-O5g" secondAttribute="trailing" constant="8" id="ICR-zT-qze"/>
+                        <constraint firstItem="lee-vI-nn3" firstAttribute="centerY" secondItem="vmC-jL-Lc9" secondAttribute="centerY" id="IVj-g8-Zrx"/>
+                        <constraint firstItem="OHL-Mw-KdD" firstAttribute="leading" secondItem="YHl-s7-vDV" secondAttribute="leading" constant="16" id="K98-Ou-NLp"/>
+                        <constraint firstAttribute="trailing" secondItem="OHL-Mw-KdD" secondAttribute="trailing" constant="16" id="KJF-5S-8QR"/>
+                        <constraint firstItem="Pxo-th-o3A" firstAttribute="top" secondItem="oND-uG-1uP" secondAttribute="bottom" constant="16" id="R1D-YI-Uu7"/>
+                        <constraint firstItem="Wv8-bO-O5g" firstAttribute="leading" secondItem="YHl-s7-vDV" secondAttribute="leading" constant="16" id="RIk-8M-O36"/>
+                        <constraint firstAttribute="trailing" secondItem="tYI-AG-krm" secondAttribute="trailing" id="SfA-rO-RSR"/>
+                        <constraint firstItem="lee-vI-nn3" firstAttribute="leading" secondItem="vmC-jL-Lc9" secondAttribute="trailing" constant="8" id="Vh0-kp-Euf"/>
+                        <constraint firstItem="Pxo-th-o3A" firstAttribute="leading" secondItem="YHl-s7-vDV" secondAttribute="leading" constant="16" id="WPe-vi-P1u"/>
+                        <constraint firstAttribute="trailing" secondItem="uer-TB-ZWt" secondAttribute="trailing" constant="8" id="Ybm-6g-si0"/>
+                        <constraint firstItem="vmC-jL-Lc9" firstAttribute="top" secondItem="OHL-Mw-KdD" secondAttribute="bottom" constant="50" id="bHm-2N-bsf"/>
+                        <constraint firstItem="uer-TB-ZWt" firstAttribute="leading" secondItem="Pxo-th-o3A" secondAttribute="trailing" constant="8" id="bQd-Nd-vhp"/>
+                        <constraint firstAttribute="trailing" secondItem="lee-vI-nn3" secondAttribute="trailing" constant="8" id="hhq-kC-5i7"/>
+                        <constraint firstItem="oND-uG-1uP" firstAttribute="centerY" secondItem="Wv8-bO-O5g" secondAttribute="centerY" id="jhI-gN-ZyU"/>
+                        <constraint firstItem="Wv8-bO-O5g" firstAttribute="top" secondItem="vmC-jL-Lc9" secondAttribute="bottom" constant="16" id="kpJ-yh-qDz"/>
+                        <constraint firstItem="RAn-GS-hka" firstAttribute="centerX" secondItem="YHl-s7-vDV" secondAttribute="centerX" id="m6X-po-dFc"/>
+                        <constraint firstItem="vmC-jL-Lc9" firstAttribute="leading" secondItem="YHl-s7-vDV" secondAttribute="leading" constant="16" id="pZN-5S-VEZ"/>
+                        <constraint firstItem="uer-TB-ZWt" firstAttribute="centerY" secondItem="Pxo-th-o3A" secondAttribute="centerY" id="ub1-Re-tyL"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Lưu">
-                        <fontDescription key="titleFontDescription" name="NotoSansMyanmar-Regular" family="Noto Sans Myanmar" pointSize="26"/>
-                        <color key="baseForegroundColor" red="0.22977593769999999" green="0.77712064830000005" blue="0.79721730030000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </buttonConfiguration>
-                    <connections>
-                        <action selector="saveAction:" destination="-1" eventType="touchUpInside" id="wyI-JR-1Zv"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên hiển thị: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmC-jL-Lc9">
-                    <rect key="frame" x="16" y="244" width="97" height="20"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số tiền chi tiêu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pxo-th-o3A">
-                    <rect key="frame" x="16" y="345.5" width="112" height="20"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ngày sinh: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wv8-bO-O5g">
-                    <rect key="frame" x="16" y="294" width="84" height="20"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" name="NewBG"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="vmC-jL-Lc9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="6du-1g-4Pc"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lee-vI-nn3" secondAttribute="trailing" constant="12" id="6eF-1t-qp4"/>
-                <constraint firstItem="OHL-Mw-KdD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="7Ox-Ls-tEI"/>
-                <constraint firstItem="oND-uG-1uP" firstAttribute="centerY" secondItem="Wv8-bO-O5g" secondAttribute="centerY" id="AxO-9R-Ti7"/>
-                <constraint firstItem="oND-uG-1uP" firstAttribute="leading" secondItem="Wv8-bO-O5g" secondAttribute="trailing" constant="12" id="Ay3-Jr-JWa"/>
-                <constraint firstItem="lee-vI-nn3" firstAttribute="centerY" secondItem="vmC-jL-Lc9" secondAttribute="centerY" id="B00-tE-ecp"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uer-TB-ZWt" secondAttribute="trailing" constant="12" id="KTN-lu-9H1"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oND-uG-1uP" secondAttribute="trailing" constant="12" id="LwH-yG-LFF"/>
-                <constraint firstItem="Wv8-bO-O5g" firstAttribute="top" secondItem="vmC-jL-Lc9" secondAttribute="bottom" constant="30" id="P5J-VC-3C8"/>
-                <constraint firstItem="Pxo-th-o3A" firstAttribute="top" secondItem="oND-uG-1uP" secondAttribute="bottom" constant="30" id="PQ3-Aw-biw"/>
-                <constraint firstItem="vmC-jL-Lc9" firstAttribute="top" secondItem="OHL-Mw-KdD" secondAttribute="bottom" constant="160" id="Qmx-ok-Bn0"/>
-                <constraint firstItem="lee-vI-nn3" firstAttribute="leading" secondItem="vmC-jL-Lc9" secondAttribute="trailing" constant="12" id="ao7-sR-klF"/>
-                <constraint firstItem="Wv8-bO-O5g" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="b7e-SZ-lKL"/>
-                <constraint firstItem="uer-TB-ZWt" firstAttribute="leading" secondItem="Pxo-th-o3A" secondAttribute="trailing" constant="12" id="bXo-1g-nUI"/>
-                <constraint firstItem="OHL-Mw-KdD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="iNG-UR-fFD"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="RAn-GS-hka" secondAttribute="bottom" constant="48" id="iXI-0b-7Kv"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OHL-Mw-KdD" secondAttribute="trailing" id="p33-VY-66V"/>
-                <constraint firstItem="RAn-GS-hka" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="r9L-yb-pEc"/>
-                <constraint firstItem="Pxo-th-o3A" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="sdq-s3-fOP"/>
-                <constraint firstItem="uer-TB-ZWt" firstAttribute="centerY" secondItem="Pxo-th-o3A" secondAttribute="centerY" id="yAx-Et-bZh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="YHl-s7-vDV" secondAttribute="bottom" constant="150" id="9bH-rV-Bst"/>
+                <constraint firstItem="YHl-s7-vDV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="150" id="MiG-SN-1Sl"/>
+                <constraint firstItem="YHl-s7-vDV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="raO-2n-NmD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YHl-s7-vDV" secondAttribute="trailing" constant="50" id="s6l-qH-tCz"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="137.68115942028987" y="75.669642857142847"/>
         </view>
     </objects>
     <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="NewBG">
             <color red="0.96100002527236938" green="0.9649999737739563" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

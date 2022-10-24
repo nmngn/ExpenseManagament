@@ -64,8 +64,6 @@ class RegisterViewController: UIViewController {
                     case .success(let user):
                         if let user = user {
                             Session.shared.userProfile.idUser = user.idUser
-                            Session.shared.userProfile.userName = user.name
-                            Session.shared.userProfile.money = Int(money) ?? 0
                         }
                         self.animateAfterLogin()
                     case .failure(let err):

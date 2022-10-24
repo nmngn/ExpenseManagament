@@ -35,6 +35,8 @@ struct HomeModel: DataTransaction {
     
     var type: HomeType
     
+    var userName = ""
+    
     var allMoney = 0
     var usedMoney = 0
     var remainMoney = 0

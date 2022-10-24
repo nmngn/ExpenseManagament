@@ -34,7 +34,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     let userNotificationCenter = UNUserNotificationCenter.current()
     let repo = Repositories(api: .share)
     let idUser = Session.shared.userProfile.idUser
-    let userMoney = Session.shared.userProfile.money
+    var userModel = ("","",0)
     let utilityThread = DispatchQueue.global(qos: .utility)
     
     let presenter: Presentr = {
@@ -51,6 +51,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         super.viewDidLoad()
         configView()
         utilityThread.async {
+            self.getDataUser()
             self.getListTransaction()
         }
         userNotificationCenter.delegate = self
@@ -66,9 +67,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         super.viewWillAppear(true)
         self.navigationController?.isNavigationBarHidden = true
         if Session.shared.isPopToRoot {
-            utilityThread.async {
-                self.getListTransaction()
-            }
+            self.tableView.es.startPullToRefresh()
             Session.shared.isPopToRoot = false
         }
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -156,6 +155,20 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         }
     }
     
+    func getDataUser() {
+        repo.getOneUser(idUser: self.idUser) { [weak self] value in
+            switch value {
+            case .success(let data):
+                if let data = data {
+                    self?.userModel = (data.idUser, data.name, data.money)
+                }
+            case .failure(let err):
+                print(err as Any)
+            }
+            self?.tableView.es.stopPullToRefresh()
+        }
+    }
+    
     func configView() {
         tableView.do {
             $0.delegate = self
@@ -170,6 +183,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             $0.registerNibCellFor(type: BannerTableViewCell.self)
             $0.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
             $0.es.addPullToRefresh {
+                self.getDataUser()
                 self.getListTransaction()
             }
         }
@@ -181,9 +195,11 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             return
         }
         
-        let welcome = HomeModel(type: .welcome)
+        var welcome = HomeModel(type: .welcome)
+        welcome.userName = userModel.1
+        
         var badge = HomeModel(type: .badge)
-        badge.allMoney = userMoney
+        badge.allMoney = userModel.2
         badge.usedMoney = calculate(list: listTransaction)
         badge.calc()
         
@@ -229,6 +245,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "WelcomeTableViewCell", for: indexPath) as?
                     WelcomeTableViewCell else { return UITableViewCell() }
             cell.selectionStyle = .none
+            cell.setupData(model: model)
             cell.delegate = self
             return cell
         case .badge:
@@ -282,7 +299,23 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 extension HomeViewController: HomeActionDelegete {
     func openProfile() {
         let vc = AccountViewController.init(nibName: "AccountViewController", bundle: nil)
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: true, completion: nil)
+        tabBarController?.tabBar.backgroundColor = UIColor.clear.withAlphaComponent(0.8)
+        if let items = tabBarController?.tabBar.items {
+                items.forEach { $0.isEnabled = false }
+        }
+        vc.dismissed = { [weak self] in
+            if Session.shared.isPopToRoot {
+                self?.tableView.es.startPullToRefresh()
+                Session.shared.isPopToRoot = false
+            }
+            self?.tabBarController?.tabBar.backgroundColor = .white
+            if let items = self?.tabBarController?.tabBar.items {
+                    items.forEach { $0.isEnabled = true }
+            }
+        }
     }
     
     func openDefaultExpense() {
@@ -294,7 +327,7 @@ extension HomeViewController: HomeActionDelegete {
     }
     
     func reloadExpense() -> Bool {
-        
+        return true
     }
     
     func showAllRecent() {

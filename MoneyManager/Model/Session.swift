@@ -16,29 +16,12 @@ class Session {
 }
 
 final class UserLogIn {
-    var userName: String {
-        get {
-            UserDefaults.standard.string(forKey: "username") ?? ""
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: "username")
-        }
-    }
     var idUser: String {
         get {
             UserDefaults.standard.string(forKey: "idUser") ?? ""
         }
         set {
             UserDefaults.standard.set(newValue, forKey: "idUser")
-        }
-    }
-    
-    var money: Int {
-        get {
-            UserDefaults.standard.integer(forKey: "userMoney")
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: "userMoney")
         }
     }
 }

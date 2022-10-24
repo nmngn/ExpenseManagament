@@ -16,6 +16,7 @@ class AccountViewController: UIViewController {
     
     let repo = Repositories(api: .share)
     let idUser = Session.shared.userProfile.idUser
+    var dismissed: (() ->())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +29,7 @@ class AccountViewController: UIViewController {
         nameTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         birthTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         moneyTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
+        view.backgroundColor = UIColor.clear.withAlphaComponent(0.5)
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
@@ -57,7 +57,12 @@ class AccountViewController: UIViewController {
             }
         }
     }
-
+    
+    @IBAction func close(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+        dismissed?()
+    }
+    
     @IBAction func saveAction(_ sender: UIButton) {
         repo.updateUser(idUser: idUser,
                         name: nameTextField.text!,
@@ -66,10 +71,11 @@ class AccountViewController: UIViewController {
             switch value {
             case .success(let data):
                 if let data = data {
-                    print("update success")
+                    print(data)
                     self.view.makeToast("Cập nhật thành công")
                     Session.shared.isPopToRoot = true
                     self.dismiss(animated: true, completion: nil)
+                    self.dismissed?()
                 }
             case .failure(let err):
                 print(err as Any)

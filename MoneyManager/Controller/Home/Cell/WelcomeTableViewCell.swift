@@ -12,9 +12,8 @@ class WelcomeTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     var delegate: HomeActionDelegete?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        let userName = Session.shared.userProfile.userName
+    func setupData(model: HomeModel) {
+        let userName = model.userName
         titleLabel.text = "Xin chào, \(userName)"
     }
     
