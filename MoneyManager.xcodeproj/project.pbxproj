@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0548D97DA74A6526F1F00BA6 /* Pods_MoneyManagerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5573617153B0CB0404C1C8 /* Pods_MoneyManagerTests.framework */; };
+		369408812906D19200A55FD5 /* PieChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3694087F2906D19200A55FD5 /* PieChartTableViewCell.swift */; };
+		369408822906D19200A55FD5 /* PieChartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 369408802906D19200A55FD5 /* PieChartTableViewCell.xib */; };
+		369408852906DAE700A55FD5 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369408832906DAE700A55FD5 /* ItemTableViewCell.swift */; };
+		369408862906DAE700A55FD5 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 369408842906DAE700A55FD5 /* ItemTableViewCell.xib */; };
+		369408892906DB2800A55FD5 /* AddTransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369408872906DB2800A55FD5 /* AddTransactionTableViewCell.swift */; };
+		3694088A2906DB2800A55FD5 /* AddTransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 369408882906DB2800A55FD5 /* AddTransactionTableViewCell.xib */; };
+		3694088D2906DB4400A55FD5 /* ExpenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3694088C2906DB4400A55FD5 /* ExpenseModel.swift */; };
 		36BF6B202901A06700343E68 /* MoneyManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6B1F2901A06700343E68 /* MoneyManagerTests.swift */; };
 		36BF6B2A2901A06700343E68 /* MoneyManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6B292901A06700343E68 /* MoneyManagerUITests.swift */; };
 		36BF6B2C2901A06700343E68 /* MoneyManagerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6B2B2901A06700343E68 /* MoneyManagerUITestsLaunchTests.swift */; };
@@ -105,6 +112,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3694087F2906D19200A55FD5 /* PieChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartTableViewCell.swift; sourceTree = "<group>"; };
+		369408802906D19200A55FD5 /* PieChartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PieChartTableViewCell.xib; sourceTree = "<group>"; };
+		369408832906DAE700A55FD5 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		369408842906DAE700A55FD5 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
+		369408872906DB2800A55FD5 /* AddTransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionTableViewCell.swift; sourceTree = "<group>"; };
+		369408882906DB2800A55FD5 /* AddTransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTransactionTableViewCell.xib; sourceTree = "<group>"; };
+		3694088C2906DB4400A55FD5 /* ExpenseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseModel.swift; sourceTree = "<group>"; };
 		36BF6B052901A06300343E68 /* MoneyManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36BF6B162901A06600343E68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36BF6B1B2901A06700343E68 /* MoneyManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoneyManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,6 +237,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3694087E2906D11000A55FD5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3694087F2906D19200A55FD5 /* PieChartTableViewCell.swift */,
+				369408802906D19200A55FD5 /* PieChartTableViewCell.xib */,
+				369408832906DAE700A55FD5 /* ItemTableViewCell.swift */,
+				369408842906DAE700A55FD5 /* ItemTableViewCell.xib */,
+				369408872906DB2800A55FD5 /* AddTransactionTableViewCell.swift */,
+				369408882906DB2800A55FD5 /* AddTransactionTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		3694088B2906DB3200A55FD5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3694088C2906DB4400A55FD5 /* ExpenseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		36BF6AFC2901A06300343E68 = {
 			isa = PBXGroup;
 			children = (
@@ -541,6 +576,8 @@
 		D8C8CBF62906AB3200328B09 /* ExpensePaging */ = {
 			isa = PBXGroup;
 			children = (
+				3694088B2906DB3200A55FD5 /* Model */,
+				3694087E2906D11000A55FD5 /* Cell */,
 				D8C8CBF72906AB5700328B09 /* ExpensePagingViewController.swift */,
 				D8C8CBF82906AB5700328B09 /* ExpensePagingViewController.xib */,
 			);
@@ -670,6 +707,8 @@
 				D8355FB12902AE6D00EDB910 /* BadgeTableViewCell.xib in Resources */,
 				36BF6C812901A1A000343E68 /* Roboto-Regular.ttf in Resources */,
 				36BF6C172901A1A000343E68 /* SmallOptionViewController.xib in Resources */,
+				3694088A2906DB2800A55FD5 /* AddTransactionTableViewCell.xib in Resources */,
+				369408862906DAE700A55FD5 /* ItemTableViewCell.xib in Resources */,
 				36BF6C8B2901A1A000343E68 /* Roboto-Black.ttf in Resources */,
 				D8355FC12902BAE900EDB910 /* BannerTableViewCell.xib in Resources */,
 				36BF6C952901BE6F00343E68 /* ExpenseViewController.xib in Resources */,
@@ -682,6 +721,7 @@
 				36BF6C152901A19F00343E68 /* PopupInfoViewController.xib in Resources */,
 				36BF6C9F2901C16400343E68 /* RegisterViewController.xib in Resources */,
 				36BF6C822901A1A000343E68 /* Roboto-MediumItalic.ttf in Resources */,
+				369408822906D19200A55FD5 /* PieChartTableViewCell.xib in Resources */,
 				D8355FBD2902B9A400EDB910 /* TransactionTableViewCell.xib in Resources */,
 				36BF6C8A2901A1A000343E68 /* Roboto-Thin.ttf in Resources */,
 				36BF6C1A2901A1A000343E68 /* Main.storyboard in Resources */,
@@ -835,9 +875,11 @@
 				D8355FAC2902ACA600EDB910 /* WelcomeTableViewCell.swift in Sources */,
 				36BF6B582901A18700343E68 /* BaseResult.swift in Sources */,
 				36BF6C252901A1A000343E68 /* HomeModel.swift in Sources */,
+				369408812906D19200A55FD5 /* PieChartTableViewCell.swift in Sources */,
 				36BF6B592901A18700343E68 /* BaseRequest.swift in Sources */,
 				D8C8CBF92906AB5700328B09 /* ExpensePagingViewController.swift in Sources */,
 				36BF6C162901A1A000343E68 /* PopupInfoViewController.swift in Sources */,
+				369408852906DAE700A55FD5 /* ItemTableViewCell.swift in Sources */,
 				36BF6B5B2901A18700343E68 /* UserRequest.swift in Sources */,
 				36BF6C782901A1A000343E68 /* SceneDelegate.swift in Sources */,
 				36BF6C192901A1A000343E68 /* HomeViewController.swift in Sources */,
@@ -853,6 +895,7 @@
 				36BF6C9E2901C16400343E68 /* RegisterViewController.swift in Sources */,
 				D8355FC02902BAE900EDB910 /* BannerTableViewCell.swift in Sources */,
 				36BF6C0F2901A19F00343E68 /* UITableView+.swift in Sources */,
+				369408892906DB2800A55FD5 /* AddTransactionTableViewCell.swift in Sources */,
 				36BF6C102901A19F00343E68 /* Model.swift in Sources */,
 				36BF6C0D2901A19F00343E68 /* UITextField+.swift in Sources */,
 				36BF6C0C2901A19F00343E68 /* UIViewController+.swift in Sources */,
@@ -860,6 +903,7 @@
 				D8355FB82902B5F600EDB910 /* RecentTableViewCell.swift in Sources */,
 				36BF6B5F2901A18700343E68 /* APIService.swift in Sources */,
 				36BF6C0E2901A19F00343E68 /* Date+.swift in Sources */,
+				3694088D2906DB4400A55FD5 /* ExpenseModel.swift in Sources */,
 				D8355FB02902AE6D00EDB910 /* BadgeTableViewCell.swift in Sources */,
 				36BF6C942901BE6F00343E68 /* ExpenseViewController.swift in Sources */,
 				36BF6C182901A1A000343E68 /* SmallOptionViewController.swift in Sources */,
