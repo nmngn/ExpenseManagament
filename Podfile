@@ -14,7 +14,8 @@ target 'MoneyManager' do
   pod "ESPullToRefresh"
   pod "ESTabBarController-swift"
   pod 'Toast-Swift', '~> 5.0.1'
-
+  pod 'Parchment', '~> 3.2'
+  
   target 'MoneyManagerTests' do
     inherit! :search_paths
     # Pods for testing
