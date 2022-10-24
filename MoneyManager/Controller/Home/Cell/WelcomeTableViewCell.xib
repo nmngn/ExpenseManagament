@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -26,24 +27,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_slide" translatesAutoresizingMaskIntoConstraints="NO" id="sWj-lW-15o">
-                                <rect key="frame" x="190" y="12" width="130" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="Gid-uM-NpZ"/>
-                                </constraints>
+                                <rect key="frame" x="186" y="12" width="134" height="32"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Gg-26-BGt">
                                 <rect key="frame" x="190" y="12" width="130" height="32"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Thông tin cá nhân">
-                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="12"/>
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="LX4-xT-dit"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Thông tin cá nhân">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="showProfile:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0P1-nJ-Iae"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xin chào" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKr-tu-zTP">
-                                <rect key="frame" x="16" y="18" width="166" height="20"/>
+                                <rect key="frame" x="16" y="18" width="66.5" height="20"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -51,16 +52,17 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="VKr-tu-zTP" firstAttribute="leading" secondItem="bYO-BK-OPM" secondAttribute="leading" constant="16" id="2Hb-ou-n9t"/>
-                            <constraint firstItem="VKr-tu-zTP" firstAttribute="centerY" secondItem="sWj-lW-15o" secondAttribute="centerY" id="5yZ-AG-dQR"/>
                             <constraint firstAttribute="height" constant="56" id="6Yo-6z-iwg"/>
-                            <constraint firstAttribute="trailing" secondItem="sWj-lW-15o" secondAttribute="trailing" id="Tnh-7m-k5I"/>
-                            <constraint firstItem="2Gg-26-BGt" firstAttribute="bottom" secondItem="sWj-lW-15o" secondAttribute="bottom" id="W38-uw-FPa"/>
-                            <constraint firstItem="sWj-lW-15o" firstAttribute="centerY" secondItem="bYO-BK-OPM" secondAttribute="centerY" id="aEC-bn-BJe"/>
-                            <constraint firstItem="2Gg-26-BGt" firstAttribute="trailing" secondItem="sWj-lW-15o" secondAttribute="trailing" id="dqk-P9-s5o"/>
-                            <constraint firstItem="2Gg-26-BGt" firstAttribute="top" secondItem="sWj-lW-15o" secondAttribute="top" id="e81-rU-4jn"/>
-                            <constraint firstItem="2Gg-26-BGt" firstAttribute="leading" secondItem="sWj-lW-15o" secondAttribute="leading" id="eFw-lU-mlI"/>
-                            <constraint firstItem="sWj-lW-15o" firstAttribute="leading" secondItem="VKr-tu-zTP" secondAttribute="trailing" constant="8" id="kOp-5Y-sZ3"/>
+                            <constraint firstAttribute="bottom" secondItem="2Gg-26-BGt" secondAttribute="bottom" constant="12" id="Bcx-JP-jPw"/>
+                            <constraint firstItem="sWj-lW-15o" firstAttribute="leading" secondItem="2Gg-26-BGt" secondAttribute="leading" constant="-4" id="FNh-Sg-FPP"/>
+                            <constraint firstAttribute="trailing" secondItem="2Gg-26-BGt" secondAttribute="trailing" id="Fmf-Hy-GJ6"/>
+                            <constraint firstAttribute="bottom" secondItem="VKr-tu-zTP" secondAttribute="bottom" constant="18" id="Ll4-xr-SoM"/>
+                            <constraint firstItem="VKr-tu-zTP" firstAttribute="top" secondItem="bYO-BK-OPM" secondAttribute="top" constant="18" id="Wb3-TT-J72"/>
+                            <constraint firstAttribute="trailing" secondItem="sWj-lW-15o" secondAttribute="trailing" id="eO6-0S-Woq"/>
+                            <constraint firstItem="sWj-lW-15o" firstAttribute="top" secondItem="bYO-BK-OPM" secondAttribute="top" constant="12" id="elW-2g-29r"/>
+                            <constraint firstAttribute="bottom" secondItem="sWj-lW-15o" secondAttribute="bottom" constant="12" id="fpO-4b-YFB"/>
+                            <constraint firstItem="2Gg-26-BGt" firstAttribute="top" secondItem="bYO-BK-OPM" secondAttribute="top" constant="12" id="gvB-56-Qg0"/>
+                            <constraint firstItem="VKr-tu-zTP" firstAttribute="leading" secondItem="bYO-BK-OPM" secondAttribute="leading" constant="16" id="ofB-Hc-zMr"/>
                         </constraints>
                     </view>
                 </subviews>

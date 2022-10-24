@@ -23,7 +23,7 @@ struct User: Mappable {
         idUser <- map["id"]
         name <- map["name"]
         birth <- map["dayOfBirth"]
-        money <- map["money"]
+        money <- map["allMoney"]
     }
 }
 

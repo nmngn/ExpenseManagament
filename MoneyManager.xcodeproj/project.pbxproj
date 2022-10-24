@@ -63,6 +63,8 @@
 		36BF6C9A2901BFAC00343E68 /* TransactionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36BF6C982901BFAC00343E68 /* TransactionDetailViewController.xib */; };
 		36BF6C9E2901C16400343E68 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6C9C2901C16400343E68 /* RegisterViewController.swift */; };
 		36BF6C9F2901C16400343E68 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36BF6C9D2901C16400343E68 /* RegisterViewController.xib */; };
+		36C6A4AC2905365B00A79B3C /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C6A4AA2905365B00A79B3C /* AccountViewController.swift */; };
+		36C6A4AD2905365B00A79B3C /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36C6A4AB2905365B00A79B3C /* AccountViewController.xib */; };
 		897E880E9A49F3F360D40283 /* Pods_MoneyManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FDA6FB7219882E3A549DEF /* Pods_MoneyManager.framework */; };
 		A9BC7F3EDDD352322A7C9517 /* Pods_MoneyManager_MoneyManagerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D82ABA2EDCF2FAA293504018 /* Pods_MoneyManager_MoneyManagerUITests.framework */; };
 		D8355FAC2902ACA600EDB910 /* WelcomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8355FAA2902ACA600EDB910 /* WelcomeTableViewCell.swift */; };
@@ -160,6 +162,8 @@
 		36BF6C982901BFAC00343E68 /* TransactionDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionDetailViewController.xib; sourceTree = "<group>"; };
 		36BF6C9C2901C16400343E68 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		36BF6C9D2901C16400343E68 /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		36C6A4AA2905365B00A79B3C /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		36C6A4AB2905365B00A79B3C /* AccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = "<group>"; };
 		3F3358BD4564E580844C2D38 /* Pods-MoneyManager-MoneyManagerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyManager-MoneyManagerUITests.debug.xcconfig"; path = "Target Support Files/Pods-MoneyManager-MoneyManagerUITests/Pods-MoneyManager-MoneyManagerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		52092A2F757A0C994D00720A /* Pods-MoneyManager-MoneyManagerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyManager-MoneyManagerUITests.release.xcconfig"; path = "Target Support Files/Pods-MoneyManager-MoneyManagerUITests/Pods-MoneyManager-MoneyManagerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9DEEC4CC0882E4FCA904686D /* Pods-MoneyManagerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyManagerTests.release.xcconfig"; path = "Target Support Files/Pods-MoneyManagerTests/Pods-MoneyManagerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -351,6 +355,7 @@
 		36BF6B6D2901A19B00343E68 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				36C6A4A92905364900A79B3C /* Account */,
 				D844349A2903D31400019696 /* ListTransaction */,
 				36BF6C9B2901C15300343E68 /* Register */,
 				36BF6C962901BF9700343E68 /* TransactionDetail */,
@@ -486,6 +491,15 @@
 				36BF6C9D2901C16400343E68 /* RegisterViewController.xib */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		36C6A4A92905364900A79B3C /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				36C6A4AA2905365B00A79B3C /* AccountViewController.swift */,
+				36C6A4AB2905365B00A79B3C /* AccountViewController.xib */,
+			);
+			path = Account;
 			sourceTree = "<group>";
 		};
 		B8096FDBCFE0BD4030D68C1A /* Pods */ = {
@@ -645,6 +659,7 @@
 				36BF6C8B2901A1A000343E68 /* Roboto-Black.ttf in Resources */,
 				D8355FC12902BAE900EDB910 /* BannerTableViewCell.xib in Resources */,
 				36BF6C952901BE6F00343E68 /* ExpenseViewController.xib in Resources */,
+				36C6A4AD2905365B00A79B3C /* AccountViewController.xib in Resources */,
 				36BF6C842901A1A000343E68 /* Roboto-BoldItalic.ttf in Resources */,
 				36BF6C802901A1A000343E68 /* Roboto-Light.ttf in Resources */,
 				36BF6C142901A19F00343E68 /* Home.xib in Resources */,
@@ -797,6 +812,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36C6A4AC2905365B00A79B3C /* AccountViewController.swift in Sources */,
 				36BF6B572901A18700343E68 /* Repository.swift in Sources */,
 				D8355FBC2902B9A400EDB910 /* TransactionTableViewCell.swift in Sources */,
 				D8355FB42902B22E00EDB910 /* OptionTableViewCell.swift in Sources */,
@@ -1012,6 +1028,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1041,6 +1058,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

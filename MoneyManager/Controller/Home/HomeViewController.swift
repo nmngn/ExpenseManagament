@@ -16,7 +16,7 @@ protocol HomeActionDelegete {
     func openProfile()
     func openDefaultExpense()
     func openFlexibleExpense()
-    func reloadExpense()
+    func reloadExpense() -> Bool
     func showAllRecent()
 }
 
@@ -281,7 +281,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension HomeViewController: HomeActionDelegete {
     func openProfile() {
-        
+        let vc = AccountViewController.init(nibName: "AccountViewController", bundle: nil)
+        self.present(vc, animated: true, completion: nil)
     }
     
     func openDefaultExpense() {
@@ -292,7 +293,7 @@ extension HomeViewController: HomeActionDelegete {
         
     }
     
-    func reloadExpense() {
+    func reloadExpense() -> Bool {
         
     }
     

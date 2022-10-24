@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -36,22 +37,25 @@
                                     <constraint firstAttribute="width" constant="40" id="mYG-tN-m2q"/>
                                     <constraint firstAttribute="height" constant="40" id="rKA-ta-pro"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="ic_reload"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="ic_reload">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
                                 <connections>
                                     <action selector="reload:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8cg-Qo-szo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbE-JS-dEq">
-                                <rect key="frame" x="233" y="10" width="87" height="28.5"/>
+                                <rect key="frame" x="217" y="9.5" width="87" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="87" id="aLZ-vv-XoN"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Xem tất cả">
-                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="12"/>
-                                    <color key="baseForegroundColor" systemColor="linkColor"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Xem tất cả">
+                                    <color key="titleColor" systemColor="linkColor"/>
+                                </state>
                                 <connections>
                                     <action selector="showAll:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eTw-Wz-y9c"/>
                                 </connections>
@@ -66,7 +70,7 @@
                             <constraint firstItem="QbE-JS-dEq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="rRw-UQ-8NA" secondAttribute="trailing" constant="8" id="hzt-3L-9m1"/>
                             <constraint firstItem="QbE-JS-dEq" firstAttribute="centerY" secondItem="5nk-gE-unv" secondAttribute="centerY" id="iFU-FN-s7L"/>
                             <constraint firstItem="rRw-UQ-8NA" firstAttribute="leading" secondItem="5nk-gE-unv" secondAttribute="trailing" id="nrG-qK-QVC"/>
-                            <constraint firstAttribute="trailing" secondItem="QbE-JS-dEq" secondAttribute="trailing" id="w4d-0u-G4h"/>
+                            <constraint firstAttribute="trailing" secondItem="QbE-JS-dEq" secondAttribute="trailing" constant="16" id="w4d-0u-G4h"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -89,6 +93,9 @@
         <namedColor name="NewBG">
             <color red="0.96100002527236938" green="0.9649999737739563" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
