@@ -25,11 +25,13 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     @IBOutlet private weak var tableView: UITableView!
         
     var model = [HomeModel]()
+    var expenseType = true
     var listTransaction: [Transaction]? {
         didSet {
-            self.setupData()
+            self.setupData(expenseType: self.expenseType)
         }
     }
+    
     var userData: User?
     let userNotificationCenter = UNUserNotificationCenter.current()
     let repo = Repositories(api: .share)
@@ -189,7 +191,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         }
     }
     
-    func setupData() {
+    func setupData(expenseType: Bool) {
         model.removeAll()
         guard let listTransaction = listTransaction else {
             return
@@ -212,7 +214,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         model.append(showRecent)
         
         var transaction = HomeModel(type: .transaction)
-        for item in listTransaction.suffix(3).reversed() {
+        for item in listTransaction.filter({$0.type == expenseType}).suffix(3).reversed() {
             transaction.transactionId = item.id
             transaction.category = item.category
             transaction.titleExpense = item.title
@@ -327,7 +329,15 @@ extension HomeViewController: HomeActionDelegete {
     }
     
     func reloadExpense() -> Bool {
-        return true
+        if self.expenseType == true {
+            setupData(expenseType: false)
+            self.expenseType = false
+            return true
+        } else {
+            setupData(expenseType: true)
+            self.expenseType = true
+            return true
+        }
     }
     
     func showAllRecent() {
