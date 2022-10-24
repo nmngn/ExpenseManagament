@@ -83,6 +83,8 @@
 		D844349929038D2200019696 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D844349729038D2200019696 /* CategoryCollectionViewCell.xib */; };
 		D844349D2903D3E300019696 /* ListTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844349B2903D3E300019696 /* ListTransactionViewController.swift */; };
 		D844349E2903D3E300019696 /* ListTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D844349C2903D3E300019696 /* ListTransactionViewController.xib */; };
+		D8C8CBF92906AB5700328B09 /* ExpensePagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C8CBF72906AB5700328B09 /* ExpensePagingViewController.swift */; };
+		D8C8CBFA2906AB5700328B09 /* ExpensePagingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C8CBF82906AB5700328B09 /* ExpensePagingViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -187,6 +189,8 @@
 		D844349729038D2200019696 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		D844349B2903D3E300019696 /* ListTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTransactionViewController.swift; sourceTree = "<group>"; };
 		D844349C2903D3E300019696 /* ListTransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTransactionViewController.xib; sourceTree = "<group>"; };
+		D8C8CBF72906AB5700328B09 /* ExpensePagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensePagingViewController.swift; sourceTree = "<group>"; };
+		D8C8CBF82906AB5700328B09 /* ExpensePagingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpensePagingViewController.xib; sourceTree = "<group>"; };
 		DF5573617153B0CB0404C1C8 /* Pods_MoneyManagerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyManagerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA1826142BAE1B9E0340083C /* Pods-MoneyManagerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyManagerTests.debug.xcconfig"; path = "Target Support Files/Pods-MoneyManagerTests/Pods-MoneyManagerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -468,6 +472,7 @@
 		36BF6C8D2901BD2A00343E68 /* Expense */ = {
 			isa = PBXGroup;
 			children = (
+				D8C8CBF62906AB3200328B09 /* ExpensePaging */,
 				36BF6C922901BE6F00343E68 /* ExpenseViewController.swift */,
 				36BF6C932901BE6F00343E68 /* ExpenseViewController.xib */,
 			);
@@ -531,6 +536,15 @@
 				D844349C2903D3E300019696 /* ListTransactionViewController.xib */,
 			);
 			path = ListTransaction;
+			sourceTree = "<group>";
+		};
+		D8C8CBF62906AB3200328B09 /* ExpensePaging */ = {
+			isa = PBXGroup;
+			children = (
+				D8C8CBF72906AB5700328B09 /* ExpensePagingViewController.swift */,
+				D8C8CBF82906AB5700328B09 /* ExpensePagingViewController.xib */,
+			);
+			path = ExpensePaging;
 			sourceTree = "<group>";
 		};
 		DEB915D9CBF827C10E4692DD /* Frameworks */ = {
@@ -661,6 +675,7 @@
 				36BF6C952901BE6F00343E68 /* ExpenseViewController.xib in Resources */,
 				36C6A4AD2905365B00A79B3C /* AccountViewController.xib in Resources */,
 				36BF6C842901A1A000343E68 /* Roboto-BoldItalic.ttf in Resources */,
+				D8C8CBFA2906AB5700328B09 /* ExpensePagingViewController.xib in Resources */,
 				36BF6C802901A1A000343E68 /* Roboto-Light.ttf in Resources */,
 				36BF6C142901A19F00343E68 /* Home.xib in Resources */,
 				36BF6C3A2901A1A000343E68 /* MainTabbar.storyboard in Resources */,
@@ -821,6 +836,7 @@
 				36BF6B582901A18700343E68 /* BaseResult.swift in Sources */,
 				36BF6C252901A1A000343E68 /* HomeModel.swift in Sources */,
 				36BF6B592901A18700343E68 /* BaseRequest.swift in Sources */,
+				D8C8CBF92906AB5700328B09 /* ExpensePagingViewController.swift in Sources */,
 				36BF6C162901A1A000343E68 /* PopupInfoViewController.swift in Sources */,
 				36BF6B5B2901A18700343E68 /* UserRequest.swift in Sources */,
 				36BF6C782901A1A000343E68 /* SceneDelegate.swift in Sources */,
