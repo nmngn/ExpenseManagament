@@ -16,6 +16,7 @@ target 'MoneyManager' do
   pod 'Toast-Swift', '~> 5.0.1'
   pod 'Parchment', '~> 3.2'
   pod 'PieCharts'
+  pod 'Charts'
   
   target 'MoneyManagerTests' do
     inherit! :search_paths

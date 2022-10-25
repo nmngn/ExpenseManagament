@@ -11,6 +11,7 @@ import PieCharts
 class PieChartTableViewCell: UITableViewCell {
 
     @IBOutlet weak var chartView: PieChart!
+    @IBOutlet weak var blankView: UIView!
     
     fileprivate static let alpha: CGFloat = 0.5
     let colors = [
@@ -30,6 +31,7 @@ class PieChartTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        blankView.isHidden = true
         chartView.bounds = CGRect(x: 0,
                                   y: 0,
                                   width: chartView.frame.width,
@@ -41,10 +43,13 @@ class PieChartTableViewCell: UITableViewCell {
         pieModel.removeAll()
         chartView.removeSlices()
         chartView.models = pieModel
-        for (index, value) in data.enumerated() {
-            pieModel.append(PieSliceModel(value: Double(value.amount), color: colors[index], obj: value.title))
+        for (_, value) in data.enumerated() {
+            pieModel.append(PieSliceModel(value: Double(value.amount), color: colors.randomElement() ?? UIColor(), obj: value.title))
         }
         chartView.models = pieModel
+        if pieModel.isEmpty {
+            blankView.isHidden = false
+        }
     }
 
     

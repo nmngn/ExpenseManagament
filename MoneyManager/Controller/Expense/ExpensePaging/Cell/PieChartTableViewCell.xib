@@ -45,18 +45,44 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pOb-YA-Jor">
+                        <rect key="frame" x="16" y="16" width="395" height="300"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Không có dữ liệu " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1D-0l-PUb">
+                                <rect key="frame" x="132.5" y="140.5" width="130" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="C1D-0l-PUb" firstAttribute="centerY" secondItem="pOb-YA-Jor" secondAttribute="centerY" id="Sbo-ts-5CX"/>
+                            <constraint firstItem="C1D-0l-PUb" firstAttribute="centerX" secondItem="pOb-YA-Jor" secondAttribute="centerX" id="YBg-8A-Piq"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="p8Y-JL-Ppd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="3x2-nf-T32"/>
                     <constraint firstItem="p8Y-JL-Ppd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="AZ5-Aj-o3W"/>
+                    <constraint firstItem="pOb-YA-Jor" firstAttribute="leading" secondItem="p8Y-JL-Ppd" secondAttribute="leading" id="D2n-ss-OPS"/>
+                    <constraint firstItem="pOb-YA-Jor" firstAttribute="bottom" secondItem="p8Y-JL-Ppd" secondAttribute="bottom" id="MRO-cr-gr7"/>
+                    <constraint firstItem="pOb-YA-Jor" firstAttribute="trailing" secondItem="p8Y-JL-Ppd" secondAttribute="trailing" id="fnL-el-7BG"/>
                     <constraint firstAttribute="bottom" secondItem="p8Y-JL-Ppd" secondAttribute="bottom" constant="16" id="kub-zb-dfW"/>
                     <constraint firstAttribute="trailing" secondItem="p8Y-JL-Ppd" secondAttribute="trailing" constant="16" id="mXb-i7-lkr"/>
+                    <constraint firstItem="pOb-YA-Jor" firstAttribute="top" secondItem="p8Y-JL-Ppd" secondAttribute="top" id="qeB-5k-8f2"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="blankView" destination="pOb-YA-Jor" id="mEi-MV-GJq"/>
                 <outlet property="chartView" destination="p8Y-JL-Ppd" id="z8r-jF-2h4"/>
             </connections>
             <point key="canvasLocation" x="215.21739130434784" y="172.43303571428569"/>

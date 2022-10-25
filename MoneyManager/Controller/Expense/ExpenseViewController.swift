@@ -11,12 +11,32 @@ import Parchment
 class ExpenseViewController: UIViewController, UIPageViewControllerDataSource {
     
     var pageViewController : UIPageViewController!
-    var statusView: UIView!
-    var statusText: UILabel!
-    var statusLine: UILabel!
+    var statusView = UIView()
+    var statusText = UILabel()
+    var statusLine = UILabel()
     
     var pageTitles : [String] = ["Cố định", "Linh hoạt"]
     var currentIndex : Int = 0
+    
+    override func loadView() {
+        super.loadView()
+        statusView.frame = CGRect(x: 0, y: 91, width: view.frame.width, height: 44)
+        statusView.backgroundColor = .white
+        
+        statusText.frame = CGRect(x: 16, y: 11,
+                                  width: (self.statusView.frame.width - 64) / 2, height: 20)
+        statusText.textAlignment = .center
+        statusText.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+        statusText.text = pageTitles[0]
+        
+        statusLine.frame = CGRect(x: 16, y: 43,
+                                  width: (self.statusView.frame.width - 64) / 2, height: 1)
+        statusLine.backgroundColor = UIColor(red: 0.21, green: 0.50, blue: 0.35, alpha: 1.00)
+        
+        self.view.addSubview(statusView)
+        statusView.addSubview(statusText)
+        statusView.addSubview(statusLine)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +48,7 @@ class ExpenseViewController: UIViewController, UIPageViewControllerDataSource {
         let startingViewController: ExpensePagingViewController = viewControllerAtIndex(index: currentIndex)!
         let viewControllers = [startingViewController]
         pageViewController.setViewControllers(viewControllers , direction: .forward, animated: false, completion: nil)
-        pageViewController.view.frame = CGRect(x: 0, y: 100, width: view.frame.size.width, height: view.frame.size.height - 100);
+        pageViewController.view.frame = CGRect(x: 0, y: 135, width: view.frame.size.width, height: view.frame.size.height - 135);
         
         addChild(pageViewController)
         view.addSubview(pageViewController.view)
@@ -64,7 +84,7 @@ class ExpenseViewController: UIViewController, UIPageViewControllerDataSource {
         }
         
         index += 1
-        
+        print("xxx" + "\(index)")
         if (index == self.pageTitles.count) {
             return nil
         }
