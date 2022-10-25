@@ -36,10 +36,6 @@
 		36BF6C102901A19F00343E68 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6B692901A19A00343E68 /* Model.swift */; };
 		36BF6C112901A19F00343E68 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6B6A2901A19A00343E68 /* Session.swift */; };
 		36BF6C142901A19F00343E68 /* Home.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36BF6B6F2901A19B00343E68 /* Home.xib */; };
-		36BF6C152901A19F00343E68 /* PopupInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36BF6B712901A19B00343E68 /* PopupInfoViewController.xib */; };
-		36BF6C162901A1A000343E68 /* PopupInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6B722901A19B00343E68 /* PopupInfoViewController.swift */; };
-		36BF6C172901A1A000343E68 /* SmallOptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36BF6B732901A19B00343E68 /* SmallOptionViewController.xib */; };
-		36BF6C182901A1A000343E68 /* SmallOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6B742901A19B00343E68 /* SmallOptionViewController.swift */; };
 		36BF6C192901A1A000343E68 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6B752901A19B00343E68 /* HomeViewController.swift */; };
 		36BF6C1A2901A1A000343E68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36BF6B762901A19B00343E68 /* Main.storyboard */; };
 		36BF6C252901A1A000343E68 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF6B842901A19B00343E68 /* HomeModel.swift */; };
@@ -144,10 +140,6 @@
 		36BF6B692901A19A00343E68 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		36BF6B6A2901A19A00343E68 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		36BF6B6F2901A19B00343E68 /* Home.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Home.xib; sourceTree = "<group>"; };
-		36BF6B712901A19B00343E68 /* PopupInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupInfoViewController.xib; sourceTree = "<group>"; };
-		36BF6B722901A19B00343E68 /* PopupInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupInfoViewController.swift; sourceTree = "<group>"; };
-		36BF6B732901A19B00343E68 /* SmallOptionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SmallOptionViewController.xib; sourceTree = "<group>"; };
-		36BF6B742901A19B00343E68 /* SmallOptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallOptionViewController.swift; sourceTree = "<group>"; };
 		36BF6B752901A19B00343E68 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		36BF6B772901A19B00343E68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		36BF6B842901A19B00343E68 /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
@@ -457,23 +449,11 @@
 			isa = PBXGroup;
 			children = (
 				36BF6B6F2901A19B00343E68 /* Home.xib */,
-				36BF6B702901A19B00343E68 /* Popup */,
 				36BF6B752901A19B00343E68 /* HomeViewController.swift */,
 				36BF6B782901A19B00343E68 /* Cell */,
 				36BF6B832901A19B00343E68 /* Model */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		36BF6B702901A19B00343E68 /* Popup */ = {
-			isa = PBXGroup;
-			children = (
-				36BF6B712901A19B00343E68 /* PopupInfoViewController.xib */,
-				36BF6B722901A19B00343E68 /* PopupInfoViewController.swift */,
-				36BF6B732901A19B00343E68 /* SmallOptionViewController.xib */,
-				36BF6B742901A19B00343E68 /* SmallOptionViewController.swift */,
-			);
-			path = Popup;
 			sourceTree = "<group>";
 		};
 		36BF6B782901A19B00343E68 /* Cell */ = {
@@ -1060,7 +1040,6 @@
 				36BF6C7F2901A1A000343E68 /* Roboto-Medium.ttf in Resources */,
 				D8355FB12902AE6D00EDB910 /* BadgeTableViewCell.xib in Resources */,
 				36BF6C812901A1A000343E68 /* Roboto-Regular.ttf in Resources */,
-				36BF6C172901A1A000343E68 /* SmallOptionViewController.xib in Resources */,
 				3694088A2906DB2800A55FD5 /* AddTransactionTableViewCell.xib in Resources */,
 				369408862906DAE700A55FD5 /* ItemTableViewCell.xib in Resources */,
 				36BF6C8B2901A1A000343E68 /* Roboto-Black.ttf in Resources */,
@@ -1072,7 +1051,6 @@
 				36BF6C802901A1A000343E68 /* Roboto-Light.ttf in Resources */,
 				36BF6C142901A19F00343E68 /* Home.xib in Resources */,
 				36BF6C3A2901A1A000343E68 /* MainTabbar.storyboard in Resources */,
-				36BF6C152901A19F00343E68 /* PopupInfoViewController.xib in Resources */,
 				36BF6C9F2901C16400343E68 /* RegisterViewController.xib in Resources */,
 				36BF6C822901A1A000343E68 /* Roboto-MediumItalic.ttf in Resources */,
 				369408822906D19200A55FD5 /* PieChartTableViewCell.xib in Resources */,
@@ -1232,7 +1210,6 @@
 				369408812906D19200A55FD5 /* PieChartTableViewCell.swift in Sources */,
 				36BF6B592901A18700343E68 /* BaseRequest.swift in Sources */,
 				D8C8CBF92906AB5700328B09 /* ExpensePagingViewController.swift in Sources */,
-				36BF6C162901A1A000343E68 /* PopupInfoViewController.swift in Sources */,
 				369408852906DAE700A55FD5 /* ItemTableViewCell.swift in Sources */,
 				36BF6B5B2901A18700343E68 /* UserRequest.swift in Sources */,
 				36BF6C782901A1A000343E68 /* SceneDelegate.swift in Sources */,
@@ -1260,7 +1237,6 @@
 				3694088D2906DB4400A55FD5 /* ExpenseModel.swift in Sources */,
 				D8355FB02902AE6D00EDB910 /* BadgeTableViewCell.swift in Sources */,
 				36BF6C942901BE6F00343E68 /* ExpenseViewController.swift in Sources */,
-				36BF6C182901A1A000343E68 /* SmallOptionViewController.swift in Sources */,
 				36BF6C0B2901A19F00343E68 /* String+.swift in Sources */,
 				36BF6B5E2901A18700343E68 /* BaseError.swift in Sources */,
 			);
