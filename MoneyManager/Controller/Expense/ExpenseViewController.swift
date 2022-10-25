@@ -25,7 +25,7 @@ class ExpenseViewController: UIViewController, UIPageViewControllerDataSource {
         pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         pageViewController.dataSource = self
         
-        let startingViewController: ExpensePagingViewController = viewControllerAtIndex(index: 0)!
+        let startingViewController: ExpensePagingViewController = viewControllerAtIndex(index: currentIndex)!
         let viewControllers = [startingViewController]
         pageViewController.setViewControllers(viewControllers , direction: .forward, animated: false, completion: nil)
         pageViewController.view.frame = CGRect(x: 0, y: 100, width: view.frame.size.width, height: view.frame.size.height - 100);

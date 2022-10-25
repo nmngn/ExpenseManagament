@@ -13,7 +13,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     
     var categorySelected: (() ->())?
-    var compareCategory: (() -> (String, String))?
+    var categoryData: (() -> ())?
     
     override func awakeFromNib() {
         super.awakeFromNib()

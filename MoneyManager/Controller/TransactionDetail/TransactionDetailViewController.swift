@@ -25,6 +25,7 @@ class TransactionDetailViewController: UIViewController {
     let repo = Repositories(api: .share)
     let utilityThread = DispatchQueue.global(qos: .utility)
     let idUser = Session.shared.userProfile.idUser
+    var oldIndexPath = 0
     var idTransaction: String = "" {
         didSet {
             if !idTransaction.isEmpty {
@@ -211,11 +212,19 @@ extension TransactionDetailViewController: UICollectionViewDelegate, UICollectio
                 CategoryCollectionViewCell else {return UICollectionViewCell()}
         cell.setupImage(image: modelCategory[indexPath.row])
         cell.compareCategory(ofIndex: modelCategory[indexPath.row], ofData: self.category)
+        if modelCategory[indexPath.row] == self.category {
+            self.oldIndexPath = indexPath.row
+        }
         cell.categorySelected = { [weak self] in
             self?.category = (self?.modelCategory[indexPath.row])!
             self?.checkButtonState()
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: IndexPath(row: self.oldIndexPath, section: 0))
+        cell?.isSelected = false
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

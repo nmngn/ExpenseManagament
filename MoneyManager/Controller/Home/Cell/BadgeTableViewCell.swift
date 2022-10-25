@@ -22,9 +22,9 @@ class BadgeTableViewCell: UITableViewCell {
     }
     
     func setupData(data: HomeModel) {
-        allLabel.text = "\(data.allMoney)"
-        usedLabel.text = "\(data.usedMoney)"
-        remainLabel.text = "\(data.remainMoney)"
+        allLabel.text = "\(data.allMoney.formattedWithSeparator)"
+        usedLabel.text = "\(data.usedMoney.formattedWithSeparator)"
+        remainLabel.text = "\(data.remainMoney.formattedWithSeparator)"
         
         if data.remainMoney == 0 {
             remainMoney = 1
@@ -32,7 +32,7 @@ class BadgeTableViewCell: UITableViewCell {
             remainMoney = data.remainMoney
         }
         
-        let ratio = Float(remainMoney) / Float(data.allMoney )
+        let ratio = Float(remainMoney) / Float(data.allMoney)
         if ratio > 0.6 {
             progressView.progressTintColor = UIColor(hex: "#046809")
         } else if ratio < 0.3 {

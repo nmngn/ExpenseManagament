@@ -50,7 +50,7 @@ class AccountViewController: UIViewController {
                 if let data = data {
                     self.nameTextField.text = data.name
                     self.birthTextField.text = data.birth
-                    self.moneyTextField.text = "\(data.money)"
+                    self.moneyTextField.text = "\(data.money.formattedWithSeparator)"
                 }
             case .failure(let err):
                 print(err as Any)
@@ -64,10 +64,11 @@ class AccountViewController: UIViewController {
     }
     
     @IBAction func saveAction(_ sender: UIButton) {
+        let money = (moneyTextField.text?.replacingOccurrences(of: " ", with: ""))!
         repo.updateUser(idUser: idUser,
                         name: nameTextField.text!,
                         birth: birthTextField.text!,
-                        allMoney: Int(moneyTextField.text!) ?? 0) { value in
+                        allMoney: Int(money) ?? 0) { value in
             switch value {
             case .success(let data):
                 if let data = data {

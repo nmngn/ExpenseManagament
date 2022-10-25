@@ -20,7 +20,7 @@ class ItemTableViewCell: UITableViewCell {
     func setupData(data: ExpenseModel) {
         titleLabel.text = data.title
         dateLabel.text = data.date
-        moneyLabel.text = "\(data.amount)"
+        moneyLabel.text = "\(data.amount.formattedWithSeparator)"
         descriptionLabel.text = data.description
         imageCategory.image = UIImage(named: data.category)
     }

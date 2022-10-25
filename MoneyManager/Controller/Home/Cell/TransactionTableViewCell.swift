@@ -25,6 +25,6 @@ class TransactionTableViewCell: UITableViewCell {
         imageCategory.image = UIImage(named: model.getCategory())
         titleLabel.text = model.getTitle()
         timeLabel.text = model.getTime()
-        moneyLabel.text = "- \(model.getAmount())"
+        moneyLabel.text = "- \(model.getAmount().formattedWithSeparator)"
     }
 }
