@@ -203,6 +203,54 @@
 		D844349729038D2200019696 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		D844349B2903D3E300019696 /* ListTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTransactionViewController.swift; sourceTree = "<group>"; };
 		D844349C2903D3E300019696 /* ListTransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTransactionViewController.xib; sourceTree = "<group>"; };
+		D8501AF22907C7E30081D68F /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		D8501AF62907C7E30081D68F /* PieSliceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSliceDelegate.swift; sourceTree = "<group>"; };
+		D8501AF72907C7E30081D68F /* PieSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSlice.swift; sourceTree = "<group>"; };
+		D8501AF82907C7E30081D68F /* PieSliceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSliceLayer.swift; sourceTree = "<group>"; };
+		D8501AFA2907C7E30081D68F /* PieChartDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartDelegate.swift; sourceTree = "<group>"; };
+		D8501AFB2907C7E30081D68F /* PieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
+		D8501AFD2907C7E30081D68F /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		D8501AFF2907C7E30081D68F /* CGSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
+		D8501B002907C7E30081D68F /* FloatingPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPoint.swift; sourceTree = "<group>"; };
+		D8501B012907C7E30081D68F /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		D8501B022907C7E30081D68F /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		D8501B032907C7E30081D68F /* CGRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
+		D8501B072907C7E30081D68F /* PiePlainTextLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiePlainTextLayer.swift; sourceTree = "<group>"; };
+		D8501B0A2907C7E30081D68F /* AlphaPieLineTextLayerAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaPieLineTextLayerAnimator.swift; sourceTree = "<group>"; };
+		D8501B0B2907C7E30081D68F /* PieLineTextLayerAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieLineTextLayerAnimator.swift; sourceTree = "<group>"; };
+		D8501B0C2907C7E30081D68F /* PieLineTextLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieLineTextLayer.swift; sourceTree = "<group>"; };
+		D8501B0E2907C7E30081D68F /* PieChartLabelSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartLabelSettings.swift; sourceTree = "<group>"; };
+		D8501B112907C7E40081D68F /* PieViewLayerAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieViewLayerAnimator.swift; sourceTree = "<group>"; };
+		D8501B122907C7E40081D68F /* AlphaPieViewLayerAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaPieViewLayerAnimator.swift; sourceTree = "<group>"; };
+		D8501B132907C7E40081D68F /* PieCustomViewsLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieCustomViewsLayer.swift; sourceTree = "<group>"; };
+		D8501B142907C7E40081D68F /* PieChartLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartLayer.swift; sourceTree = "<group>"; };
+		D8501B162907C7E40081D68F /* PieSliceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSliceModel.swift; sourceTree = "<group>"; };
+		D8501B172907C7E40081D68F /* PieSliceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSliceData.swift; sourceTree = "<group>"; };
+		D8501B182907C7E40081D68F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D85951E82907C974004BCFE3 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		D85951EC2907C974004BCFE3 /* PieSliceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSliceDelegate.swift; sourceTree = "<group>"; };
+		D85951ED2907C974004BCFE3 /* PieSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSlice.swift; sourceTree = "<group>"; };
+		D85951EE2907C974004BCFE3 /* PieSliceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSliceLayer.swift; sourceTree = "<group>"; };
+		D85951F02907C974004BCFE3 /* PieChartDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartDelegate.swift; sourceTree = "<group>"; };
+		D85951F12907C974004BCFE3 /* PieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
+		D85951F32907C974004BCFE3 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		D85951F52907C974004BCFE3 /* CGSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
+		D85951F62907C974004BCFE3 /* FloatingPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPoint.swift; sourceTree = "<group>"; };
+		D85951F72907C974004BCFE3 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		D85951F82907C974004BCFE3 /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		D85951F92907C974004BCFE3 /* CGRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
+		D85951FD2907C974004BCFE3 /* PiePlainTextLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiePlainTextLayer.swift; sourceTree = "<group>"; };
+		D85952002907C974004BCFE3 /* AlphaPieLineTextLayerAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaPieLineTextLayerAnimator.swift; sourceTree = "<group>"; };
+		D85952012907C974004BCFE3 /* PieLineTextLayerAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieLineTextLayerAnimator.swift; sourceTree = "<group>"; };
+		D85952022907C974004BCFE3 /* PieLineTextLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieLineTextLayer.swift; sourceTree = "<group>"; };
+		D85952042907C974004BCFE3 /* PieChartLabelSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartLabelSettings.swift; sourceTree = "<group>"; };
+		D85952072907C974004BCFE3 /* PieViewLayerAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieViewLayerAnimator.swift; sourceTree = "<group>"; };
+		D85952082907C974004BCFE3 /* AlphaPieViewLayerAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaPieViewLayerAnimator.swift; sourceTree = "<group>"; };
+		D85952092907C974004BCFE3 /* PieCustomViewsLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieCustomViewsLayer.swift; sourceTree = "<group>"; };
+		D859520A2907C974004BCFE3 /* PieChartLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartLayer.swift; sourceTree = "<group>"; };
+		D859520C2907C974004BCFE3 /* PieSliceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSliceModel.swift; sourceTree = "<group>"; };
+		D859520D2907C974004BCFE3 /* PieSliceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSliceData.swift; sourceTree = "<group>"; };
+		D859520E2907C974004BCFE3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D8C8CBF72906AB5700328B09 /* ExpensePagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensePagingViewController.swift; sourceTree = "<group>"; };
 		D8C8CBF82906AB5700328B09 /* ExpensePagingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpensePagingViewController.xib; sourceTree = "<group>"; };
 		DF5573617153B0CB0404C1C8 /* Pods_MoneyManagerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyManagerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -573,6 +621,310 @@
 			path = ListTransaction;
 			sourceTree = "<group>";
 		};
+		D8501AF12907C7E30081D68F /* PieCharts */ = {
+			isa = PBXGroup;
+			children = (
+				D8501AF22907C7E30081D68F /* LICENSE */,
+				D8501AF32907C7E30081D68F /* PieCharts */,
+				D8501B182907C7E40081D68F /* README.md */,
+			);
+			name = PieCharts;
+			path = MoneyManager/Library/PieCharts;
+			sourceTree = "<group>";
+		};
+		D8501AF32907C7E30081D68F /* PieCharts */ = {
+			isa = PBXGroup;
+			children = (
+				D8501AF42907C7E30081D68F /* Core */,
+				D8501AFC2907C7E30081D68F /* Util */,
+				D8501AFE2907C7E30081D68F /* Extensions */,
+				D8501B042907C7E30081D68F /* Layer */,
+				D8501B152907C7E40081D68F /* Model */,
+			);
+			path = PieCharts;
+			sourceTree = "<group>";
+		};
+		D8501AF42907C7E30081D68F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D8501AF52907C7E30081D68F /* Slice */,
+				D8501AF92907C7E30081D68F /* Chart */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D8501AF52907C7E30081D68F /* Slice */ = {
+			isa = PBXGroup;
+			children = (
+				D8501AF62907C7E30081D68F /* PieSliceDelegate.swift */,
+				D8501AF72907C7E30081D68F /* PieSlice.swift */,
+				D8501AF82907C7E30081D68F /* PieSliceLayer.swift */,
+			);
+			path = Slice;
+			sourceTree = "<group>";
+		};
+		D8501AF92907C7E30081D68F /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				D8501AFA2907C7E30081D68F /* PieChartDelegate.swift */,
+				D8501AFB2907C7E30081D68F /* PieChart.swift */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		D8501AFC2907C7E30081D68F /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D8501AFD2907C7E30081D68F /* Globals.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		D8501AFE2907C7E30081D68F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D8501AFF2907C7E30081D68F /* CGSize.swift */,
+				D8501B002907C7E30081D68F /* FloatingPoint.swift */,
+				D8501B012907C7E30081D68F /* Int.swift */,
+				D8501B022907C7E30081D68F /* CGPoint.swift */,
+				D8501B032907C7E30081D68F /* CGRect.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D8501B042907C7E30081D68F /* Layer */ = {
+			isa = PBXGroup;
+			children = (
+				D8501B052907C7E30081D68F /* Impl */,
+				D8501B142907C7E40081D68F /* PieChartLayer.swift */,
+			);
+			path = Layer;
+			sourceTree = "<group>";
+		};
+		D8501B052907C7E30081D68F /* Impl */ = {
+			isa = PBXGroup;
+			children = (
+				D8501B062907C7E30081D68F /* PlainText */,
+				D8501B082907C7E30081D68F /* LineText */,
+				D8501B0D2907C7E30081D68F /* Common */,
+				D8501B0F2907C7E30081D68F /* View */,
+			);
+			path = Impl;
+			sourceTree = "<group>";
+		};
+		D8501B062907C7E30081D68F /* PlainText */ = {
+			isa = PBXGroup;
+			children = (
+				D8501B072907C7E30081D68F /* PiePlainTextLayer.swift */,
+			);
+			path = PlainText;
+			sourceTree = "<group>";
+		};
+		D8501B082907C7E30081D68F /* LineText */ = {
+			isa = PBXGroup;
+			children = (
+				D8501B092907C7E30081D68F /* Anim */,
+				D8501B0C2907C7E30081D68F /* PieLineTextLayer.swift */,
+			);
+			path = LineText;
+			sourceTree = "<group>";
+		};
+		D8501B092907C7E30081D68F /* Anim */ = {
+			isa = PBXGroup;
+			children = (
+				D8501B0A2907C7E30081D68F /* AlphaPieLineTextLayerAnimator.swift */,
+				D8501B0B2907C7E30081D68F /* PieLineTextLayerAnimator.swift */,
+			);
+			path = Anim;
+			sourceTree = "<group>";
+		};
+		D8501B0D2907C7E30081D68F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D8501B0E2907C7E30081D68F /* PieChartLabelSettings.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D8501B0F2907C7E30081D68F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D8501B102907C7E30081D68F /* Anim */,
+				D8501B132907C7E40081D68F /* PieCustomViewsLayer.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D8501B102907C7E30081D68F /* Anim */ = {
+			isa = PBXGroup;
+			children = (
+				D8501B112907C7E40081D68F /* PieViewLayerAnimator.swift */,
+				D8501B122907C7E40081D68F /* AlphaPieViewLayerAnimator.swift */,
+			);
+			path = Anim;
+			sourceTree = "<group>";
+		};
+		D8501B152907C7E40081D68F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D8501B162907C7E40081D68F /* PieSliceModel.swift */,
+				D8501B172907C7E40081D68F /* PieSliceData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D85951E72907C974004BCFE3 /* PieCharts */ = {
+			isa = PBXGroup;
+			children = (
+				D85951E82907C974004BCFE3 /* LICENSE */,
+				D85951E92907C974004BCFE3 /* PieCharts */,
+				D859520E2907C974004BCFE3 /* README.md */,
+			);
+			name = PieCharts;
+			path = MoneyManager/Library/PieCharts;
+			sourceTree = "<group>";
+		};
+		D85951E92907C974004BCFE3 /* PieCharts */ = {
+			isa = PBXGroup;
+			children = (
+				D85951EA2907C974004BCFE3 /* Core */,
+				D85951F22907C974004BCFE3 /* Util */,
+				D85951F42907C974004BCFE3 /* Extensions */,
+				D85951FA2907C974004BCFE3 /* Layer */,
+				D859520B2907C974004BCFE3 /* Model */,
+			);
+			path = PieCharts;
+			sourceTree = "<group>";
+		};
+		D85951EA2907C974004BCFE3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D85951EB2907C974004BCFE3 /* Slice */,
+				D85951EF2907C974004BCFE3 /* Chart */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D85951EB2907C974004BCFE3 /* Slice */ = {
+			isa = PBXGroup;
+			children = (
+				D85951EC2907C974004BCFE3 /* PieSliceDelegate.swift */,
+				D85951ED2907C974004BCFE3 /* PieSlice.swift */,
+				D85951EE2907C974004BCFE3 /* PieSliceLayer.swift */,
+			);
+			path = Slice;
+			sourceTree = "<group>";
+		};
+		D85951EF2907C974004BCFE3 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				D85951F02907C974004BCFE3 /* PieChartDelegate.swift */,
+				D85951F12907C974004BCFE3 /* PieChart.swift */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		D85951F22907C974004BCFE3 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D85951F32907C974004BCFE3 /* Globals.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		D85951F42907C974004BCFE3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D85951F52907C974004BCFE3 /* CGSize.swift */,
+				D85951F62907C974004BCFE3 /* FloatingPoint.swift */,
+				D85951F72907C974004BCFE3 /* Int.swift */,
+				D85951F82907C974004BCFE3 /* CGPoint.swift */,
+				D85951F92907C974004BCFE3 /* CGRect.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D85951FA2907C974004BCFE3 /* Layer */ = {
+			isa = PBXGroup;
+			children = (
+				D85951FB2907C974004BCFE3 /* Impl */,
+				D859520A2907C974004BCFE3 /* PieChartLayer.swift */,
+			);
+			path = Layer;
+			sourceTree = "<group>";
+		};
+		D85951FB2907C974004BCFE3 /* Impl */ = {
+			isa = PBXGroup;
+			children = (
+				D85951FC2907C974004BCFE3 /* PlainText */,
+				D85951FE2907C974004BCFE3 /* LineText */,
+				D85952032907C974004BCFE3 /* Common */,
+				D85952052907C974004BCFE3 /* View */,
+			);
+			path = Impl;
+			sourceTree = "<group>";
+		};
+		D85951FC2907C974004BCFE3 /* PlainText */ = {
+			isa = PBXGroup;
+			children = (
+				D85951FD2907C974004BCFE3 /* PiePlainTextLayer.swift */,
+			);
+			path = PlainText;
+			sourceTree = "<group>";
+		};
+		D85951FE2907C974004BCFE3 /* LineText */ = {
+			isa = PBXGroup;
+			children = (
+				D85951FF2907C974004BCFE3 /* Anim */,
+				D85952022907C974004BCFE3 /* PieLineTextLayer.swift */,
+			);
+			path = LineText;
+			sourceTree = "<group>";
+		};
+		D85951FF2907C974004BCFE3 /* Anim */ = {
+			isa = PBXGroup;
+			children = (
+				D85952002907C974004BCFE3 /* AlphaPieLineTextLayerAnimator.swift */,
+				D85952012907C974004BCFE3 /* PieLineTextLayerAnimator.swift */,
+			);
+			path = Anim;
+			sourceTree = "<group>";
+		};
+		D85952032907C974004BCFE3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D85952042907C974004BCFE3 /* PieChartLabelSettings.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D85952052907C974004BCFE3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D85952062907C974004BCFE3 /* Anim */,
+				D85952092907C974004BCFE3 /* PieCustomViewsLayer.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D85952062907C974004BCFE3 /* Anim */ = {
+			isa = PBXGroup;
+			children = (
+				D85952072907C974004BCFE3 /* PieViewLayerAnimator.swift */,
+				D85952082907C974004BCFE3 /* AlphaPieViewLayerAnimator.swift */,
+			);
+			path = Anim;
+			sourceTree = "<group>";
+		};
+		D859520B2907C974004BCFE3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D859520C2907C974004BCFE3 /* PieSliceModel.swift */,
+				D859520D2907C974004BCFE3 /* PieSliceData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D8C8CBF62906AB3200328B09 /* ExpensePaging */ = {
 			isa = PBXGroup;
 			children = (
@@ -587,6 +939,8 @@
 		DEB915D9CBF827C10E4692DD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D8501AF12907C7E30081D68F /* PieCharts */,
+				D85951E72907C974004BCFE3 /* PieCharts */,
 				B0FDA6FB7219882E3A549DEF /* Pods_MoneyManager.framework */,
 				D82ABA2EDCF2FAA293504018 /* Pods_MoneyManager_MoneyManagerUITests.framework */,
 				DF5573617153B0CB0404C1C8 /* Pods_MoneyManagerTests.framework */,

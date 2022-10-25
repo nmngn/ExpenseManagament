@@ -11,23 +11,33 @@ import Parchment
 class ExpenseViewController: UIViewController, UIPageViewControllerDataSource {
     
     var pageViewController : UIPageViewController!
+    var statusView: UIView!
+    var statusText: UILabel!
+    var statusLine: UILabel!
+    
     var pageTitles : [String] = ["Cố định", "Linh hoạt"]
     var currentIndex : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Tổng hợp"
+        
         pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         pageViewController.dataSource = self
         
         let startingViewController: ExpensePagingViewController = viewControllerAtIndex(index: 0)!
         let viewControllers = [startingViewController]
         pageViewController.setViewControllers(viewControllers , direction: .forward, animated: false, completion: nil)
-        pageViewController.view.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height);
+        pageViewController.view.frame = CGRect(x: 0, y: 100, width: view.frame.size.width, height: view.frame.size.height - 100);
         
         addChild(pageViewController)
         view.addSubview(pageViewController.view)
         pageViewController.didMove(toParent: self)
+        
+        navigationController?.isNavigationBarHidden = false
+        if self.navigationController?.viewControllers.count != 1 {
+            setupNavigationButton()
+        }
     }
     
     override func didReceiveMemoryWarning() {

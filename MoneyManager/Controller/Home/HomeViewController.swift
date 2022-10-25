@@ -32,11 +32,14 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         }
     }
     
-    var userData: User?
     let userNotificationCenter = UNUserNotificationCenter.current()
     let repo = Repositories(api: .share)
     let idUser = Session.shared.userProfile.idUser
-    var userModel = ("","",0)
+    var userModel = ("","",0) {
+        didSet {
+            self.setupData(expenseType: self.expenseType)
+        }
+    }
     let utilityThread = DispatchQueue.global(qos: .utility)
     
     let presenter: Presentr = {
@@ -321,11 +324,17 @@ extension HomeViewController: HomeActionDelegete {
     }
     
     func openDefaultExpense() {
-        
+        let vc = ExpenseViewController.init(nibName: "ExpenseViewController", bundle: nil)
+        vc.currentIndex = 0
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func openFlexibleExpense() {
-        
+        let vc = ExpenseViewController.init(nibName: "ExpenseViewController", bundle: nil)
+        vc.currentIndex = 1
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func reloadExpense() -> Bool {
