@@ -163,7 +163,7 @@ class TransactionDetailViewController: UIViewController {
                         print(data)
                         self.view.makeToast("Lưu thành công")
                         Session.shared.isPopToRoot = true
-                        self.navigationController?.popToRootViewController(animated: true)
+                        self.navigationController?.popViewController(animated: true)
                         self.dismiss(animated: true, completion: nil)
                     }
                 case .failure(let err):
@@ -187,7 +187,7 @@ class TransactionDetailViewController: UIViewController {
                         print(data)
                         self.view.makeToast("Lưu thành công")
                         Session.shared.isPopToRoot = true
-                        self.navigationController?.popToRootViewController(animated: true)
+                        self.navigationController?.popViewController(animated: true)
                         self.dismiss(animated: true, completion: nil)
                     }
                 case .failure(let err):

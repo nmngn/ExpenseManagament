@@ -98,15 +98,11 @@ extension ListTransactionViewController: UITableViewDataSource, UITableViewDeleg
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = TransactionDetailViewController.init(nibName: "TransactionDetailViewController", bundle: nil)
         vc.hidesBottomBarWhenPushed = true
         vc.idTransaction = self.listTransaction?[indexPath.row].id ?? ""
         self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

@@ -52,10 +52,11 @@ class MainTabbarViewController: ESTabBarController, UITabBarControllerDelegate {
     
     func getTabbarViewController() -> [UIViewController] {
         var viewController = [UIViewController]()
+        
         let homeVC = UINavigationController(rootViewController: HomeViewController.init(nibName: "Home", bundle: nil))
         homeVC.tabBarItem = ESTabBarItem.init(ESTabbarBasicContentView(), title: "Màn hình chính", image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill")?.toHierachicalImage())
         
-        let expense = UINavigationController(rootViewController: ExpenseViewController.init(nibName: "ExpenseViewController", bundle: nil))
+        let expense = UINavigationController(rootViewController: ExpensePagingViewController.init(nibName: "ExpensePagingViewController", bundle: nil))
         expense.tabBarItem = ESTabBarItem.init(ESTabbarBasicContentView(),title: "Tổng hợp", image: UIImage(systemName: "wallet.pass"), selectedImage: UIImage(systemName: "wallet.pass")?.toHierachicalImage())
         
         viewController.append(contentsOf: [homeVC, expense])

@@ -9,15 +9,20 @@ import UIKit
 
 class ItemTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    @IBOutlet weak var imageCategory: UIImageView!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var moneyLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func setupData(data: ExpenseModel) {
+        titleLabel.text = data.title
+        dateLabel.text = data.date
+        moneyLabel.text = "\(data.amount)"
+        descriptionLabel.text = data.description
+        imageCategory.image = UIImage(named: data.category)
     }
     
 }

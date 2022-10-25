@@ -15,6 +15,13 @@ enum ExpenseScreenType {
 
 struct ExpenseModel {
     var type: ExpenseScreenType
+        
+    var id = ""
+    var title = ""
+    var date = ""
+    var amount = 0
+    var description = ""
+    var category = ""
     
     init(type: ExpenseScreenType) {
         self.type = type

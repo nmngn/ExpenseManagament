@@ -81,4 +81,5 @@ struct Transaction : Mappable, DataTransaction {
     func getAmount() -> Int {
         return amount
     }
+    
 }
