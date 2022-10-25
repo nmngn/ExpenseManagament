@@ -13,6 +13,11 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     
     var categorySelected: (() ->())?
+    var compareCategory: (() -> (String, String))?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
     
     override var isSelected: Bool {
         willSet {

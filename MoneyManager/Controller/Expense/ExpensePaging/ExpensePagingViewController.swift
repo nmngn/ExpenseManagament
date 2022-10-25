@@ -12,6 +12,9 @@ class ExpensePagingViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var pageIndex : Int = 0
+    var titleText : String = ""
+    
     var expenseModel = [ExpenseModel]()
     var listTransaction: [Transaction]? {
         didSet {
@@ -34,11 +37,16 @@ class ExpensePagingViewController: UIViewController {
     }
     
     func getData() {
+        var filter = true
+        if pageIndex == 1 {
+            filter = false
+        }
+        
         repo.getAllTransaction(idUser: idUser) { value in
             switch value{
             case .success(let data):
                 if let data = data?.transactions {
-                    self.listTransaction = data.filter({$0.type == true})
+                    self.listTransaction = data.filter({$0.idUser == self.idUser && $0.type == filter})
                 }
             case .failure(let err):
                 print(err as Any)

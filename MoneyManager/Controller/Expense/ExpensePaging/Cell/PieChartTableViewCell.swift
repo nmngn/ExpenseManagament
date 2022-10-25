@@ -35,7 +35,6 @@ class PieChartTableViewCell: UITableViewCell {
                                   width: chartView.frame.width,
                                   height: chartView.frame.height)
         chartView.layers = [createPlainTextLayer(), createTextWithLinesLayer()]
-
     }
     
     func setupData(data: [Transaction], usedMoney: Int) {
@@ -43,7 +42,7 @@ class PieChartTableViewCell: UITableViewCell {
         chartView.removeSlices()
         chartView.models = pieModel
         for (index, value) in data.enumerated() {
-            pieModel.append(PieSliceModel(value: Double(value.amount), color: colors[index], title: value.title))
+            pieModel.append(PieSliceModel(value: Double(value.amount), color: colors[index], obj: value.title))
         }
         chartView.models = pieModel
     }
@@ -58,7 +57,7 @@ class PieChartTableViewCell: UITableViewCell {
         
         let formatter = NumberFormatter()
         formatter.maximumFractionDigits = 1
-        textLayerSettings.label.textGenerator = {slice in
+        textLayerSettings.label.textGenerator = { slice in
             return formatter.string(from: slice.data.percentage * 100 as NSNumber).map{"\($0)%"} ?? ""
         }
         
@@ -74,8 +73,8 @@ class PieChartTableViewCell: UITableViewCell {
         let formatter = NumberFormatter()
         formatter.maximumFractionDigits = 1
         lineTextLayerSettings.label.font = UIFont.systemFont(ofSize: 14)
-        lineTextLayerSettings.label.textGenerator = {slice in
-            return slice.data.model.title
+        lineTextLayerSettings.label.textGenerator = { slice in
+            return slice.data.model.obj as! String
         }
         
         lineTextLayer.settings = lineTextLayerSettings
