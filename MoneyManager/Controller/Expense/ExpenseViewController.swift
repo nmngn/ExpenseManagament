@@ -77,7 +77,7 @@ class ExpenseViewController: UIViewController, UIPageViewControllerDataSource, U
     }
     
     @objc func handleButton() {
-        let vc = StatisPagingViewController.init(nibName: "StatisPagingViewController", bundle: nil)
+        let vc = StatisticalViewController.init(nibName: "StatisticalViewController", bundle: nil)
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }

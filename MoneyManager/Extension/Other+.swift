@@ -9,45 +9,6 @@ import Foundation
 import UIKit
 import LocalAuthentication
 
-extension UIDevice {
-    var iPhoneX: Bool {
-        return UIScreen.main.nativeBounds.height == 2436
-    }
-    var iPhone: Bool {
-        return UIDevice.current.userInterfaceIdiom == .phone
-    }
-    enum ScreenType: String {
-        case iPhones_4_4S = "iPhone 4 or iPhone 4S"
-        case iPhones_5_5s_5c_SE = "iPhone 5, iPhone 5s, iPhone 5c or iPhone SE"
-        case iPhones_6_6s_7_8_SE2 = "iPhone 6, iPhone 6S, iPhone 7 or iPhone 8"
-        case iPhones_6Plus_6sPlus_7Plus_8Plus = "iPhone 6 Plus, iPhone 6S Plus, iPhone 7 Plus or iPhone 8 Plus"
-        case iPhones_X_XS_11_11Pro = "iPhone X or iPhone XS"
-        case iPhone_XR = "iPhone XR"
-        case iPhone_XSMax_11ProMax = "iPhone XS Max or iPhone 11 Pro Max"
-        case unknown
-    }
-    var screenType: ScreenType {
-        switch UIScreen.main.nativeBounds.height {
-        case 960:
-            return .iPhones_4_4S
-        case 1136:
-            return .iPhones_5_5s_5c_SE
-        case 1334:
-            return .iPhones_6_6s_7_8_SE2
-        case 1792:
-            return .iPhone_XR
-        case 1920, 2208:
-            return .iPhones_6Plus_6sPlus_7Plus_8Plus
-        case 2436:
-            return .iPhones_X_XS_11_11Pro
-        case 2688:
-            return .iPhone_XSMax_11ProMax
-        default:
-            return .unknown
-        }
-    }
-}
-
 extension UIColor {
     @nonobjc class var disabledGrey: UIColor {
         
@@ -112,6 +73,27 @@ extension UIColor {
         )
     }
     
+    func components() -> (CGFloat, CGFloat, CGFloat, CGFloat) {
+        guard let c = cgColor.components else { return (0, 0, 0, 1) }
+        if cgColor.numberOfComponents == 2 {
+            return (c[0], c[0], c[0], c[1])
+        } else {
+            return (c[0], c[1], c[2], c[3])
+        }
+    }
+
+    
+    static func interpolate(from: UIColor, to: UIColor, with fraction: CGFloat) -> UIColor {
+        let f = min(1, max(0, fraction))
+        let c1 = from.components()
+        let c2 = to.components()
+        let r = c1.0 + (c2.0 - c1.0) * f
+        let g = c1.1 + (c2.1 - c1.1) * f
+        let b = c1.2 + (c2.2 - c1.2) * f
+        let a = c1.3 + (c2.3 - c1.3) * f
+        return UIColor(red: r, green: g, blue: b, alpha: a)
+    }
+
 }
 
 extension NSObject {
@@ -179,4 +161,25 @@ func parseCategory(_ text: String) -> String {
         break
     }
     return ""
+}
+
+struct DateFormatters {
+    static var shortDateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .none
+        dateFormatter.dateStyle = .short
+        return dateFormatter
+    }()
+
+    static var dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d"
+        return dateFormatter
+    }()
+
+    static var weekdayFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEE"
+        return dateFormatter
+    }()
 }

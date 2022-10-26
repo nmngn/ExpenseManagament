@@ -19,7 +19,7 @@ class ListTransactionViewController: UIViewController {
     }
     let repo = Repositories(api: .share)
     let idUser = Session.shared.userProfile.idUser
-    let utilityThread = DispatchQueue.global(qos: .utility)
+    let mainThread = DispatchQueue.main
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class ListTransactionViewController: UIViewController {
         segmentControl.selectedSegmentIndex = 0
         segmentControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: UIControl.Event.valueChanged)
         configView()
-        utilityThread.async {
+        mainThread.async {
             self.getListData()
         }
         setupNavigationButton()
@@ -79,7 +79,7 @@ class ListTransactionViewController: UIViewController {
     }
     
     @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
-        utilityThread.async {
+        mainThread.async {
             self.getListData()
         }
     }
@@ -117,7 +117,7 @@ extension ListTransactionViewController: UITableViewDataSource, UITableViewDeleg
             self.listTransaction?.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .none)
             tableView.endUpdates()
-            utilityThread.async {
+            mainThread.async {
                 self.getListData()
             }
             Session.shared.isPopToRoot = true

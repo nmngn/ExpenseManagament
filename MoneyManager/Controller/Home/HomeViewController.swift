@@ -37,10 +37,10 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     let idUser = Session.shared.userProfile.idUser
     var userModel = ("","",0) {
         didSet {
-            self.setupData(expenseType: self.expenseType)
+            self.tableView.reloadData()
         }
     }
-    let utilityThread = DispatchQueue.global(qos: .utility)
+    let mainThread = DispatchQueue.main
     
     let presenter: Presentr = {
         let customPresenter = Presentr(presentationType: .fullScreen)
@@ -55,7 +55,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
-        utilityThread.async {
+        mainThread.async {
             self.getDataUser()
             self.getListTransaction()
         }

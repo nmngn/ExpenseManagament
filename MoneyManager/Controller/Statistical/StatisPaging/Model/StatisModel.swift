@@ -16,7 +16,8 @@ struct StatisPagingModel {
     var type: StatisPagingType
     
     var list = [Transaction]()
-    
+    var userData: User?
+     
     init(type: StatisPagingType) {
         self.type = type
     }

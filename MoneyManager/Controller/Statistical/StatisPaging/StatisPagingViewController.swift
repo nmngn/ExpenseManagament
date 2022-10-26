@@ -11,6 +11,7 @@ class StatisPagingViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var pageIndex = 0
     var listTransaction: [Transaction]? {
         didSet {
             self.setupData()
@@ -20,13 +21,14 @@ class StatisPagingViewController: UIViewController {
     var model = [StatisPagingModel]()
     let repo = Repositories(api: .share)
     let date = Date()
-    let utilityThread = DispatchQueue.global(qos: .utility)
+    let mainThread = DispatchQueue.main
+    var userData: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
         configView()
-        utilityThread.async {
+        mainThread.async {
             self.getData()
         }
     }
@@ -62,6 +64,20 @@ class StatisPagingViewController: UIViewController {
         }
     }
     
+    func getUserData() {
+        repo.getOneUser(idUser: idUser) { [weak self] value in
+            switch value {
+            case .success(let data):
+                if let data = data {
+                    self?.userData = data
+                }
+            case .failure(let err):
+                print(err as Any)
+                self?.view.makeToast("Lỗi")
+            }
+        }
+    }
+    
     func checkDate(date: String) -> Bool {
         let dataYear = date[0 ..< 4]
         let dataMonth = date[5 ..< 7]
@@ -75,6 +91,8 @@ class StatisPagingViewController: UIViewController {
     
     func setupData() {
         guard let data = listTransaction else { return }
+        guard let user = userData else {return}
+        
         self.model.removeAll()
         
         var barChart = StatisPagingModel(type: .barChart)
@@ -82,6 +100,7 @@ class StatisPagingViewController: UIViewController {
         
         var statis = StatisPagingModel(type: .info)
         statis.list = data
+        statis.userData =
         
         model.append(barChart)
         model.append(statis)

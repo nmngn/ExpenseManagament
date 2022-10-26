@@ -28,13 +28,13 @@ class ExpensePagingViewController: UIViewController {
     }
     var idUser = Session.shared.userProfile.idUser
     let repo = Repositories(api: .share)
-    let utilityThread = DispatchQueue.global(qos: .utility)
+    let mainThread = DispatchQueue.main
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Tổng hợp"
-        configView()
-        getDataUser()
+        self.configView()
+        self.getDataUser()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,17 +48,18 @@ class ExpensePagingViewController: UIViewController {
             filter = false
         }
         
-        repo.getAllTransaction(idUser: idUser) { value in
+        repo.getAllTransaction(idUser: idUser) { [weak self] value in
             switch value{
             case .success(let data):
                 if let data = data?.transactions {
-                    self.listTransaction = data.filter({$0.idUser == self.idUser && $0.type == filter})
+                    self?.listTransaction = data.filter({$0.idUser == self?.idUser && $0.type == filter})
                 }
             case .failure(let err):
                 print(err as Any)
-                self.view.makeToast("Lỗi")
+                self?.view.makeToast("Lỗi")
             }
-            self.tableView.es.stopPullToRefresh()
+            self?.tableView.es.stopPullToRefresh()
+            self?.tableView.reloadData()
         }
     }
     

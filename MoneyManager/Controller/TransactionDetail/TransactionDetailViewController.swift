@@ -24,7 +24,6 @@ class TransactionDetailViewController: UIViewController {
     var modelCategory = ["car", "device", "health", "house", "office", "food", "shopping", "other"]
     var category = ""
     let repo = Repositories(api: .share)
-    let utilityThread = DispatchQueue.global(qos: .utility)
     let idUser = Session.shared.userProfile.idUser
     var oldIndexPath = 0
     var idTransaction: String = "" {
