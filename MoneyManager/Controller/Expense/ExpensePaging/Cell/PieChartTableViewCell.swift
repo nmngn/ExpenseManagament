@@ -44,7 +44,7 @@ class PieChartTableViewCell: UITableViewCell {
         chartView.removeSlices()
         chartView.models = pieModel
         for (_, value) in data.enumerated() {
-            pieModel.append(PieSliceModel(value: Double(value.amount), color: colors.randomElement() ?? UIColor(), obj: value.title))
+            pieModel.append(PieSliceModel(value: Double(value.amount), color: .random(), obj: value.title))
         }
         chartView.models = pieModel
         if pieModel.isEmpty {

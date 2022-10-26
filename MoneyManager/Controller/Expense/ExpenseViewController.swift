@@ -8,19 +8,19 @@
 import UIKit
 import Parchment
 
-class ExpenseViewController: UIViewController, UIPageViewControllerDataSource {
+class ExpenseViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
     var pageViewController : UIPageViewController!
     var statusView = UIView()
     var statusText = UILabel()
     var statusLine = UILabel()
     
-    var pageTitles : [String] = ["Cố định", "Linh hoạt"]
-    var currentIndex : Int = 0
-    
+    var pageTitles: [String] = ["Cố định", "Linh hoạt"]
+    var currentIndex: Int = 0
+        
     override func loadView() {
         super.loadView()
-        statusView.frame = CGRect(x: 0, y: 91, width: view.frame.width, height: 44)
+        statusView.frame = CGRect(x: 0, y: 91, width: UIScreen.main.bounds.width, height: 44)
         statusView.backgroundColor = .white
         
         statusText.frame = CGRect(x: 16, y: 11,
@@ -44,20 +44,26 @@ class ExpenseViewController: UIViewController, UIPageViewControllerDataSource {
         
         pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         pageViewController.dataSource = self
+        pageViewController.delegate = self
         
         let startingViewController: ExpensePagingViewController = viewControllerAtIndex(index: currentIndex)!
         let viewControllers = [startingViewController]
         pageViewController.setViewControllers(viewControllers , direction: .forward, animated: false, completion: nil)
         pageViewController.view.frame = CGRect(x: 0, y: 135, width: view.frame.size.width, height: view.frame.size.height - 135);
-        
+
         addChild(pageViewController)
         view.addSubview(pageViewController.view)
         pageViewController.didMove(toParent: self)
-        
+                
         navigationController?.isNavigationBarHidden = false
         if self.navigationController?.viewControllers.count != 1 {
             setupNavigationButton()
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        changeTab()
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,7 +78,6 @@ class ExpenseViewController: UIViewController, UIPageViewControllerDataSource {
         }
         
         index -= 1
-        
         return viewControllerAtIndex(index: index)
     }
     
@@ -84,7 +89,6 @@ class ExpenseViewController: UIViewController, UIPageViewControllerDataSource {
         }
         
         index += 1
-        print("xxx" + "\(index)")
         if (index == self.pageTitles.count) {
             return nil
         }
@@ -106,6 +110,34 @@ class ExpenseViewController: UIViewController, UIPageViewControllerDataSource {
         return pageContentViewController
     }
     
+    func changeTab() {
+        if currentIndex == 0 {
+            UIView.animate(withDuration: 0.5) {
+                self.statusText.frame = CGRect(x: 16, y: 11,
+                                          width: (self.statusView.frame.width - 64) / 2, height: 20)
+                self.statusText.textAlignment = .center
+                self.statusText.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+                self.statusText.text = self.pageTitles[0]
+                
+                self.statusLine.frame = CGRect(x: 16, y: 43,
+                                          width: (self.statusView.frame.width - 64) / 2, height: 1)
+                self.statusLine.backgroundColor = UIColor(red: 0.21, green: 0.50, blue: 0.35, alpha: 1.00)
+            }
+        } else {
+            UIView.animate(withDuration: 0.5) {
+                self.statusText.frame = CGRect(x: (self.view.frame.width - 16 - ((self.statusView.frame.width - 64) / 2)), y: 11,
+                                          width: (self.statusView.frame.width - 64) / 2, height: 20)
+                self.statusText.textAlignment = .center
+                self.statusText.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+                self.statusText.text = self.pageTitles[1]
+                
+                self.statusLine.frame = CGRect(x: (self.view.frame.width - 16 - ((self.statusView.frame.width - 64) / 2)), y: 43,
+                                          width: (self.statusView.frame.width - 64) / 2, height: 1)
+                self.statusLine.backgroundColor = UIColor(red: 0.21, green: 0.50, blue: 0.35, alpha: 1.00)
+            }
+        }
+    }
+    
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
         return self.pageTitles.count
     }
@@ -114,5 +146,10 @@ class ExpenseViewController: UIViewController, UIPageViewControllerDataSource {
         return 0
     }
     
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        let pageContentViewController = pageViewController.viewControllers![0] as! ExpensePagingViewController
+        self.currentIndex = pageContentViewController.pageIndex
+        changeTab()
+    }
 }
 

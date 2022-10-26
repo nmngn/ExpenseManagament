@@ -102,6 +102,16 @@ extension UIColor {
 
         return nil
     }
+    
+    static func random() -> UIColor {
+        return UIColor(
+            red:   .random(),
+            green: .random(),
+            blue:  .random(),
+            alpha: 0.5
+        )
+    }
+    
 }
 
 extension NSObject {
@@ -126,4 +136,23 @@ extension Formatter {
 
 extension Numeric {
     var formattedWithSeparator: String { Formatter.withSeparator.string(for: self) ?? "" }
+}
+
+extension UIPageViewController {
+
+    public var scrollView: UIScrollView? {
+        for view in self.view.subviews {
+            if let scrollView = view as? UIScrollView {
+                return scrollView
+            }
+        }
+        return nil
+    }
+
+}
+
+extension CGFloat {
+    static func random() -> CGFloat {
+        return CGFloat(arc4random()) / CGFloat(UInt32.max)
+    }
 }
