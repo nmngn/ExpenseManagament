@@ -142,7 +142,7 @@ extension ExpensePagingViewController: UITableViewDelegate, UITableViewDataSourc
         case .pieChart:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "PieChartTableViewCell", for: indexPath) as? PieChartTableViewCell else { return UITableViewCell()}
             cell.selectionStyle = .none
-            cell.setupData(data: model.listData, usedMoney: model.usedMoney)
+            cell.setupData(data: mergeList(list: model.listData), usedMoney: model.usedMoney)
             return cell
         case .statis:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "StatisTableViewCell", for: indexPath) as? StatisTableViewCell else { return UITableViewCell()}

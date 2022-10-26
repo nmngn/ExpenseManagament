@@ -84,4 +84,22 @@ extension UIViewController {
         self.navigationController?.popViewController(animated: true)
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func mergeList(list: [Transaction]) -> [MergedDataModel] {
+        var mergedModel = [MergedDataModel]()
+        var newList = list
+        
+        var _ = newList.sorted { item1, item2 in
+            if item1.category == item2.category {
+                mergedModel.append(MergedDataModel(category: item1.category, amount: item1.amount + item2.amount))
+                newList.removeAll(where: {$0.id == item1.id})
+                newList.removeAll(where: {$0.id == item2.id})
+            }
+            return true
+        }
+        for item in newList {
+            mergedModel.append(MergedDataModel(category: item.category, amount: item.amount))
+        }
+        return mergedModel
+    }
 }

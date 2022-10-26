@@ -9,17 +9,17 @@ import UIKit
 import ObjectMapper
 import Alamofire
 
-struct User: Mappable {
+class User: Mappable {
     var name = ""
     var birth = ""
     var money = 0
     var idUser = ""
     
-    init?(map: Map) {
+    required init?(map: Map) {
         mapping(map: map)
     }
     
-    mutating func mapping(map: Map) {
+    func mapping(map: Map) {
         idUser <- map["id"]
         name <- map["name"]
         birth <- map["dayOfBirth"]
@@ -27,19 +27,19 @@ struct User: Mappable {
     }
 }
 
-struct SuperTransaction: Mappable {
+class SuperTransaction: Mappable {
     var transactions: [Transaction]?
     
-    init?(map: Map) {
+    required init?(map: Map) {
         mapping(map: map)
     }
     
-    mutating func mapping(map: Map) {
+    func mapping(map: Map) {
         transactions <- map["data"]
     }
 }
 
-struct Transaction : Mappable, DataTransaction {
+class Transaction : Mappable, DataTransaction {
     var id = ""
     var idUser = ""
     var title = ""
@@ -50,11 +50,11 @@ struct Transaction : Mappable, DataTransaction {
     var isIncome = false
     var type = false
     
-    init?(map: Map) {
+    required init?(map: Map) {
         mapping(map: map)
     }
     
-    mutating func mapping(map: Map) {
+    func mapping(map: Map) {
         id <- map["id"]
         idUser <- map["idUser"]
         title <- map["title"]
@@ -81,5 +81,14 @@ struct Transaction : Mappable, DataTransaction {
     func getAmount() -> Int {
         return amount
     }
+}
+
+class MergedDataModel {
+    var category : String
+    var amount : Int
     
+    init(category: String, amount: Int) {
+        self.category = category
+        self.amount = amount
+    }
 }

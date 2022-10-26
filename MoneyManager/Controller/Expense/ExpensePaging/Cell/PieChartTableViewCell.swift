@@ -11,15 +11,12 @@ import Charts
 class PieChartTableViewCell: UITableViewCell {
     
     @IBOutlet weak var chartView: PieChartView!
-        
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
     
-    func setupData(data: [Transaction], usedMoney: Int) {
+    func setupData(data: [MergedDataModel], usedMoney: Int) {
         var dataEntries: [ChartDataEntry] = []
+        
         for i in 0 ..< data.count {
-            let dataEntry = PieChartDataEntry(value: Double(data[i].amount) / Double(usedMoney) * 100, label: data[i].title, data: data[i].amount.formattedWithSeparator)
+            let dataEntry = PieChartDataEntry(value: Double(data[i].amount) / Double(usedMoney) * 100, label: parseCategory(data[i].category), data: data[i].amount.formattedWithSeparator)
             dataEntries.append(dataEntry)
         }
         

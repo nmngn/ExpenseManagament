@@ -156,3 +156,27 @@ extension CGFloat {
         return CGFloat(arc4random()) / CGFloat(UInt32.max)
     }
 }
+
+func parseCategory(_ text: String) -> String {
+    switch text {
+    case "car":
+        return "xe cộ"
+    case "device":
+        return "máy móc"
+    case "health":
+        return "sức khoẻ"
+    case "house":
+        return "nhà cửa"
+    case "office":
+        return "công việc"
+    case "food":
+        return "ăn uống"
+    case "shopping":
+        return "mua sắm"
+    case "other":
+        return "khác"
+    default:
+        break
+    }
+    return ""
+}
