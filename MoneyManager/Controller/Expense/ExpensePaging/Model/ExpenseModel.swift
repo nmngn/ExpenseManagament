@@ -9,6 +9,7 @@ import Foundation
 
 enum ExpenseScreenType {
     case pieChart
+    case statis
     case item
     case add
 }
@@ -16,6 +17,10 @@ enum ExpenseScreenType {
 struct ExpenseModel {
     var type: ExpenseScreenType
         
+    var listData = [Transaction]()
+    var usedMoney = 0
+    var allMoney = 0
+    
     var id = ""
     var title = ""
     var date = ""

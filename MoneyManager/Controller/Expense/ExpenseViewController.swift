@@ -59,6 +59,12 @@ class ExpenseViewController: UIViewController, UIPageViewControllerDataSource, U
         if self.navigationController?.viewControllers.count != 1 {
             setupNavigationButton()
         }
+        rightBarItem()
+    }
+    
+    private func rightBarItem() {
+        let actionButton = UIBarButtonItem(image: UIImage(named: "ic_statis")?.toHierachicalImage(), style: .plain, target: self, action: #selector(handleButton))
+        self.navigationItem.rightBarButtonItem  = actionButton
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,6 +74,10 @@ class ExpenseViewController: UIViewController, UIPageViewControllerDataSource, U
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @objc func handleButton() {
+        
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {

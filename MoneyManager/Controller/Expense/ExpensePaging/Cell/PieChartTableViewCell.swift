@@ -6,83 +6,44 @@
 //
 
 import UIKit
-import PieCharts
+import Charts
 
 class PieChartTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var chartView: PieChart!
-    @IBOutlet weak var blankView: UIView!
     
-    fileprivate static let alpha: CGFloat = 0.5
-    let colors = [
-        UIColor.yellow.withAlphaComponent(alpha),
-        UIColor.green.withAlphaComponent(alpha),
-        UIColor.purple.withAlphaComponent(alpha),
-        UIColor.cyan.withAlphaComponent(alpha),
-        UIColor.darkGray.withAlphaComponent(alpha),
-        UIColor.red.withAlphaComponent(alpha),
-        UIColor.magenta.withAlphaComponent(alpha),
-        UIColor.orange.withAlphaComponent(alpha),
-        UIColor.brown.withAlphaComponent(alpha),
-        UIColor.lightGray.withAlphaComponent(alpha),
-        UIColor.gray.withAlphaComponent(alpha),
-    ]
-    var pieModel: [PieSliceModel] = []
-
+    @IBOutlet weak var chartView: PieChartView!
+        
     override func awakeFromNib() {
         super.awakeFromNib()
-        blankView.isHidden = true
-        chartView.bounds = CGRect(x: 0,
-                                  y: 0,
-                                  width: chartView.frame.width,
-                                  height: chartView.frame.height)
-        chartView.layers = [createPlainTextLayer(), createTextWithLinesLayer()]
     }
     
     func setupData(data: [Transaction], usedMoney: Int) {
-        pieModel.removeAll()
-        chartView.removeSlices()
-        chartView.models = pieModel
-        for (_, value) in data.enumerated() {
-            pieModel.append(PieSliceModel(value: Double(value.amount), color: .random(), obj: value.title))
+        var dataEntries: [ChartDataEntry] = []
+        for i in 0 ..< data.count {
+            let dataEntry = PieChartDataEntry(value: Double(data[i].amount) / Double(usedMoney) * 100, label: data[i].title, data: data[i].amount.formattedWithSeparator)
+            dataEntries.append(dataEntry)
         }
-        chartView.models = pieModel
-        if pieModel.isEmpty {
-            blankView.isHidden = false
-        }
-    }
+        
+        let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: "")
+        pieChartDataSet.colors = colorsOfCharts(numbersOfColor: data.count)
 
-    
-    fileprivate func createPlainTextLayer() -> PiePlainTextLayer {
-        
-        let textLayerSettings = PiePlainTextLayerSettings()
-        textLayerSettings.viewRadius = 55
-        textLayerSettings.hideOnOverflow = true
-        textLayerSettings.label.font = UIFont.systemFont(ofSize: 12)
-        
-        let formatter = NumberFormatter()
-        formatter.maximumFractionDigits = 1
-        textLayerSettings.label.textGenerator = { slice in
-            return formatter.string(from: slice.data.percentage * 100 as NSNumber).map{"\($0)%"} ?? ""
-        }
-        
-        let textLayer = PiePlainTextLayer()
-        textLayer.settings = textLayerSettings
-        return textLayer
+        let pieChartData = PieChartData(dataSet: pieChartDataSet)
+        let format = NumberFormatter()
+        format.numberStyle = .none
+        let formatter = DefaultValueFormatter(formatter: format)
+        pieChartData.setValueFormatter(formatter)
+
+        chartView.data = pieChartData
     }
     
-    fileprivate func createTextWithLinesLayer() -> PieLineTextLayer {
-        let lineTextLayer = PieLineTextLayer()
-        var lineTextLayerSettings = PieLineTextLayerSettings()
-        lineTextLayerSettings.lineColor = UIColor.lightGray
-        let formatter = NumberFormatter()
-        formatter.maximumFractionDigits = 1
-        lineTextLayerSettings.label.font = UIFont.systemFont(ofSize: 14)
-        lineTextLayerSettings.label.textGenerator = { slice in
-            return slice.data.model.obj as! String
+    private func colorsOfCharts(numbersOfColor: Int) -> [UIColor] {
+        var colors: [UIColor] = []
+        for _ in 0..<numbersOfColor {
+            let red = Double(arc4random_uniform(256))
+            let green = Double(arc4random_uniform(256))
+            let blue = Double(arc4random_uniform(256))
+            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 0.5)
+            colors.append(color)
         }
-        
-        lineTextLayer.settings = lineTextLayerSettings
-        return lineTextLayer
+        return colors
     }
 }

@@ -20,6 +20,7 @@ class TransactionDetailViewController: UIViewController {
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
     @IBOutlet weak var bottomTextViewHeight: NSLayoutConstraint!
     
+    var typeExpense = 0
     var modelCategory = ["car", "device", "health", "house", "office", "food", "shopping", "other"]
     var category = ""
     let repo = Repositories(api: .share)
@@ -45,7 +46,7 @@ class TransactionDetailViewController: UIViewController {
     }
     
     func configView() {
-        segmentType.selectedSegmentIndex = 0
+        segmentType.selectedSegmentIndex = typeExpense
         segmentType.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: UIControl.Event.valueChanged)
         
         titleTextField.do {

@@ -86,6 +86,12 @@
 		D844349929038D2200019696 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D844349729038D2200019696 /* CategoryCollectionViewCell.xib */; };
 		D844349D2903D3E300019696 /* ListTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844349B2903D3E300019696 /* ListTransactionViewController.swift */; };
 		D844349E2903D3E300019696 /* ListTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D844349C2903D3E300019696 /* ListTransactionViewController.xib */; };
+		D85952152908DD11004BCFE3 /* StatisticalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85952132908DD11004BCFE3 /* StatisticalViewController.swift */; };
+		D85952162908DD11004BCFE3 /* StatisticalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85952142908DD11004BCFE3 /* StatisticalViewController.xib */; };
+		D859521A2908DD27004BCFE3 /* StatisPagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85952182908DD27004BCFE3 /* StatisPagingViewController.swift */; };
+		D859521B2908DD27004BCFE3 /* StatisPagingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85952192908DD27004BCFE3 /* StatisPagingViewController.xib */; };
+		D859521E2908E849004BCFE3 /* StatisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859521C2908E848004BCFE3 /* StatisTableViewCell.swift */; };
+		D859521F2908E849004BCFE3 /* StatisTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D859521D2908E848004BCFE3 /* StatisTableViewCell.xib */; };
 		D8C8CBF92906AB5700328B09 /* ExpensePagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C8CBF72906AB5700328B09 /* ExpensePagingViewController.swift */; };
 		D8C8CBFA2906AB5700328B09 /* ExpensePagingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C8CBF82906AB5700328B09 /* ExpensePagingViewController.xib */; };
 /* End PBXBuildFile section */
@@ -243,6 +249,12 @@
 		D859520C2907C974004BCFE3 /* PieSliceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSliceModel.swift; sourceTree = "<group>"; };
 		D859520D2907C974004BCFE3 /* PieSliceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSliceData.swift; sourceTree = "<group>"; };
 		D859520E2907C974004BCFE3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D85952132908DD11004BCFE3 /* StatisticalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticalViewController.swift; sourceTree = "<group>"; };
+		D85952142908DD11004BCFE3 /* StatisticalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticalViewController.xib; sourceTree = "<group>"; };
+		D85952182908DD27004BCFE3 /* StatisPagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisPagingViewController.swift; sourceTree = "<group>"; };
+		D85952192908DD27004BCFE3 /* StatisPagingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisPagingViewController.xib; sourceTree = "<group>"; };
+		D859521C2908E848004BCFE3 /* StatisTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisTableViewCell.swift; sourceTree = "<group>"; };
+		D859521D2908E848004BCFE3 /* StatisTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisTableViewCell.xib; sourceTree = "<group>"; };
 		D8C8CBF72906AB5700328B09 /* ExpensePagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensePagingViewController.swift; sourceTree = "<group>"; };
 		D8C8CBF82906AB5700328B09 /* ExpensePagingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpensePagingViewController.xib; sourceTree = "<group>"; };
 		DF5573617153B0CB0404C1C8 /* Pods_MoneyManagerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyManagerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -280,12 +292,14 @@
 		3694087E2906D11000A55FD5 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				3694087F2906D19200A55FD5 /* PieChartTableViewCell.swift */,
-				369408802906D19200A55FD5 /* PieChartTableViewCell.xib */,
-				369408832906DAE700A55FD5 /* ItemTableViewCell.swift */,
-				369408842906DAE700A55FD5 /* ItemTableViewCell.xib */,
 				369408872906DB2800A55FD5 /* AddTransactionTableViewCell.swift */,
 				369408882906DB2800A55FD5 /* AddTransactionTableViewCell.xib */,
+				369408832906DAE700A55FD5 /* ItemTableViewCell.swift */,
+				369408842906DAE700A55FD5 /* ItemTableViewCell.xib */,
+				3694087F2906D19200A55FD5 /* PieChartTableViewCell.swift */,
+				369408802906D19200A55FD5 /* PieChartTableViewCell.xib */,
+				D859521C2908E848004BCFE3 /* StatisTableViewCell.swift */,
+				D859521D2908E848004BCFE3 /* StatisTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -323,15 +337,15 @@
 		36BF6B072901A06300343E68 /* MoneyManager */ = {
 			isa = PBXGroup;
 			children = (
-				36BF6B482901A18700343E68 /* Source */,
-				36BF6B682901A19A00343E68 /* Model */,
 				36BF6BF12901A19B00343E68 /* AppDelegate */,
 				36BF6B6D2901A19B00343E68 /* Controller */,
 				36BF6B602901A19900343E68 /* Extension */,
+				36BF6B162901A06600343E68 /* Info.plist */,
 				36BF6BF42901A19C00343E68 /* LaunchScreen.storyboard */,
 				36BF6B762901A19B00343E68 /* Main.storyboard */,
+				36BF6B682901A19A00343E68 /* Model */,
+				36BF6B482901A18700343E68 /* Source */,
 				36BF6BF52901A19F00343E68 /* Utils */,
-				36BF6B162901A06600343E68 /* Info.plist */,
 			);
 			path = MoneyManager;
 			sourceTree = "<group>";
@@ -411,13 +425,13 @@
 		36BF6B602901A19900343E68 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				36BF6B612901A19900343E68 /* Other+.swift */,
-				36BF6B622901A19A00343E68 /* UIView+.swift */,
-				36BF6B632901A19A00343E68 /* String+.swift */,
-				36BF6B642901A19A00343E68 /* UIViewController+.swift */,
-				36BF6B652901A19A00343E68 /* UITextField+.swift */,
 				36BF6B662901A19A00343E68 /* Date+.swift */,
+				36BF6B612901A19900343E68 /* Other+.swift */,
+				36BF6B632901A19A00343E68 /* String+.swift */,
 				36BF6B672901A19A00343E68 /* UITableView+.swift */,
+				36BF6B652901A19A00343E68 /* UITextField+.swift */,
+				36BF6B622901A19A00343E68 /* UIView+.swift */,
+				36BF6B642901A19A00343E68 /* UIViewController+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -435,12 +449,13 @@
 			isa = PBXGroup;
 			children = (
 				36C6A4A92905364900A79B3C /* Account */,
-				D844349A2903D31400019696 /* ListTransaction */,
-				36BF6C9B2901C15300343E68 /* Register */,
-				36BF6C962901BF9700343E68 /* TransactionDetail */,
 				36BF6C8D2901BD2A00343E68 /* Expense */,
 				36BF6B6E2901A19B00343E68 /* Home */,
+				D844349A2903D31400019696 /* ListTransaction */,
+				36BF6C9B2901C15300343E68 /* Register */,
+				D85952112908DA94004BCFE3 /* Statistical */,
 				36BF6B9F2901A19B00343E68 /* Tabbar */,
+				36BF6C962901BF9700343E68 /* TransactionDetail */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -459,18 +474,18 @@
 		36BF6B782901A19B00343E68 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				D8355FAA2902ACA600EDB910 /* WelcomeTableViewCell.swift */,
-				D8355FAB2902ACA600EDB910 /* WelcomeTableViewCell.xib */,
 				D8355FAE2902AE6D00EDB910 /* BadgeTableViewCell.swift */,
 				D8355FAF2902AE6D00EDB910 /* BadgeTableViewCell.xib */,
+				D8355FBE2902BAE900EDB910 /* BannerTableViewCell.swift */,
+				D8355FBF2902BAE900EDB910 /* BannerTableViewCell.xib */,
 				D8355FB22902B22E00EDB910 /* OptionTableViewCell.swift */,
 				D8355FB32902B22E00EDB910 /* OptionTableViewCell.xib */,
 				D8355FB62902B5F600EDB910 /* RecentTableViewCell.swift */,
 				D8355FB72902B5F600EDB910 /* RecentTableViewCell.xib */,
 				D8355FBA2902B9A400EDB910 /* TransactionTableViewCell.swift */,
 				D8355FBB2902B9A400EDB910 /* TransactionTableViewCell.xib */,
-				D8355FBE2902BAE900EDB910 /* BannerTableViewCell.swift */,
-				D8355FBF2902BAE900EDB910 /* BannerTableViewCell.xib */,
+				D8355FAA2902ACA600EDB910 /* WelcomeTableViewCell.swift */,
+				D8355FAB2902ACA600EDB910 /* WelcomeTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -504,9 +519,9 @@
 		36BF6BF52901A19F00343E68 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				36BF6BF62901A19F00343E68 /* Constant.swift */,
 				36BF6BF72901A19F00343E68 /* Assets.xcassets */,
 				36BF6BF92901A19F00343E68 /* Color.xcassets */,
+				36BF6BF62901A19F00343E68 /* Constant.swift */,
 				36BF6BFB2901A19F00343E68 /* Roboto */,
 			);
 			path = Utils;
@@ -905,6 +920,25 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		D85952112908DA94004BCFE3 /* Statistical */ = {
+			isa = PBXGroup;
+			children = (
+				D85952172908DD15004BCFE3 /* StatisPaging */,
+				D85952132908DD11004BCFE3 /* StatisticalViewController.swift */,
+				D85952142908DD11004BCFE3 /* StatisticalViewController.xib */,
+			);
+			path = Statistical;
+			sourceTree = "<group>";
+		};
+		D85952172908DD15004BCFE3 /* StatisPaging */ = {
+			isa = PBXGroup;
+			children = (
+				D85952182908DD27004BCFE3 /* StatisPagingViewController.swift */,
+				D85952192908DD27004BCFE3 /* StatisPagingViewController.xib */,
+			);
+			path = StatisPaging;
+			sourceTree = "<group>";
+		};
 		D8C8CBF62906AB3200328B09 /* ExpensePaging */ = {
 			isa = PBXGroup;
 			children = (
@@ -1043,6 +1077,7 @@
 				3694088A2906DB2800A55FD5 /* AddTransactionTableViewCell.xib in Resources */,
 				369408862906DAE700A55FD5 /* ItemTableViewCell.xib in Resources */,
 				36BF6C8B2901A1A000343E68 /* Roboto-Black.ttf in Resources */,
+				D85952162908DD11004BCFE3 /* StatisticalViewController.xib in Resources */,
 				D8355FC12902BAE900EDB910 /* BannerTableViewCell.xib in Resources */,
 				36BF6C952901BE6F00343E68 /* ExpenseViewController.xib in Resources */,
 				36C6A4AD2905365B00A79B3C /* AccountViewController.xib in Resources */,
@@ -1059,11 +1094,13 @@
 				36BF6C1A2901A1A000343E68 /* Main.storyboard in Resources */,
 				36BF6C7D2901A1A000343E68 /* Color.xcassets in Resources */,
 				36BF6C9A2901BFAC00343E68 /* TransactionDetailViewController.xib in Resources */,
+				D859521B2908DD27004BCFE3 /* StatisPagingViewController.xib in Resources */,
 				36BF6C792901A1A000343E68 /* LaunchScreen.storyboard in Resources */,
 				36BF6C872901A1A000343E68 /* LICENSE.txt in Resources */,
 				D8355FB52902B22E00EDB910 /* OptionTableViewCell.xib in Resources */,
 				D8355FB92902B5F600EDB910 /* RecentTableViewCell.xib in Resources */,
 				36BF6C862901A1A000343E68 /* Roboto-Italic.ttf in Resources */,
+				D859521F2908E849004BCFE3 /* StatisTableViewCell.xib in Resources */,
 				D8355FAD2902ACA600EDB910 /* WelcomeTableViewCell.xib in Resources */,
 				D844349E2903D3E300019696 /* ListTransactionViewController.xib in Resources */,
 				36BF6C882901A1A000343E68 /* Roboto-BlackItalic.ttf in Resources */,
@@ -1199,6 +1236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D85952152908DD11004BCFE3 /* StatisticalViewController.swift in Sources */,
 				36C6A4AC2905365B00A79B3C /* AccountViewController.swift in Sources */,
 				36BF6B572901A18700343E68 /* Repository.swift in Sources */,
 				D8355FBC2902B9A400EDB910 /* TransactionTableViewCell.swift in Sources */,
@@ -1212,6 +1250,7 @@
 				D8C8CBF92906AB5700328B09 /* ExpensePagingViewController.swift in Sources */,
 				369408852906DAE700A55FD5 /* ItemTableViewCell.swift in Sources */,
 				36BF6B5B2901A18700343E68 /* UserRequest.swift in Sources */,
+				D859521A2908DD27004BCFE3 /* StatisPagingViewController.swift in Sources */,
 				36BF6C782901A1A000343E68 /* SceneDelegate.swift in Sources */,
 				36BF6C192901A1A000343E68 /* HomeViewController.swift in Sources */,
 				36BF6C392901A1A000343E68 /* MainTabbarViewController.swift in Sources */,
@@ -1227,6 +1266,7 @@
 				D8355FC02902BAE900EDB910 /* BannerTableViewCell.swift in Sources */,
 				36BF6C0F2901A19F00343E68 /* UITableView+.swift in Sources */,
 				369408892906DB2800A55FD5 /* AddTransactionTableViewCell.swift in Sources */,
+				D859521E2908E849004BCFE3 /* StatisTableViewCell.swift in Sources */,
 				36BF6C102901A19F00343E68 /* Model.swift in Sources */,
 				36BF6C0D2901A19F00343E68 /* UITextField+.swift in Sources */,
 				36BF6C0C2901A19F00343E68 /* UIViewController+.swift in Sources */,

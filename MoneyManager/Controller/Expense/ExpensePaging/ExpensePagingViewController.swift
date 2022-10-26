@@ -21,6 +21,11 @@ class ExpensePagingViewController: UIViewController {
             setupData()
         }
     }
+    var userData: User? {
+        didSet {
+            self.tableView.reloadRows(at: [IndexPath(row: 1, section: 0)], with: .none)
+        }
+    }
     var idUser = Session.shared.userProfile.idUser
     let repo = Repositories(api: .share)
     let utilityThread = DispatchQueue.global(qos: .utility)
@@ -29,6 +34,7 @@ class ExpensePagingViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Tổng hợp"
         configView()
+        getDataUser()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,6 +61,21 @@ class ExpensePagingViewController: UIViewController {
         }
     }
     
+    func getDataUser() {
+        utilityThread.async {
+            self.repo.getOneUser(idUser: self.idUser) { value in
+                switch value {
+                case .success(let data):
+                    if let data = data {
+                        self.userData = data
+                    }
+                case .failure(let err):
+                    print(err as Any)
+                }
+            }
+        }
+    }
+    
     func configView() {
         tableView.do {
             $0.delegate = self
@@ -65,6 +86,7 @@ class ExpensePagingViewController: UIViewController {
             $0.registerNibCellFor(type: PieChartTableViewCell.self)
             $0.registerNibCellFor(type: ItemTableViewCell.self)
             $0.registerNibCellFor(type: AddTransactionTableViewCell.self)
+            $0.registerNibCellFor(type: StatisTableViewCell.self)
             $0.es.addPullToRefresh {
                 self.getData()
             }
@@ -75,8 +97,15 @@ class ExpensePagingViewController: UIViewController {
         guard let list = self.listTransaction else {return }
         expenseModel.removeAll()
         
-        let chart = ExpenseModel(type: .pieChart)
+        var chart = ExpenseModel(type: .pieChart)
+        chart.listData = list
+        chart.usedMoney = calculate(list: list)
         expenseModel.append(chart)
+        
+        var statis = ExpenseModel(type: .statis)
+        statis.allMoney = userData?.money ?? 0
+        statis.usedMoney = calculate(list: list)
+        expenseModel.append(statis)
         
         var item = ExpenseModel(type: .item)
         for data in list {
@@ -113,9 +142,12 @@ extension ExpensePagingViewController: UITableViewDelegate, UITableViewDataSourc
         case .pieChart:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "PieChartTableViewCell", for: indexPath) as? PieChartTableViewCell else { return UITableViewCell()}
             cell.selectionStyle = .none
-            if let data = self.listTransaction {
-                cell.setupData(data: data, usedMoney: calculate(list: data))
-            }
+            cell.setupData(data: model.listData, usedMoney: model.usedMoney)
+            return cell
+        case .statis:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "StatisTableViewCell", for: indexPath) as? StatisTableViewCell else { return UITableViewCell()}
+            cell.selectionStyle = .none
+            cell.setupData(usedMoney: model.usedMoney, allMoney: model.allMoney)
             return cell
         case .item:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ItemTableViewCell", for: indexPath) as? ItemTableViewCell else { return UITableViewCell()}
@@ -142,6 +174,7 @@ extension ExpensePagingViewController: UITableViewDelegate, UITableViewDataSourc
         case .add:
             let vc = TransactionDetailViewController.init(nibName: "TransactionDetailViewController", bundle: nil)
             vc.hidesBottomBarWhenPushed = true
+            vc.typeExpense = pageIndex
             self.navigationController?.pushViewController(vc, animated: true)
         default:
             break
