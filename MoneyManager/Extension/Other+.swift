@@ -160,21 +160,21 @@ extension CGFloat {
 func parseCategory(_ text: String) -> String {
     switch text {
     case "car":
-        return "xe cộ"
+        return "Xe cộ"
     case "device":
-        return "máy móc"
+        return "Máy móc"
     case "health":
-        return "sức khoẻ"
+        return "Sức khoẻ"
     case "house":
-        return "nhà cửa"
+        return "Nhà cửa"
     case "office":
-        return "công việc"
+        return "Công việc"
     case "food":
-        return "ăn uống"
+        return "Ăn uống"
     case "shopping":
-        return "mua sắm"
+        return "Mua sắm"
     case "other":
-        return "khác"
+        return "Khác"
     default:
         break
     }

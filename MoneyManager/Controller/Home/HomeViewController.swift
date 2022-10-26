@@ -169,6 +169,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
                 }
             case .failure(let err):
                 print(err as Any)
+                self?.view.makeToast("Lỗi")
             }
             self?.tableView.es.stopPullToRefresh()
         }

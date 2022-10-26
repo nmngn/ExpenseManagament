@@ -15,7 +15,6 @@ target 'MoneyManager' do
   pod "ESTabBarController-swift"
   pod 'Toast-Swift', '~> 5.0.1'
   pod 'Parchment', '~> 3.2'
-  pod 'PieCharts'
   pod 'Charts'
   
   target 'MoneyManagerTests' do

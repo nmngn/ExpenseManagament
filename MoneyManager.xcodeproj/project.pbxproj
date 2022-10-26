@@ -92,6 +92,11 @@
 		D859521B2908DD27004BCFE3 /* StatisPagingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85952192908DD27004BCFE3 /* StatisPagingViewController.xib */; };
 		D859521E2908E849004BCFE3 /* StatisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859521C2908E848004BCFE3 /* StatisTableViewCell.swift */; };
 		D859521F2908E849004BCFE3 /* StatisTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D859521D2908E848004BCFE3 /* StatisTableViewCell.xib */; };
+		D859522329091254004BCFE3 /* BarChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859522129091254004BCFE3 /* BarChartTableViewCell.swift */; };
+		D859522429091254004BCFE3 /* BarChartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D859522229091254004BCFE3 /* BarChartTableViewCell.xib */; };
+		D859522729091269004BCFE3 /* StatisMonthlyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859522529091269004BCFE3 /* StatisMonthlyTableViewCell.swift */; };
+		D859522829091269004BCFE3 /* StatisMonthlyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D859522629091269004BCFE3 /* StatisMonthlyTableViewCell.xib */; };
+		D859522B2909163E004BCFE3 /* StatisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859522A2909163E004BCFE3 /* StatisModel.swift */; };
 		D8C8CBF92906AB5700328B09 /* ExpensePagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C8CBF72906AB5700328B09 /* ExpensePagingViewController.swift */; };
 		D8C8CBFA2906AB5700328B09 /* ExpensePagingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C8CBF82906AB5700328B09 /* ExpensePagingViewController.xib */; };
 /* End PBXBuildFile section */
@@ -255,6 +260,11 @@
 		D85952192908DD27004BCFE3 /* StatisPagingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisPagingViewController.xib; sourceTree = "<group>"; };
 		D859521C2908E848004BCFE3 /* StatisTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisTableViewCell.swift; sourceTree = "<group>"; };
 		D859521D2908E848004BCFE3 /* StatisTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisTableViewCell.xib; sourceTree = "<group>"; };
+		D859522129091254004BCFE3 /* BarChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartTableViewCell.swift; sourceTree = "<group>"; };
+		D859522229091254004BCFE3 /* BarChartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarChartTableViewCell.xib; sourceTree = "<group>"; };
+		D859522529091269004BCFE3 /* StatisMonthlyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisMonthlyTableViewCell.swift; sourceTree = "<group>"; };
+		D859522629091269004BCFE3 /* StatisMonthlyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisMonthlyTableViewCell.xib; sourceTree = "<group>"; };
+		D859522A2909163E004BCFE3 /* StatisModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisModel.swift; sourceTree = "<group>"; };
 		D8C8CBF72906AB5700328B09 /* ExpensePagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensePagingViewController.swift; sourceTree = "<group>"; };
 		D8C8CBF82906AB5700328B09 /* ExpensePagingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpensePagingViewController.xib; sourceTree = "<group>"; };
 		DF5573617153B0CB0404C1C8 /* Pods_MoneyManagerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyManagerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -341,11 +351,11 @@
 				36BF6B6D2901A19B00343E68 /* Controller */,
 				36BF6B602901A19900343E68 /* Extension */,
 				36BF6B162901A06600343E68 /* Info.plist */,
-				36BF6BF42901A19C00343E68 /* LaunchScreen.storyboard */,
-				36BF6B762901A19B00343E68 /* Main.storyboard */,
 				36BF6B682901A19A00343E68 /* Model */,
 				36BF6B482901A18700343E68 /* Source */,
 				36BF6BF52901A19F00343E68 /* Utils */,
+				36BF6BF42901A19C00343E68 /* LaunchScreen.storyboard */,
+				36BF6B762901A19B00343E68 /* Main.storyboard */,
 			);
 			path = MoneyManager;
 			sourceTree = "<group>";
@@ -933,10 +943,31 @@
 		D85952172908DD15004BCFE3 /* StatisPaging */ = {
 			isa = PBXGroup;
 			children = (
+				D859522929091631004BCFE3 /* Model */,
+				D859522029091236004BCFE3 /* Cell */,
 				D85952182908DD27004BCFE3 /* StatisPagingViewController.swift */,
 				D85952192908DD27004BCFE3 /* StatisPagingViewController.xib */,
 			);
 			path = StatisPaging;
+			sourceTree = "<group>";
+		};
+		D859522029091236004BCFE3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D859522129091254004BCFE3 /* BarChartTableViewCell.swift */,
+				D859522229091254004BCFE3 /* BarChartTableViewCell.xib */,
+				D859522529091269004BCFE3 /* StatisMonthlyTableViewCell.swift */,
+				D859522629091269004BCFE3 /* StatisMonthlyTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		D859522929091631004BCFE3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D859522A2909163E004BCFE3 /* StatisModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D8C8CBF62906AB3200328B09 /* ExpensePaging */ = {
@@ -1092,6 +1123,7 @@
 				D8355FBD2902B9A400EDB910 /* TransactionTableViewCell.xib in Resources */,
 				36BF6C8A2901A1A000343E68 /* Roboto-Thin.ttf in Resources */,
 				36BF6C1A2901A1A000343E68 /* Main.storyboard in Resources */,
+				D859522829091269004BCFE3 /* StatisMonthlyTableViewCell.xib in Resources */,
 				36BF6C7D2901A1A000343E68 /* Color.xcassets in Resources */,
 				36BF6C9A2901BFAC00343E68 /* TransactionDetailViewController.xib in Resources */,
 				D859521B2908DD27004BCFE3 /* StatisPagingViewController.xib in Resources */,
@@ -1109,6 +1141,7 @@
 				D844349929038D2200019696 /* CategoryCollectionViewCell.xib in Resources */,
 				36BF6C852901A1A000343E68 /* Roboto-LightItalic.ttf in Resources */,
 				36BF6C892901A1A000343E68 /* Roboto-Bold.ttf in Resources */,
+				D859522429091254004BCFE3 /* BarChartTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1239,6 +1272,7 @@
 				D85952152908DD11004BCFE3 /* StatisticalViewController.swift in Sources */,
 				36C6A4AC2905365B00A79B3C /* AccountViewController.swift in Sources */,
 				36BF6B572901A18700343E68 /* Repository.swift in Sources */,
+				D859522729091269004BCFE3 /* StatisMonthlyTableViewCell.swift in Sources */,
 				D8355FBC2902B9A400EDB910 /* TransactionTableViewCell.swift in Sources */,
 				D8355FB42902B22E00EDB910 /* OptionTableViewCell.swift in Sources */,
 				D844349D2903D3E300019696 /* ListTransactionViewController.swift in Sources */,
@@ -1252,6 +1286,7 @@
 				36BF6B5B2901A18700343E68 /* UserRequest.swift in Sources */,
 				D859521A2908DD27004BCFE3 /* StatisPagingViewController.swift in Sources */,
 				36BF6C782901A1A000343E68 /* SceneDelegate.swift in Sources */,
+				D859522329091254004BCFE3 /* BarChartTableViewCell.swift in Sources */,
 				36BF6C192901A1A000343E68 /* HomeViewController.swift in Sources */,
 				36BF6C392901A1A000343E68 /* MainTabbarViewController.swift in Sources */,
 				36BF6C7A2901A1A000343E68 /* Constant.swift in Sources */,
@@ -1277,6 +1312,7 @@
 				3694088D2906DB4400A55FD5 /* ExpenseModel.swift in Sources */,
 				D8355FB02902AE6D00EDB910 /* BadgeTableViewCell.swift in Sources */,
 				36BF6C942901BE6F00343E68 /* ExpenseViewController.swift in Sources */,
+				D859522B2909163E004BCFE3 /* StatisModel.swift in Sources */,
 				36BF6C0B2901A19F00343E68 /* String+.swift in Sources */,
 				36BF6B5E2901A18700343E68 /* BaseError.swift in Sources */,
 			);

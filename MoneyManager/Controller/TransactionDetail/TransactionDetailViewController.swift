@@ -144,6 +144,7 @@ class TransactionDetailViewController: UIViewController {
                 }
             case .failure(let err):
                 print(err as Any)
+                self.view.makeToast("Lỗi")
             }
         }
         
