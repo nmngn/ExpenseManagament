@@ -46,7 +46,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.000.000 VND" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFH-9k-ZKW">
-                                <rect key="frame" x="144" y="53" width="195" height="21"/>
+                                <rect key="frame" x="140" y="53" width="199" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
@@ -82,7 +82,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="sFH-9k-ZKW" firstAttribute="leading" secondItem="Qtb-rA-Uvy" secondAttribute="trailing" constant="12" id="2J6-uv-oF9"/>
+                            <constraint firstItem="sFH-9k-ZKW" firstAttribute="leading" secondItem="Qtb-rA-Uvy" secondAttribute="trailing" constant="8" id="2J6-uv-oF9"/>
                             <constraint firstItem="RGG-O5-Mdr" firstAttribute="centerY" secondItem="85A-O5-Dco" secondAttribute="centerY" id="7u6-pa-6Pf"/>
                             <constraint firstAttribute="bottom" secondItem="9Zf-2d-IHt" secondAttribute="bottom" id="Bfa-1w-oSB"/>
                             <constraint firstItem="BUC-th-sW6" firstAttribute="top" secondItem="0nA-kp-p3k" secondAttribute="top" constant="20" id="CyO-a8-AoZ"/>

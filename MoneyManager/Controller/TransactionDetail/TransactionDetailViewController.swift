@@ -122,29 +122,29 @@ class TransactionDetailViewController: UIViewController {
     }
     
     func getDataTransaction(transactionId: String) {
-        self.repo.getOneTransaction(transactionId: transactionId) { value in
+        self.repo.getOneTransaction(transactionId: transactionId) { [weak self] value in
             switch value {
             case .success(let data):
                 if let data = data {
-                    self.titleTextField.text = data.title
-                    self.amountTextField.text = "\(data.amount)"
-                    self.descriptionTextView.text = data.description
-                    self.category = data.category
+                    self?.titleTextField.text = data.title
+                    self?.amountTextField.text = "\(data.amount)"
+                    self?.descriptionTextView.text = data.description
+                    self?.category = data.category
                     if data.type {
-                        self.segmentType.selectedSegmentIndex = 0
+                        self?.segmentType.selectedSegmentIndex = 0
                     } else {
-                        self.segmentType.selectedSegmentIndex = 1
+                        self?.segmentType.selectedSegmentIndex = 1
                     }
-                    if !self.descriptionTextView.text.isEmpty {
-                        self.placeholderLabel.text = ""
+                    if !(self?.descriptionTextView.text.isEmpty ?? false) {
+                        self?.placeholderLabel.text = ""
                     } else {
-                        self.placeholderLabel.text = "Nhập ghi chú"
+                        self?.placeholderLabel.text = "Nhập ghi chú"
                     }
-                    self.collectionView.reloadData()
+                    self?.collectionView.reloadData()
                 }
             case .failure(let err):
                 print(err as Any)
-                self.view.makeToast("Lỗi")
+                self?.view.makeToast("Lỗi")
             }
         }
         
@@ -159,20 +159,20 @@ class TransactionDetailViewController: UIViewController {
                                         category: self.category,
                                         dateTime: self.getCurrentDate(),
                                         isIncome: false,
-                                        type: self.segmentType.selectedSegmentIndex == 0 ? true : false) { value in
+                                        type: self.segmentType.selectedSegmentIndex == 0 ? true : false) { [weak self] value in
                 switch value {
                 case .success(let data):
                     if let data = data {
                         print(data)
-                        self.view.makeToast("Lưu thành công")
+                        self?.view.makeToast("Lưu thành công")
                         Session.shared.isPopToRoot = true
-                        self.navigationController?.popViewController(animated: true)
-                        self.dismiss(animated: true, completion: nil)
+                        self?.navigationController?.popViewController(animated: true)
+                        self?.dismiss(animated: true, completion: nil)
                     }
                 case .failure(let err):
                     if let err = err {
                         print(err)
-                        self.view.makeToast("Lỗi")
+                        self?.view.makeToast("Lỗi")
                     }
                 }
             }
@@ -183,20 +183,20 @@ class TransactionDetailViewController: UIViewController {
                                         amount: Int(self.amountTextField.text!) ?? 0,
                                         category: self.category,
                                         isIncome: false,
-                                        type: self.segmentType.selectedSegmentIndex == 0 ? true : false) { value in
+                                        type: self.segmentType.selectedSegmentIndex == 0 ? true : false) { [weak self] value in
                 switch value {
                 case .success(let data):
                     if let data = data {
                         print(data)
-                        self.view.makeToast("Lưu thành công")
+                        self?.view.makeToast("Lưu thành công")
                         Session.shared.isPopToRoot = true
-                        self.navigationController?.popViewController(animated: true)
-                        self.dismiss(animated: true, completion: nil)
+                        self?.navigationController?.popViewController(animated: true)
+                        self?.dismiss(animated: true, completion: nil)
                     }
                 case .failure(let err):
                     if let err = err {
                         print(err)
-                        self.view.makeToast("Lỗi")
+                        self?.view.makeToast("Lỗi")
                     }
                 }
             }

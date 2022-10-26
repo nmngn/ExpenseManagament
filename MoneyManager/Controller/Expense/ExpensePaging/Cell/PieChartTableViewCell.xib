@@ -27,12 +27,37 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VS9-Om-6W7">
+                                <rect key="frame" x="0.0" y="0.0" width="395" height="300"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Không có dữ liệu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fke-XP-lhb">
+                                        <rect key="frame" x="137" y="140.5" width="121.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="fke-XP-lhb" firstAttribute="centerY" secondItem="VS9-Om-6W7" secondAttribute="centerY" id="Jg9-dI-Zwh"/>
+                                    <constraint firstItem="fke-XP-lhb" firstAttribute="centerX" secondItem="VS9-Om-6W7" secondAttribute="centerX" id="aDW-8U-Fod"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="300" id="73v-zI-uNN"/>
                             <constraint firstAttribute="trailing" secondItem="ukY-ob-2yy" secondAttribute="trailing" constant="8" id="HTz-7E-TSZ"/>
+                            <constraint firstAttribute="bottom" secondItem="VS9-Om-6W7" secondAttribute="bottom" id="IwF-E6-eq6"/>
+                            <constraint firstItem="VS9-Om-6W7" firstAttribute="top" secondItem="p8Y-JL-Ppd" secondAttribute="top" id="LAs-ru-VsS"/>
                             <constraint firstItem="ukY-ob-2yy" firstAttribute="top" secondItem="p8Y-JL-Ppd" secondAttribute="top" constant="8" id="StF-ve-0IU"/>
+                            <constraint firstAttribute="trailing" secondItem="VS9-Om-6W7" secondAttribute="trailing" id="Wjc-8W-yOR"/>
+                            <constraint firstItem="VS9-Om-6W7" firstAttribute="leading" secondItem="p8Y-JL-Ppd" secondAttribute="leading" id="viG-xU-Prd"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -67,6 +92,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="blankView" destination="VS9-Om-6W7" id="Vb4-Ct-Ezp"/>
                 <outlet property="chartView" destination="p8Y-JL-Ppd" id="z8r-jF-2h4"/>
             </connections>
             <point key="canvasLocation" x="215.21739130434784" y="172.43303571428569"/>

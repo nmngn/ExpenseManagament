@@ -156,6 +156,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             case .failure(let error):
                 self?.openAlert(error?.errorMessage ?? "")
             }
+            self?.tableView.reloadData()
             self?.tableView.es.stopPullToRefresh()
         }
     }
@@ -171,6 +172,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
                 print(err as Any)
                 self?.view.makeToast("Lỗi")
             }
+            self?.tableView.reloadData()
             self?.tableView.es.stopPullToRefresh()
         }
     }

@@ -63,18 +63,18 @@ class ExpensePagingViewController: UIViewController {
     }
     
     func getDataUser() {
-        utilityThread.async {
-            self.repo.getOneUser(idUser: self.idUser) { value in
-                switch value {
-                case .success(let data):
-                    if let data = data {
-                        self.userData = data
-                    }
-                case .failure(let err):
-                    print(err as Any)
-                    self.view.makeToast("Lỗi")
+        self.repo.getOneUser(idUser: self.idUser) { [weak self] value in
+            switch value {
+            case .success(let data):
+                if let data = data {
+                    self?.userData = data
                 }
+            case .failure(let err):
+                print(err as Any)
+                self?.view.makeToast("Lỗi")
             }
+            self?.tableView.reloadData()
+            self?.tableView.es.stopPullToRefresh()
         }
     }
     
@@ -97,6 +97,7 @@ class ExpensePagingViewController: UIViewController {
     
     func setupData() {
         guard let list = self.listTransaction else {return }
+        guard let data = self.userData else { return }
         expenseModel.removeAll()
         
         var chart = ExpenseModel(type: .pieChart)
@@ -105,7 +106,7 @@ class ExpensePagingViewController: UIViewController {
         expenseModel.append(chart)
         
         var statis = ExpenseModel(type: .statis)
-        statis.allMoney = userData?.money ?? 0
+        statis.allMoney = data.money
         statis.usedMoney = calculate(list: list)
         expenseModel.append(statis)
         

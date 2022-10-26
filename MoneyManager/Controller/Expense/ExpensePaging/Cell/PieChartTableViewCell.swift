@@ -11,9 +11,22 @@ import Charts
 class PieChartTableViewCell: UITableViewCell {
     
     @IBOutlet weak var chartView: PieChartView!
+    @IBOutlet weak var blankView: UIView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        blankView.isHidden = false
+    }
     
     func setupData(data: [MergedDataModel], usedMoney: Int) {
         var dataEntries: [ChartDataEntry] = []
+        
+        if !data.isEmpty {
+            blankView.isHidden = true
+        } else {
+            blankView.isHidden = false
+        }
+
         
         for i in 0 ..< data.count {
             let dataEntry = PieChartDataEntry(value: Double(data[i].amount) / Double(usedMoney) * 100, label: parseCategory(data[i].category), data: data[i].amount.formattedWithSeparator)

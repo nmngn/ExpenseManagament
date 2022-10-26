@@ -44,17 +44,17 @@ class AccountViewController: UIViewController {
     }
     
     func getDataUser() {
-        repo.getOneUser(idUser: idUser) { value in
+        repo.getOneUser(idUser: idUser) { [weak self] value in
             switch value {
             case .success(let data):
                 if let data = data {
-                    self.nameTextField.text = data.name
-                    self.birthTextField.text = data.birth
-                    self.moneyTextField.text = "\(data.money.formattedWithSeparator)"
+                    self?.nameTextField.text = data.name
+                    self?.birthTextField.text = data.birth
+                    self?.moneyTextField.text = "\(data.money.formattedWithSeparator)"
                 }
             case .failure(let err):
                 print(err as Any)
-                self.view.makeToast("Lỗi")
+                self?.view.makeToast("Lỗi")
             }
         }
     }
@@ -69,19 +69,19 @@ class AccountViewController: UIViewController {
         repo.updateUser(idUser: idUser,
                         name: nameTextField.text!,
                         birth: birthTextField.text!,
-                        allMoney: Int(money) ?? 0) { value in
+                        allMoney: Int(money) ?? 0) { [weak self] value in
             switch value {
             case .success(let data):
                 if let data = data {
                     print(data)
-                    self.view.makeToast("Cập nhật thành công")
+                    self?.view.makeToast("Cập nhật thành công")
                     Session.shared.isPopToRoot = true
-                    self.dismiss(animated: true, completion: nil)
-                    self.dismissed?()
+                    self?.dismiss(animated: true, completion: nil)
+                    self?.dismissed?()
                 }
             case .failure(let err):
                 print(err as Any)
-                self.view.makeToast("Lỗi")
+                self?.view.makeToast("Lỗi")
             }
         }
     }
