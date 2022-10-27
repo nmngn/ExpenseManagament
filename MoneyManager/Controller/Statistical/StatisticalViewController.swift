@@ -107,7 +107,7 @@ class StatisticalViewController: UIViewController {
             switch value {
             case .success(let data):
                 if let data = data?.transactions {
-                    let result = data.filter({$0.idUser == self?.idUser})
+                    let result = data
                     if let date = date {
                         let newResult = result.filter({$0.dateTime.contains(String(date))})
                         self?.listTransaction = newResult

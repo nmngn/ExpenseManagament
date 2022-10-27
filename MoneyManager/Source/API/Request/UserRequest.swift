@@ -18,7 +18,7 @@ class UserRequest: BaseRequest {
         super.init(url: url, requestType: .post, body: body)
     }
     
-    required init(idUser: String) {
+    required init(idUser: String) { // getOneUser
         let url = URLs.userUrl + idUser
         super.init(url: url, requestType: .get)
     }

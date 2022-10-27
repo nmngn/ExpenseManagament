@@ -127,7 +127,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             switch value {
             case .success(let data):
                 if let data = data {
-                    if let list = data.transactions?.filter({$0.idUser == self?.idUser}) {
+                    if let list = data.transactions {
                         self?.listTransaction = list
                     }
                 }

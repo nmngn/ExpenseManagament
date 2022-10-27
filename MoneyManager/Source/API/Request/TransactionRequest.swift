@@ -48,7 +48,7 @@ class TransactionRequest: BaseRequest {
     }
     
     required init(idUser: String) { //getAll
-        let url = URLs.getAllTransaction
+        let url = URLs.getAllTransaction + idUser
         super.init(url: url, requestType: .get)
     }
     

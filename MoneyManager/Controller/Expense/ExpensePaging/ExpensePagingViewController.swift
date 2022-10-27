@@ -64,7 +64,7 @@ class ExpensePagingViewController: UIViewController {
             switch value{
             case .success(let data):
                 if let data = data?.transactions {
-                    self?.listTransaction = data.filter({$0.idUser == self?.idUser && $0.type == filter})
+                    self?.listTransaction = data.filter({$0.type == filter})
                 }
             case .failure(let err):
                 print(err as Any)

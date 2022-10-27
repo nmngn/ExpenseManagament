@@ -53,7 +53,7 @@ class ListTransactionViewController: UIViewController {
             switch value {
             case .success(let data):
                 if let list = data?.transactions {
-                    self?.listTransaction = list.filter({$0.idUser == self?.idUser && $0.type == (self?.segmentControl.selectedSegmentIndex == 0 ? true : false)})
+                    self?.listTransaction = list.filter({$0.type == (self?.segmentControl.selectedSegmentIndex == 0 ? true : false)})
                 }
             case .failure(let err):
                 if let err = err {
