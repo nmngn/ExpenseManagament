@@ -43,13 +43,13 @@ class StatisMonthlyTableViewCell: UITableViewCell {
 
         let newListStable = mergeList(list: stableArray).sorted(by: {$0.amount > $1.amount})
         if !newListStable.isEmpty {
-            stableMaxLabel.text = parseCategory(newListStable[0].category)
+            stableMaxLabel.text = "\(parseCategory(newListStable[0].category)) (\(newListStable[0].amount.formattedWithSeparator))"
         } else {
             stableMaxLabel.text = "Không có dữ liệu"
         }
         let newListFlexible = mergeList(list: flexibleArray).sorted(by: {$0.amount > $1.amount})
         if !newListFlexible.isEmpty {
-            flexibleMaxLabel.text = parseCategory(newListFlexible[0].category)
+            flexibleMaxLabel.text = "\(parseCategory(newListFlexible[0].category)) (\(newListFlexible[0].amount.formattedWithSeparator))"
         } else {
             flexibleMaxLabel.text = "Không có dữ liệu"
         }
