@@ -34,6 +34,11 @@ class ListTransactionViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.es.startPullToRefresh()
+    }
+    
     func configView() {
         tableView.do {
             $0.delegate = self
@@ -61,7 +66,6 @@ class ListTransactionViewController: UIViewController {
                     self?.view.makeToast("Lỗi")
                 }
             }
-            self?.tableView.reloadData()
             self?.tableView.es.stopPullToRefresh()
         }
     }

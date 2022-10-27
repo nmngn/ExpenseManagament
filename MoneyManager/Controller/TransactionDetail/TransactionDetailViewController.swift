@@ -42,8 +42,42 @@ class TransactionDetailViewController: UIViewController {
         if self.navigationController?.viewControllers.count != 1 {
             setupNavigationButton()
         }
+        if !idTransaction.isEmpty {
+            self.rightBarItem()
+        }
+
         buttonAction.isEnabled = false
         self.buttonAction.setTitle("Lưu", for: .normal)
+    }
+    
+    private func rightBarItem() {
+        let actionButton = UIBarButtonItem(image: UIImage(systemName: "trash")?.toHierachicalImage(), style: .plain, target: self, action: #selector(handleButton))
+        self.navigationItem.rightBarButtonItem  = actionButton
+    }
+    
+    @objc func handleButton() {
+        let alert = UIAlertController(title: "Thông báo", message: "Bạn có muốn xóa chi tiêu này ?", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Đồng ý", style: .default) { _ in
+            self.deleteTransaction()
+        }
+        let cancel = UIAlertAction(title: "Hủy bỏ", style: .cancel, handler: nil)
+        alert.addAction(action)
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func deleteTransaction() {
+        repo.deleteTransaction(transactionId: idTransaction) { response in
+            switch response {
+            case .success(let value):
+                print(value as Any)
+                self.view.makeToast("Xoá thành công")
+                Session.shared.isPopToRoot = true
+                self.navigationController?.popViewController(animated: true)
+            case .failure(let error):
+                print(error as Any)
+            }
+        }
     }
     
     func configView() {

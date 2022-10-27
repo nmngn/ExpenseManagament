@@ -7,9 +7,7 @@ target 'MoneyManager' do
 
   # Pods for MoneyManager
   pod 'Then'
-  pod 'PopupDialog'
   pod 'IQKeyboardManagerSwift'
-  pod 'Presentr'
   pod 'AlamofireObjectMapper', '~> 5.2'
   pod "ESPullToRefresh"
   pod "ESTabBarController-swift"
