@@ -13,9 +13,7 @@ class StatisTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        moneyLabel.adjustsFontSizeToFitWidth = true
-        moneyLabel.minimumScaleFactor = 0.2
-        moneyLabel.numberOfLines = 0
+        moneyLabel.autoResize()
     }
     
     func setupData(usedMoney: Int, allMoney: Int) {

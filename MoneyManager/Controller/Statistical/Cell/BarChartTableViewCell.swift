@@ -13,8 +13,6 @@ class BarChartTableViewCell: UITableViewCell, ChartViewDelegate {
     @IBOutlet weak var barChart: BarChartView!
     
     let category = ["Xe cộ", "Máy móc", "Sức khoẻ", "Nhà cửa", "Công việc", "Ăm uống", "Mua sắm", "Khác"]
-    var flexible = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-    var stable = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -51,6 +49,9 @@ class BarChartTableViewCell: UITableViewCell, ChartViewDelegate {
     }
     
     func setupData(list: [Transaction]) {
+        var flexible = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        var stable = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        
         let flexibleList = list.filter({$0.type == false})
         for item in flexibleList {
             switch item.category {
@@ -99,20 +100,20 @@ class BarChartTableViewCell: UITableViewCell, ChartViewDelegate {
             }
         }
         
-        setChart()
+        setChart(stable: stable, flexible: flexible)
     }
     
-    func setChart() {
+    func setChart(stable: [Double], flexible: [Double]) {
         barChart.noDataText = "Không có dữ liệu"
         var dataEntries: [BarChartDataEntry] = []
         var dataEntries1: [BarChartDataEntry] = []
         
         for i in 0 ..< self.category.count {
             
-            let dataEntry = BarChartDataEntry(x: Double(i) , y: self.self.stable[i])
+            let dataEntry = BarChartDataEntry(x: Double(i) , y: stable[i])
             dataEntries.append(dataEntry)
             
-            let dataEntry1 = BarChartDataEntry(x: Double(i) , y: self.flexible[i])
+            let dataEntry1 = BarChartDataEntry(x: Double(i) , y: flexible[i])
             dataEntries1.append(dataEntry1)
         }
         

@@ -40,7 +40,7 @@ class ExpenseViewController: UIViewController, UIPageViewControllerDataSource, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Tổng hợp"
+        self.title = "Tổng hợp tháng"
         
         pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         pageViewController.dataSource = self

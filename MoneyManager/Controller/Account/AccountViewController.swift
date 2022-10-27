@@ -65,7 +65,7 @@ class AccountViewController: UIViewController {
     }
     
     @IBAction func saveAction(_ sender: UIButton) {
-        let money = (moneyTextField.text?.replacingOccurrences(of: " ", with: ""))!
+        let money = (moneyTextField.text?.replacingOccurrences(of: ".", with: ""))!
         repo.updateUser(idUser: idUser,
                         name: nameTextField.text!,
                         birth: birthTextField.text!,

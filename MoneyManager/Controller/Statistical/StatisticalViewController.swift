@@ -12,7 +12,6 @@ class StatisticalViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var pullDownButton: UIButton!
     
-    var pageIndex = 0
     var listTransaction: [Transaction]? {
         didSet {
             self.setupData()
@@ -21,7 +20,6 @@ class StatisticalViewController: UIViewController {
     let idUser = Session.shared.userProfile.idUser
     var model = [StatisPagingModel]()
     let repo = Repositories(api: .share)
-    let date = Date()
     let dispatchGroup = DispatchGroup()
     var userData: User? {
         didSet {
@@ -35,7 +33,7 @@ class StatisticalViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
         setupNavigationButton()
         configView()
-        callApiRequest()
+        callApiRequest(isFirst: true)
     }
     
     func configView() {
@@ -70,8 +68,9 @@ class StatisticalViewController: UIViewController {
         let menuClosure = {(action: UIAction) in
             self.loadDataOfMonth(value: action.title)
         }
+        let newListDate = listDate.sorted(by: {$0 > $1})
         
-        for value in listDate {
+        for value in newListDate {
             listChildren.append(UIAction(title: value, handler: menuClosure))
         }
 
@@ -89,12 +88,12 @@ class StatisticalViewController: UIViewController {
         self.view.makeToast(value)
     }
     
-    func callApiRequest(date: String? = nil) {
+    func callApiRequest(date: String? = nil, isFirst: Bool = false) {
         dispatchGroup.enter()
         self.getUserData()
         dispatchGroup.leave()
         dispatchGroup.enter()
-        self.getData(date: date)
+        self.getData(date: date, isFirst: isFirst)
         dispatchGroup.leave()
         
         dispatchGroup.notify(queue: .main) { [weak self] in
@@ -102,7 +101,7 @@ class StatisticalViewController: UIViewController {
         }
     }
     
-    func getData(date: String? = nil) {
+    func getData(date: String? = nil, isFirst: Bool) {
         repo.getAllTransaction(idUser: self.idUser) { [weak self] value in
             switch value {
             case .success(let data):
@@ -112,9 +111,13 @@ class StatisticalViewController: UIViewController {
                         let newResult = result.filter({$0.dateTime.contains(String(date))})
                         self?.listTransaction = newResult
                     } else {
-                        self?.listTransaction = result
+                        let currentDate = self?.getCurrentDate().prefix(7)
+                        let newResult = result.filter({$0.dateTime.contains(String(currentDate ?? ""))})
+                        self?.listTransaction = newResult
                     }
-                    self?.setupButton(list: result)
+                    if isFirst {
+                        self?.setupButton(list: result)
+                    }
                 }
             case .failure(let err):
                 print(err as Any)

@@ -64,7 +64,9 @@ class ExpensePagingViewController: UIViewController {
             switch value{
             case .success(let data):
                 if let data = data?.transactions {
-                    self?.listTransaction = data.filter({$0.type == filter})
+                    let currentDate = self?.getCurrentDate().prefix(7)
+                    let newData = data.filter({$0.type == filter && $0.dateTime.contains(currentDate ?? "")})
+                    self?.listTransaction = newData.sorted(by: {$0.dateTime > $1.dateTime})
                 }
             case .failure(let err):
                 print(err as Any)

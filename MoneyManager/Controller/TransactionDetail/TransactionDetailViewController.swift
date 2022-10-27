@@ -39,7 +39,9 @@ class TransactionDetailViewController: UIViewController {
         self.title = "Chi tiêu"
         configView()
         self.navigationController?.isNavigationBarHidden = false
-        setupNavigationButton()
+        if self.navigationController?.viewControllers.count != 1 {
+            setupNavigationButton()
+        }
         buttonAction.isEnabled = false
         self.buttonAction.setTitle("Lưu", for: .normal)
     }
@@ -111,7 +113,8 @@ class TransactionDetailViewController: UIViewController {
     func checkButtonState() {
         if let title = titleTextField.text, let amount = amountTextField.text {
             if !title.isEmpty && !amount.isEmpty && !category.isEmpty {
-                if (Int(amount) != nil) {
+                let money = amount.replacingOccurrences(of: ".", with: "")
+                if (Int(money) != nil) {
                     buttonAction.isEnabled = true
                 } else {
                     buttonAction.isEnabled = false
@@ -126,7 +129,7 @@ class TransactionDetailViewController: UIViewController {
             case .success(let data):
                 if let data = data {
                     self?.titleTextField.text = data.title
-                    self?.amountTextField.text = "\(data.amount)"
+                    self?.amountTextField.text = "\(data.amount.formattedWithSeparator)"
                     self?.descriptionTextView.text = data.description
                     self?.category = data.category
                     if data.type {
@@ -150,11 +153,12 @@ class TransactionDetailViewController: UIViewController {
     }
     
     @IBAction func add(_ sender: UIButton) {
+        let money = self.amountTextField.text?.replacingOccurrences(of: ".", with: "") ?? ""
         if idTransaction.isEmpty {
             self.repo.createTransaction(idUser: self.idUser,
                                         title: self.titleTextField.text!,
                                         description: self.descriptionTextView.text ?? "",
-                                        amount: Int(self.amountTextField.text!) ?? 0,
+                                        amount: Int(money) ?? 0,
                                         category: self.category,
                                         dateTime: self.getCurrentDate(),
                                         isIncome: false,
@@ -179,7 +183,7 @@ class TransactionDetailViewController: UIViewController {
             self.repo.updateTransaction(transactionId: idTransaction,
                                         title: self.titleTextField.text!,
                                         description: self.descriptionTextView.text ?? "",
-                                        amount: Int(self.amountTextField.text!) ?? 0,
+                                        amount: Int(money) ?? 0,
                                         category: self.category,
                                         isIncome: false,
                                         type: self.segmentType.selectedSegmentIndex == 0 ? true : false) { [weak self] value in

@@ -18,7 +18,8 @@ class StatisMonthlyTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        stableMaxLabel.autoResize()
+        flexibleMaxLabel.autoResize()
     }
     
     func setupData(data: [Transaction], user: User) {

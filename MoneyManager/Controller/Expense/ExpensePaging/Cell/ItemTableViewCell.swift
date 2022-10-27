@@ -10,7 +10,6 @@ import UIKit
 class ItemTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imageCategory: UIImageView!
-    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var moneyLabel: UILabel!

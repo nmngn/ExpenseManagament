@@ -89,7 +89,7 @@ extension Formatter {
     static let withSeparator: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
-        formatter.groupingSeparator = " "
+        formatter.groupingSeparator = "."
         return formatter
     }()
 }
@@ -126,4 +126,12 @@ func parseCategory(_ text: String) -> String {
         break
     }
     return ""
+}
+
+extension UILabel {
+    func autoResize() {
+        self.adjustsFontSizeToFitWidth = true
+        self.minimumScaleFactor = 0.2
+        self.numberOfLines = 1
+    }
 }

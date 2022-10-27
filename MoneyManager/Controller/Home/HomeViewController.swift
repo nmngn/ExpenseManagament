@@ -47,9 +47,13 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         configView()
         callApiRequest()
         userNotificationCenter.delegate = self
+        
         navigationController?.isNavigationBarHidden = true
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        
         self.requestNotificationAuthorization()
-//        sendNotification()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,9 +63,16 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             self.tableView.es.startPullToRefresh()
             Session.shared.isPopToRoot = false
         }
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let listTransaction = listTransaction {
+            let usedMoney = calculate(list: listTransaction)
+            if (Double(usedMoney) / Double(userModel.2)) >= 0.9 {
+                sendNotification()
+            }
+        }
     }
 
     func requestNotificationAuthorization() {
@@ -104,7 +115,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             }
         }
     }
-    
+                
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.banner, .badge, .sound])
     }
@@ -128,7 +139,8 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             case .success(let data):
                 if let data = data {
                     if let list = data.transactions {
-                        self?.listTransaction = list
+                        let curentDate = self?.getCurrentDate().prefix(7)
+                        self?.listTransaction = list.filter({$0.dateTime.contains(curentDate ?? "")})
                     }
                 }
             case .failure(let error):
@@ -195,7 +207,8 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         model.append(showRecent)
         
         var transaction = HomeModel(type: .transaction)
-        for item in listTransaction.filter({$0.type == expenseType}).suffix(3).reversed() {
+        let newList = listTransaction.filter({$0.type == expenseType}).suffix(3)
+        for item in newList.sorted(by: {$0.dateTime > $1.dateTime}) {
             transaction.transactionId = item.id
             transaction.category = item.category
             transaction.titleExpense = item.title
