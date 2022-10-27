@@ -26,8 +26,14 @@
                     <rect key="frame" x="0.0" y="74" width="414" height="788"/>
                     <color key="backgroundColor" name="NewBG"/>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chọn thời gian: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zK-R9-jvj">
+                    <rect key="frame" x="16" y="44" width="112" height="30"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpZ-dj-XVz">
-                    <rect key="frame" x="16" y="44" width="30" height="30"/>
+                    <rect key="frame" x="136" y="44" width="30" height="30"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                     <menu key="menu" id="jKY-Op-cHR">
                         <children>
@@ -40,11 +46,14 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="NpZ-dj-XVz" firstAttribute="leading" secondItem="3zK-R9-jvj" secondAttribute="trailing" constant="8" id="29M-Nd-nNM"/>
+                <constraint firstItem="3zK-R9-jvj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="50y-L8-sgW"/>
+                <constraint firstItem="3zK-R9-jvj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="MAg-5c-Nuc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NpZ-dj-XVz" secondAttribute="trailing" constant="16" id="N6s-8i-EdW"/>
                 <constraint firstItem="Ics-Ab-SPf" firstAttribute="top" secondItem="NpZ-dj-XVz" secondAttribute="bottom" id="Nka-PQ-0SK"/>
-                <constraint firstItem="NpZ-dj-XVz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="XrA-8G-1oc"/>
                 <constraint firstItem="NpZ-dj-XVz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="a1Y-C2-CoT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Ics-Ab-SPf" secondAttribute="bottom" id="jcv-cB-tu1"/>
+                <constraint firstItem="Ics-Ab-SPf" firstAttribute="top" secondItem="3zK-R9-jvj" secondAttribute="bottom" id="meo-Cy-SZE"/>
                 <constraint firstItem="Ics-Ab-SPf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="phH-ET-Y8e"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ics-Ab-SPf" secondAttribute="trailing" id="zpK-Z2-tdc"/>
             </constraints>

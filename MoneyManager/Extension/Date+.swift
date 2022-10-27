@@ -16,25 +16,15 @@ extension Date {
         self = Date(timeIntervalSince1970: TimeInterval(milliseconds) / 1000)
     }
     
-    var month: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM"
-        return dateFormatter.string(from: self)
+    func startOfMonth() -> Date? {
+        let comp: DateComponents = Calendar.current.dateComponents([.year, .month, .hour], from: Calendar.current.startOfDay(for: self))
+        return Calendar.current.date(from: comp)!
     }
     
-    var year: Int {
-        return Calendar.current.component(.year, from: Date())
-    }
-    
-    func getDaysInMonth() -> Int {
-        let calendar = Calendar.current
-
-        let dateComponents = DateComponents(year: calendar.component(.year, from: self), month: calendar.component(.month, from: self))
-        let date = calendar.date(from: dateComponents)!
-
-        let range = calendar.range(of: .day, in: .month, for: date)!
-        let numDays = range.count
-
-        return numDays
+    func endOfMonth() -> Date? {
+        var comp: DateComponents = Calendar.current.dateComponents([.month, .day, .hour], from: Calendar.current.startOfDay(for: self))
+        comp.month = 1
+        comp.day = -1
+        return Calendar.current.date(byAdding: comp, to: self.startOfMonth()!)
     }
 }

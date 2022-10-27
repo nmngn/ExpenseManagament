@@ -42,16 +42,6 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     }
     let dispatchGroup = DispatchGroup()
     
-    let presenter: Presentr = {
-        let customPresenter = Presentr(presentationType: .fullScreen)
-        customPresenter.transitionType = .coverHorizontalFromRight
-        customPresenter.dismissTransitionType = .coverHorizontalFromRight
-        customPresenter.dismissOnSwipe = true
-        customPresenter.dismissAnimated = true
-        customPresenter.dismissOnSwipeDirection = .default
-        return customPresenter
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
@@ -59,6 +49,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         userNotificationCenter.delegate = self
         navigationController?.isNavigationBarHidden = true
         self.requestNotificationAuthorization()
+        sendNotification()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -83,54 +74,35 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         }
     }
     
-//    func sendNotification(noti: [NotificationModel]) {
-//        let application = UIApplication.shared
-//        let notificationContent = UNMutableNotificationContent()
-//        if noti.count == 1 {
-//            notificationContent.title = "Thông báo về: \(noti.first?.name ?? "")"
-//            guard let date = noti.first?.dateCalculate else { return }
-//            if date.contains("40W") {
-//                notificationContent.body =
-//                "Chú ý: \(noti.first?.name ?? "") đã đủ 40 tuần. Hãy chú ý !"
-//            } else {
-//                notificationContent.body =
-//                "Chú ý: \(noti.first?.name ?? "") đã bước vào tháng cuối( \(noti.first?.dateCalculate ?? ""))\nCần chú ý !"
-//            }
-//        } else {
-//            notificationContent.title = "Thông báo về \(self.notiModel.count) sản phụ tháng cuối"
-//            notificationContent.body =
-//            "Chú ý: \(self.notiModel.count) sản phụ đã bước vào tháng cuối \nCần chú ý !"
-//        }
-//        application.applicationIconBadgeNumber = noti.count
-//
-//        if let url = Bundle.main.url(forResource: "dune",
-//                                     withExtension: "png") {
-//            if let attachment = try? UNNotificationAttachment(identifier: "dune",
-//                                                              url: url,
-//                                                              options: nil) {
-//                notificationContent.attachments = [attachment]
-//            }
-//        }
-//
-//        var date = DateComponents()
-//        date.hour = 7
-//        date.minute = 30
-//        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
-//        //        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-//        let request = UNNotificationRequest(identifier: "Notification",
-//                                            content: notificationContent,
-//                                            trigger: trigger)
-//
-//        if !noti.isEmpty {
-//            userNotificationCenter.add(request) { (error) in
-//                if let error = error {
-//                    print("Notification Error: ", error)
-//                }
-//            }
-//        }
-//    }
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+    func sendNotification() {
+        let application = UIApplication.shared
+        let notificationContent = UNMutableNotificationContent()
+        
+        notificationContent.title = "Thông báo số tiền chi tiêu trong tháng"
+        notificationContent.body =
+        "Chú ý: Số tiền chi tiêu của bạn trong tháng đã đạt hơn 90%. Hãy cân nhắc !"
+        
+        application.applicationIconBadgeNumber = 1
+
+        if let url = Bundle.main.url(forResource: "dune",
+                                     withExtension: "png") {
+            if let attachment = try? UNNotificationAttachment(identifier: "dune",
+                                                              url: url,
+                                                              options: nil) {
+                notificationContent.attachments = [attachment]
+            }
+        }
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let request = UNNotificationRequest(identifier: "Notification",
+                                            content: notificationContent,
+                                            trigger: trigger)
+        
+        userNotificationCenter.add(request) { (error) in
+            if let error = error {
+                print("Notification Error: ", error)
+            }
+        }
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {

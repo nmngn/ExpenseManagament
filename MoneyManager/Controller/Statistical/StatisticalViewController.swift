@@ -36,7 +36,6 @@ class StatisticalViewController: UIViewController {
         setupNavigationButton()
         configView()
         callApiRequest()
-        setupButton()
     }
     
     func configView() {
@@ -53,17 +52,30 @@ class StatisticalViewController: UIViewController {
         }
     }
     
-    func setupButton() {
-        let menuClosure = {(action: UIAction) in
-            
-            self.update(number: action.title)
+    func filterData(list: [Transaction]) -> [String] {
+        var arrayDateData: [String] = []
+        for item in list {
+            let date = item.dateTime.prefix(7)
+            if !arrayDateData.contains(where: {$0 == String(date)}) {
+                arrayDateData.append(String(date))
+            }
         }
-        pullDownButton.menu = UIMenu(children: [
-            UIAction(title: "option 1", state: .on, handler:
-                        menuClosure),
-            UIAction(title: "option 2", handler: menuClosure),
-            UIAction(title: "option 3", handler: menuClosure),
-        ])
+        return arrayDateData
+    }
+    
+    func setupButton(list: [Transaction]) {
+        let listDate = filterData(list: list)
+        var listChildren: [UIAction] = []
+        
+        let menuClosure = {(action: UIAction) in
+            self.loadDataOfMonth(value: action.title)
+        }
+        
+        for value in listDate {
+            listChildren.append(UIAction(title: value, handler: menuClosure))
+        }
+
+        pullDownButton.menu = UIMenu(children: listChildren)
         pullDownButton.showsMenuAsPrimaryAction = true
         if #available(iOS 15.0, *) {
             pullDownButton.changesSelectionAsPrimaryAction = true
@@ -72,18 +84,17 @@ class StatisticalViewController: UIViewController {
         }
     }
     
-    func update(number:String) {
-        if number == "option 1" {
-            print("option 1 selected")
-        }
+    func loadDataOfMonth(value: String) {
+        self.callApiRequest(date: value)
+        self.view.makeToast(value)
     }
     
-    func callApiRequest() {
+    func callApiRequest(date: String? = nil) {
         dispatchGroup.enter()
         self.getUserData()
         dispatchGroup.leave()
         dispatchGroup.enter()
-        self.getData()
+        self.getData(date: date)
         dispatchGroup.leave()
         
         dispatchGroup.notify(queue: .main) { [weak self] in
@@ -91,13 +102,19 @@ class StatisticalViewController: UIViewController {
         }
     }
     
-    func getData() {
+    func getData(date: String? = nil) {
         repo.getAllTransaction(idUser: self.idUser) { [weak self] value in
             switch value {
             case .success(let data):
                 if let data = data?.transactions {
                     let result = data.filter({$0.idUser == self?.idUser})
-                    self?.listTransaction = result
+                    if let date = date {
+                        let newResult = result.filter({$0.dateTime.contains(String(date))})
+                        self?.listTransaction = newResult
+                    } else {
+                        self?.listTransaction = result
+                    }
+                    self?.setupButton(list: result)
                 }
             case .failure(let err):
                 print(err as Any)
@@ -119,17 +136,6 @@ class StatisticalViewController: UIViewController {
                 self?.view.makeToast("Lỗi")
             }
             self?.tableView.es.stopPullToRefresh()
-        }
-    }
-    
-    func checkDate(date: String) -> Bool {
-        let dataYear = date[0 ..< 4]
-        let dataMonth = date[5 ..< 7]
-        
-        if dataYear == "\(self.date.year)" && dataMonth == self.date.month {
-            return true
-        } else {
-            return false
         }
     }
     

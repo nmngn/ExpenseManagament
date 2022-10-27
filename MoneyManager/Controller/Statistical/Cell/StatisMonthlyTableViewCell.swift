@@ -16,11 +16,6 @@ class StatisMonthlyTableViewCell: UITableViewCell {
     @IBOutlet weak var flexibleMaxLabel: UILabel!
     @IBOutlet weak var remainLabel: UILabel!
     
-    var stableUsedMoney = 0
-    var flexibleUsedMoney = 0
-    var stableArray: [Transaction] = []
-    var flexibleArray: [Transaction] = []
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -29,6 +24,11 @@ class StatisMonthlyTableViewCell: UITableViewCell {
     func setupData(data: [Transaction], user: User) {
         allMoneyLabel.text = "\(user.money.formattedWithSeparator)"
 
+        var stableUsedMoney = 0
+        var flexibleUsedMoney = 0
+        var stableArray: [Transaction] = []
+        var flexibleArray: [Transaction] = []
+        
         for item in data {
             if item.type == true {
                 stableUsedMoney += item.amount
