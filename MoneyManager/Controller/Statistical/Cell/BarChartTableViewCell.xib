@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +19,7 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1C-nJ-S2N" customClass="BarChartView" customModule="Charts">
                         <rect key="frame" x="16" y="8" width="370" height="280"/>
-                        <color key="backgroundColor" name="NewBG"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="280" id="ZTq-RC-oWO"/>
                         </constraints>
@@ -46,9 +45,4 @@
             <point key="canvasLocation" x="191.30434782608697" y="190.17857142857142"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <namedColor name="NewBG">
-            <color red="0.96100002527236938" green="0.9649999737739563" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-    </resources>
 </document>

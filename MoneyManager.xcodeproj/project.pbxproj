@@ -86,10 +86,8 @@
 		D844349929038D2200019696 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D844349729038D2200019696 /* CategoryCollectionViewCell.xib */; };
 		D844349D2903D3E300019696 /* ListTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844349B2903D3E300019696 /* ListTransactionViewController.swift */; };
 		D844349E2903D3E300019696 /* ListTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D844349C2903D3E300019696 /* ListTransactionViewController.xib */; };
-		D85952152908DD11004BCFE3 /* StatisticalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85952132908DD11004BCFE3 /* StatisticalViewController.swift */; };
-		D85952162908DD11004BCFE3 /* StatisticalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85952142908DD11004BCFE3 /* StatisticalViewController.xib */; };
-		D859521A2908DD27004BCFE3 /* StatisPagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85952182908DD27004BCFE3 /* StatisPagingViewController.swift */; };
-		D859521B2908DD27004BCFE3 /* StatisPagingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85952192908DD27004BCFE3 /* StatisPagingViewController.xib */; };
+		D859521A2908DD27004BCFE3 /* StatisticalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85952182908DD27004BCFE3 /* StatisticalViewController.swift */; };
+		D859521B2908DD27004BCFE3 /* StatisticalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85952192908DD27004BCFE3 /* StatisticalViewController.xib */; };
 		D859521E2908E849004BCFE3 /* StatisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859521C2908E848004BCFE3 /* StatisTableViewCell.swift */; };
 		D859521F2908E849004BCFE3 /* StatisTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D859521D2908E848004BCFE3 /* StatisTableViewCell.xib */; };
 		D859522329091254004BCFE3 /* BarChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859522129091254004BCFE3 /* BarChartTableViewCell.swift */; };
@@ -254,10 +252,8 @@
 		D859520C2907C974004BCFE3 /* PieSliceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSliceModel.swift; sourceTree = "<group>"; };
 		D859520D2907C974004BCFE3 /* PieSliceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSliceData.swift; sourceTree = "<group>"; };
 		D859520E2907C974004BCFE3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		D85952132908DD11004BCFE3 /* StatisticalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticalViewController.swift; sourceTree = "<group>"; };
-		D85952142908DD11004BCFE3 /* StatisticalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticalViewController.xib; sourceTree = "<group>"; };
-		D85952182908DD27004BCFE3 /* StatisPagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisPagingViewController.swift; sourceTree = "<group>"; };
-		D85952192908DD27004BCFE3 /* StatisPagingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisPagingViewController.xib; sourceTree = "<group>"; };
+		D85952182908DD27004BCFE3 /* StatisticalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticalViewController.swift; sourceTree = "<group>"; };
+		D85952192908DD27004BCFE3 /* StatisticalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticalViewController.xib; sourceTree = "<group>"; };
 		D859521C2908E848004BCFE3 /* StatisTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisTableViewCell.swift; sourceTree = "<group>"; };
 		D859521D2908E848004BCFE3 /* StatisTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisTableViewCell.xib; sourceTree = "<group>"; };
 		D859522129091254004BCFE3 /* BarChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartTableViewCell.swift; sourceTree = "<group>"; };
@@ -933,22 +929,12 @@
 		D85952112908DA94004BCFE3 /* Statistical */ = {
 			isa = PBXGroup;
 			children = (
-				D85952172908DD15004BCFE3 /* StatisPaging */,
-				D85952132908DD11004BCFE3 /* StatisticalViewController.swift */,
-				D85952142908DD11004BCFE3 /* StatisticalViewController.xib */,
-			);
-			path = Statistical;
-			sourceTree = "<group>";
-		};
-		D85952172908DD15004BCFE3 /* StatisPaging */ = {
-			isa = PBXGroup;
-			children = (
 				D859522929091631004BCFE3 /* Model */,
 				D859522029091236004BCFE3 /* Cell */,
-				D85952182908DD27004BCFE3 /* StatisPagingViewController.swift */,
-				D85952192908DD27004BCFE3 /* StatisPagingViewController.xib */,
+				D85952182908DD27004BCFE3 /* StatisticalViewController.swift */,
+				D85952192908DD27004BCFE3 /* StatisticalViewController.xib */,
 			);
-			path = StatisPaging;
+			path = Statistical;
 			sourceTree = "<group>";
 		};
 		D859522029091236004BCFE3 /* Cell */ = {
@@ -1108,7 +1094,6 @@
 				3694088A2906DB2800A55FD5 /* AddTransactionTableViewCell.xib in Resources */,
 				369408862906DAE700A55FD5 /* ItemTableViewCell.xib in Resources */,
 				36BF6C8B2901A1A000343E68 /* Roboto-Black.ttf in Resources */,
-				D85952162908DD11004BCFE3 /* StatisticalViewController.xib in Resources */,
 				D8355FC12902BAE900EDB910 /* BannerTableViewCell.xib in Resources */,
 				36BF6C952901BE6F00343E68 /* ExpenseViewController.xib in Resources */,
 				36C6A4AD2905365B00A79B3C /* AccountViewController.xib in Resources */,
@@ -1126,7 +1111,7 @@
 				D859522829091269004BCFE3 /* StatisMonthlyTableViewCell.xib in Resources */,
 				36BF6C7D2901A1A000343E68 /* Color.xcassets in Resources */,
 				36BF6C9A2901BFAC00343E68 /* TransactionDetailViewController.xib in Resources */,
-				D859521B2908DD27004BCFE3 /* StatisPagingViewController.xib in Resources */,
+				D859521B2908DD27004BCFE3 /* StatisticalViewController.xib in Resources */,
 				36BF6C792901A1A000343E68 /* LaunchScreen.storyboard in Resources */,
 				36BF6C872901A1A000343E68 /* LICENSE.txt in Resources */,
 				D8355FB52902B22E00EDB910 /* OptionTableViewCell.xib in Resources */,
@@ -1269,7 +1254,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D85952152908DD11004BCFE3 /* StatisticalViewController.swift in Sources */,
 				36C6A4AC2905365B00A79B3C /* AccountViewController.swift in Sources */,
 				36BF6B572901A18700343E68 /* Repository.swift in Sources */,
 				D859522729091269004BCFE3 /* StatisMonthlyTableViewCell.swift in Sources */,
@@ -1284,7 +1268,7 @@
 				D8C8CBF92906AB5700328B09 /* ExpensePagingViewController.swift in Sources */,
 				369408852906DAE700A55FD5 /* ItemTableViewCell.swift in Sources */,
 				36BF6B5B2901A18700343E68 /* UserRequest.swift in Sources */,
-				D859521A2908DD27004BCFE3 /* StatisPagingViewController.swift in Sources */,
+				D859521A2908DD27004BCFE3 /* StatisticalViewController.swift in Sources */,
 				36BF6C782901A1A000343E68 /* SceneDelegate.swift in Sources */,
 				D859522329091254004BCFE3 /* BarChartTableViewCell.swift in Sources */,
 				36BF6C192901A1A000343E68 /* HomeViewController.swift in Sources */,

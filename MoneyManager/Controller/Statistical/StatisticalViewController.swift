@@ -6,107 +6,181 @@
 //
 
 import UIKit
-import Parchment
 
-class StatisticalViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+class StatisticalViewController: UIViewController {
+
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var pullDownButton: UIButton!
     
-    var pageViewController : UIPageViewController!
-    var statusView = UIView()
-    var statusText = UILabel()
-    var statusLine = UILabel()
-    
-    var pageTitles: [String] = ["Cố định", "Linh hoạt"]
-    var currentIndex: Int = 0
-        
-    override func loadView() {
-        super.loadView()
-        statusView.frame = CGRect(x: 0, y: 91, width: UIScreen.main.bounds.width, height: 44)
-        statusView.backgroundColor = .white
-        
-        statusText.frame = CGRect(x: 16, y: 11,
-                                  width: (self.statusView.frame.width - 64) / 2, height: 20)
-        statusText.textAlignment = .center
-        statusText.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
-        statusText.text = pageTitles[0]
-        
-        statusLine.frame = CGRect(x: 16, y: 43,
-                                  width: (self.statusView.frame.width - 64) / 2, height: 1)
-        statusLine.backgroundColor = UIColor(red: 0.21, green: 0.50, blue: 0.35, alpha: 1.00)
-        
-        self.view.addSubview(statusView)
-        statusView.addSubview(statusText)
-        statusView.addSubview(statusLine)
+    var pageIndex = 0
+    var listTransaction: [Transaction]? {
+        didSet {
+            self.setupData()
+        }
+    }
+    let idUser = Session.shared.userProfile.idUser
+    var model = [StatisPagingModel]()
+    let repo = Repositories(api: .share)
+    let date = Date()
+    let dispatchGroup = DispatchGroup()
+    var userData: User? {
+        didSet {
+            self.setupData()
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Thống kê"
-        pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-        pageViewController.dataSource = self
-        pageViewController.delegate = self
+        self.navigationController?.isNavigationBarHidden = false
+        setupNavigationButton()
+        configView()
+        callApiRequest()
+        setupButton()
+    }
+    
+    func configView() {
+        tableView.do {
+            $0.delegate = self
+            $0.dataSource = self
+            $0.separatorStyle = .none
+            $0.tableFooterView = UIView()
+            $0.registerNibCellFor(type: BarChartTableViewCell.self)
+            $0.registerNibCellFor(type: StatisMonthlyTableViewCell.self)
+            $0.es.addPullToRefresh { [weak self] in
+                self?.callApiRequest()
+            }
+        }
+    }
+    
+    func setupButton() {
+        let menuClosure = {(action: UIAction) in
+            
+            self.update(number: action.title)
+        }
+        pullDownButton.menu = UIMenu(children: [
+            UIAction(title: "option 1", state: .on, handler:
+                        menuClosure),
+            UIAction(title: "option 2", handler: menuClosure),
+            UIAction(title: "option 3", handler: menuClosure),
+        ])
+        pullDownButton.showsMenuAsPrimaryAction = true
+        if #available(iOS 15.0, *) {
+            pullDownButton.changesSelectionAsPrimaryAction = true
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+    
+    func update(number:String) {
+        if number == "option 1" {
+            print("option 1 selected")
+        }
+    }
+    
+    func callApiRequest() {
+        dispatchGroup.enter()
+        self.getUserData()
+        dispatchGroup.leave()
+        dispatchGroup.enter()
+        self.getData()
+        dispatchGroup.leave()
         
-        let startingViewController: StatisPagingViewController = viewControllerAtIndex(index: currentIndex)!
-        let viewControllers = [startingViewController]
-        pageViewController.setViewControllers(viewControllers , direction: .forward, animated: false, completion: nil)
-        pageViewController.view.frame = CGRect(x: 0, y: 135, width: view.frame.size.width, height: view.frame.size.height - 135);
+        dispatchGroup.notify(queue: .main) { [weak self] in
+            self?.tableView.reloadData()
+        }
+    }
+    
+    func getData() {
+        repo.getAllTransaction(idUser: self.idUser) { [weak self] value in
+            switch value {
+            case .success(let data):
+                if let data = data?.transactions {
+                    let result = data.filter({$0.idUser == self?.idUser})
+                    self?.listTransaction = result
+                }
+            case .failure(let err):
+                print(err as Any)
+                self?.view.makeToast("Lỗi")
+            }
+            self?.tableView.es.stopPullToRefresh()
+        }
+    }
+    
+    func getUserData() {
+        repo.getOneUser(idUser: idUser) { [weak self] value in
+            switch value {
+            case .success(let data):
+                if let data = data {
+                    self?.userData = data
+                }
+            case .failure(let err):
+                print(err as Any)
+                self?.view.makeToast("Lỗi")
+            }
+            self?.tableView.es.stopPullToRefresh()
+        }
+    }
+    
+    func checkDate(date: String) -> Bool {
+        let dataYear = date[0 ..< 4]
+        let dataMonth = date[5 ..< 7]
+        
+        if dataYear == "\(self.date.year)" && dataMonth == self.date.month {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func setupData() {
+        guard let data = listTransaction else { return }
+        guard let user = userData else {return}
+        
+        self.model.removeAll()
+        
+        var barChart = StatisPagingModel(type: .barChart)
+        barChart.list = data
+        
+        var statis = StatisPagingModel(type: .info)
+        statis.list = data
+        statis.userData = user
+        
+        model.append(barChart)
+        model.append(statis)
+        self.tableView.reloadData()
+    }
+    
+    func modelIndexPath(indexPath: IndexPath) -> StatisPagingModel {
+        return model[indexPath.row]
+    }
+    
+}
 
-        addChild(pageViewController)
-        view.addSubview(pageViewController.view)
-        pageViewController.didMove(toParent: self)
-                
-        navigationController?.isNavigationBarHidden = false
-        if self.navigationController?.viewControllers.count != 1 {
-            setupNavigationButton()
+extension StatisticalViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return model.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var model: StatisPagingModel
+        model = modelIndexPath(indexPath: indexPath)
+        
+        switch model.type {
+        case .barChart:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "BarChartTableViewCell", for: indexPath) as?
+                    BarChartTableViewCell else { return UITableViewCell()}
+            cell.selectionStyle = .none
+            cell.setupData(list: model.list)
+            return cell
+        case .info:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "StatisMonthlyTableViewCell", for: indexPath) as?
+                    StatisMonthlyTableViewCell else { return UITableViewCell()}
+            cell.selectionStyle = .none
+            if let data = model.userData {
+                cell.setupData(data: model.list, user: data)
+            }
+            return cell
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        var index = (viewController as! StatisPagingViewController).pageIndex
-        
-        if (index == 0) || (index == NSNotFound) {
-            return nil
-        }
-        
-        index -= 1
-        return viewControllerAtIndex(index: index)
-    }
-    
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        var index = (viewController as! StatisPagingViewController).pageIndex
-        
-        if index == NSNotFound {
-            return nil
-        }
-        
-        index += 1
-        if (index == self.pageTitles.count) {
-            return nil
-        }
-        
-        return viewControllerAtIndex(index: index)
-    }
-    
-    func viewControllerAtIndex(index: Int) -> StatisPagingViewController? {
-        if self.pageTitles.count == 0 || index >= self.pageTitles.count {
-            return nil
-        }
-        
-        // Create a new view controller and pass suitable data.
-        let pageContentViewController = StatisPagingViewController()
-        currentIndex = index
-        
-        return pageContentViewController
-    }
-    
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return self.pageTitles.count
-    }
-    
-    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return 0
     }
 }

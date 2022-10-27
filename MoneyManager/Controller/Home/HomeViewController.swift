@@ -37,7 +37,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     let idUser = Session.shared.userProfile.idUser
     var userModel = ("","",0) {
         didSet {
-            self.tableView.reloadData()
+            self.setupData(expenseType: self.expenseType)
         }
     }
     let dispatchGroup = DispatchGroup()

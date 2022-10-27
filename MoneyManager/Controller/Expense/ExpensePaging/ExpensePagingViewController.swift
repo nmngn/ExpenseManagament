@@ -23,7 +23,7 @@ class ExpensePagingViewController: UIViewController {
     }
     var userData: User? {
         didSet {
-            self.tableView.reloadRows(at: [IndexPath(row: 1, section: 0)], with: .none)
+            setupData()
         }
     }
     var idUser = Session.shared.userProfile.idUser
