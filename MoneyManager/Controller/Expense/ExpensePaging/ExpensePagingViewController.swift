@@ -28,18 +28,30 @@ class ExpensePagingViewController: UIViewController {
     }
     var idUser = Session.shared.userProfile.idUser
     let repo = Repositories(api: .share)
-    let mainThread = DispatchQueue.main
+    let dispatchGroup = DispatchGroup()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Tổng hợp"
+        callApiRequest()
         self.configView()
-        self.getDataUser()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    func callApiRequest() {
+        dispatchGroup.enter()
         self.getData()
+        dispatchGroup.leave()
+        dispatchGroup.enter()
+        self.getDataUser()
+        dispatchGroup.leave()
+        
+        dispatchGroup.notify(queue: .main) { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
     
     func getData() {
@@ -59,7 +71,6 @@ class ExpensePagingViewController: UIViewController {
                 self?.view.makeToast("Lỗi")
             }
             self?.tableView.es.stopPullToRefresh()
-            self?.tableView.reloadData()
         }
     }
     
@@ -74,7 +85,6 @@ class ExpensePagingViewController: UIViewController {
                 print(err as Any)
                 self?.view.makeToast("Lỗi")
             }
-            self?.tableView.reloadData()
             self?.tableView.es.stopPullToRefresh()
         }
     }
@@ -90,8 +100,8 @@ class ExpensePagingViewController: UIViewController {
             $0.registerNibCellFor(type: ItemTableViewCell.self)
             $0.registerNibCellFor(type: AddTransactionTableViewCell.self)
             $0.registerNibCellFor(type: StatisTableViewCell.self)
-            $0.es.addPullToRefresh {
-                self.getData()
+            $0.es.addPullToRefresh { [weak self] in
+                self?.callApiRequest()
             }
         }
     }

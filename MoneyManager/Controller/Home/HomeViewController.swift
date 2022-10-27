@@ -40,7 +40,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             self.tableView.reloadData()
         }
     }
-    let mainThread = DispatchQueue.main
+    let dispatchGroup = DispatchGroup()
     
     let presenter: Presentr = {
         let customPresenter = Presentr(presentationType: .fullScreen)
@@ -55,17 +55,10 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
-        mainThread.async {
-            self.getDataUser()
-            self.getListTransaction()
-        }
+        callApiRequest()
         userNotificationCenter.delegate = self
         navigationController?.isNavigationBarHidden = true
         self.requestNotificationAuthorization()
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -144,6 +137,19 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         completionHandler([.banner, .badge, .sound])
     }
     
+    func callApiRequest() {
+        dispatchGroup.enter()
+        self.getListTransaction()
+        dispatchGroup.leave()
+        dispatchGroup.enter()
+        self.getDataUser()
+        dispatchGroup.leave()
+        
+        dispatchGroup.notify(queue: .main) { [weak self] in
+            self?.tableView.reloadData()
+        }
+    }
+    
     func getListTransaction() {
         repo.getAllTransaction(idUser: idUser) { [weak self] value in
             switch value {
@@ -156,7 +162,6 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             case .failure(let error):
                 self?.openAlert(error?.errorMessage ?? "")
             }
-            self?.tableView.reloadData()
             self?.tableView.es.stopPullToRefresh()
         }
     }
@@ -172,7 +177,6 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
                 print(err as Any)
                 self?.view.makeToast("Lỗi")
             }
-            self?.tableView.reloadData()
             self?.tableView.es.stopPullToRefresh()
         }
     }
@@ -190,9 +194,8 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             $0.registerNibCellFor(type: TransactionTableViewCell.self)
             $0.registerNibCellFor(type: BannerTableViewCell.self)
             $0.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
-            $0.es.addPullToRefresh {
-                self.getDataUser()
-                self.getListTransaction()
+            $0.es.addPullToRefresh { [weak self] in
+                self?.callApiRequest()
             }
         }
     }

@@ -40,6 +40,7 @@ class StatisticalViewController: UIViewController, UIPageViewControllerDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Thống kê"
         pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         pageViewController.dataSource = self
         pageViewController.delegate = self

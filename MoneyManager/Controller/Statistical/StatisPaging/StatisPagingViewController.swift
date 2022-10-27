@@ -21,16 +21,18 @@ class StatisPagingViewController: UIViewController {
     var model = [StatisPagingModel]()
     let repo = Repositories(api: .share)
     let date = Date()
-    let mainThread = DispatchQueue.main
-    var userData: User?
+    let dispatchGroup = DispatchGroup()
+    var userData: User? {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
         configView()
-        mainThread.async {
-            self.getData()
-        }
+        callApiRequest()
     }
     
     func configView() {
@@ -41,9 +43,22 @@ class StatisPagingViewController: UIViewController {
             $0.tableFooterView = UIView()
             $0.registerNibCellFor(type: BarChartTableViewCell.self)
             $0.registerNibCellFor(type: StatisMonthlyTableViewCell.self)
-            $0.es.addPullToRefresh {
-                self.getData()
+            $0.es.addPullToRefresh { [weak self] in
+                self?.callApiRequest()
             }
+        }
+    }
+    
+    func callApiRequest() {
+        dispatchGroup.enter()
+        self.getData()
+        dispatchGroup.leave()
+        dispatchGroup.enter()
+        self.getUserData()
+        dispatchGroup.leave()
+        
+        dispatchGroup.notify(queue: .main) { [weak self] in
+            self?.tableView.reloadData()
         }
     }
     
@@ -60,7 +75,6 @@ class StatisPagingViewController: UIViewController {
                 self?.view.makeToast("Lỗi")
             }
             self?.tableView.es.stopPullToRefresh()
-            self?.tableView.reloadData()
         }
     }
     
@@ -75,6 +89,7 @@ class StatisPagingViewController: UIViewController {
                 print(err as Any)
                 self?.view.makeToast("Lỗi")
             }
+            self?.tableView.es.stopPullToRefresh()
         }
     }
     
@@ -91,7 +106,7 @@ class StatisPagingViewController: UIViewController {
     
     func setupData() {
         guard let data = listTransaction else { return }
-        guard let user = userData else {return}
+//        guard let user = userData else {return}
         
         self.model.removeAll()
         
@@ -100,7 +115,7 @@ class StatisPagingViewController: UIViewController {
         
         var statis = StatisPagingModel(type: .info)
         statis.list = data
-        statis.userData =
+//        statis.userData =
         
         model.append(barChart)
         model.append(statis)
