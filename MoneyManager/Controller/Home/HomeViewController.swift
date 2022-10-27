@@ -7,8 +7,6 @@
 
 import UIKit
 import NotificationCenter
-import PopupDialog
-import Presentr
 import ESPullToRefresh
 import Then
 
