@@ -49,7 +49,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         userNotificationCenter.delegate = self
         navigationController?.isNavigationBarHidden = true
         self.requestNotificationAuthorization()
-        sendNotification()
+//        sendNotification()
     }
     
     override func viewWillAppear(_ animated: Bool) {
