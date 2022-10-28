@@ -73,6 +73,10 @@ class StatisticalViewController: UIViewController {
         for value in newListDate {
             listChildren.append(UIAction(title: value, handler: menuClosure))
         }
+        
+        if listChildren.isEmpty {
+            listChildren.append(UIAction(title: "Không có dữ liệu", handler: menuClosure))
+        }
 
         pullDownButton.menu = UIMenu(children: listChildren)
         pullDownButton.showsMenuAsPrimaryAction = true
